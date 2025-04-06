@@ -9,8 +9,10 @@ import logo from '../images/eventnorasaydam.png';
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [mobileServicesDropdownOpen, setMobileServicesDropdownOpen] = useState(false);
   const mobileMenuRef = useRef(null);
+  const desktopMenuRef = useRef(null);
   const location = useLocation();
   const { language } = useLanguage();
   const { toast } = useToast();
@@ -23,6 +25,7 @@ const Navigation = () => {
 
   useEffect(() => {
     setMobileMenuOpen(false);
+    setServicesDropdownOpen(false);
     setMobileServicesDropdownOpen(false);
   }, [location.pathname]);
 
@@ -32,8 +35,10 @@ const Navigation = () => {
         setMobileMenuOpen(false);
         setMobileServicesDropdownOpen(false);
       }
+      if (desktopMenuRef.current && !desktopMenuRef.current.contains(event.target)) {
+        setServicesDropdownOpen(false);
+      }
     };
-
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
@@ -68,11 +73,36 @@ const Navigation = () => {
           </Link>
 
           {/* Desktop Menü */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {navItems.map(item => !item.dropdown && (
-                <Link key={item.path} to={item.path} className={cn('nav-link', location.pathname === item.path && 'after:w-full font-medium')}>
-                  {language === 'en' ? item.nameEn : item.nameTr}
-                </Link>
+          <nav ref={desktopMenuRef} className="hidden md:flex items-center space-x-8">
+            {navItems.map(item => (
+                <div key={item.path} className="relative">
+                  {item.dropdown ? (
+                      <>
+                        <button
+                            className="flex items-center gap-1 cursor-pointer text-gold services-toggle"
+                            onClick={() => setServicesDropdownOpen(prev => !prev)}
+                        >
+                    <span className={cn('nav-link', (location.pathname === item.path || location.pathname.startsWith('/services')) && 'after:w-full font-medium')}>
+                      {language === 'en' ? item.nameEn : item.nameTr}
+                    </span>
+                          {servicesDropdownOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                        </button>
+                        {servicesDropdownOpen && (
+                            <div className="absolute left-0 mt-2 w-64 bg-black border border-gold/20 rounded-lg shadow-lg z-50 desktop-services-dropdown">
+                              {servicesItems.map(service => (
+                                  <Link key={service.slug} to={`/services/${service.slug}`} className="block px-4 py-2 text-gold hover:bg-gold/10 transition-colors" onClick={() => setServicesDropdownOpen(false)}>
+                                    {language === 'en' ? service.nameEn : service.nameTr}
+                                  </Link>
+                              ))}
+                            </div>
+                        )}
+                      </>
+                  ) : (
+                      <Link to={item.path} className={cn('nav-link', location.pathname === item.path && 'after:w-full font-medium')}>
+                        {language === 'en' ? item.nameEn : item.nameTr}
+                      </Link>
+                  )}
+                </div>
             ))}
           </nav>
 
@@ -93,11 +123,10 @@ const Navigation = () => {
                           {language === 'en' ? item.nameEn : item.nameTr}
                           {mobileServicesDropdownOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
                         </button>
-
                         {mobileServicesDropdownOpen && (
                             <div className="mt-2 pl-2 max-h-60 overflow-y-auto border-l border-gold/20">
                               {servicesItems.map(service => (
-                                  <Link key={service.slug} to={`/services/${service.slug}`} className="block px-3 py-2 text-gold hover:bg-gold/10 rounded transition">
+                                  <Link key={service.slug} to={`/services/${service.slug}`} className="block px-3 py-2 text-gold hover:bg-gold/10 rounded transition" onClick={() => setMobileMenuOpen(false)}>
                                     {language === 'en' ? service.nameEn : service.nameTr}
                                   </Link>
                               ))}
@@ -105,7 +134,7 @@ const Navigation = () => {
                         )}
                       </div>
                   ) : (
-                      <Link key={item.path} to={item.path} className="text-gold">
+                      <Link key={item.path} to={item.path} className="text-gold" onClick={() => setMobileMenuOpen(false)}>
                         {language === 'en' ? item.nameEn : item.nameTr}
                       </Link>
                   ))}
