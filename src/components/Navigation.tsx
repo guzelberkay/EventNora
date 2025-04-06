@@ -28,14 +28,24 @@ const Navigation = () => {
     setServicesDropdownOpen(false);
   }, [location.pathname]);
 
-  // ✅ Mobil menü açıkken dış tıklamayı algıla
+  // ✅ Tüm ekranlarda menü dışına tıklanırsa kapat
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (
+      const target = event.target as Node;
+
+      const isOutsideMobile =
           mobileMenuOpen &&
           mobileMenuRef.current &&
-          !mobileMenuRef.current.contains(event.target as Node)
-      ) {
+          !mobileMenuRef.current.contains(target);
+
+      const desktopDropdown = document.querySelector('.desktop-services-dropdown');
+      const isOutsideDesktop =
+          servicesDropdownOpen &&
+          desktopDropdown &&
+          !desktopDropdown.contains(target) &&
+          !(target as HTMLElement).closest('.services-toggle');
+
+      if (isOutsideMobile || isOutsideDesktop) {
         setMobileMenuOpen(false);
         setServicesDropdownOpen(false);
       }
@@ -45,7 +55,7 @@ const Navigation = () => {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [mobileMenuOpen]);
+  }, [mobileMenuOpen, servicesDropdownOpen]);
 
   const handleLanguageChange = (lang: 'en' | 'tr') => {
     setLanguage(lang);
@@ -97,7 +107,7 @@ const Navigation = () => {
             {navItems.map((item) => (
                 <div key={item.path} className="relative group">
                   {item.dropdown ? (
-                      <div className="flex items-center gap-1 cursor-pointer" onClick={toggleServicesDropdown}>
+                      <div className="flex items-center gap-1 cursor-pointer services-toggle" onClick={toggleServicesDropdown}>
                   <span className={cn(
                       'nav-link',
                       (location.pathname === item.path || location.pathname.startsWith('/services')) && 'after:w-full font-medium'
@@ -116,7 +126,7 @@ const Navigation = () => {
                   )}
 
                   {item.dropdown && servicesDropdownOpen && (
-                      <div className="absolute left-0 mt-2 w-64 bg-black border border-gold/20 rounded-lg shadow-lg z-50">
+                      <div className="absolute left-0 mt-2 w-64 bg-black border border-gold/20 rounded-lg shadow-lg z-50 desktop-services-dropdown">
                         <div className="py-2">
                           {servicesItems.map((service, index) => (
                               <Link
@@ -146,13 +156,13 @@ const Navigation = () => {
             </div>
           </nav>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Toggle */}
           <button className="md:hidden text-gold" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
-        {/* Mobile Navigation Menu */}
+        {/* Mobile Menu */}
         {mobileMenuOpen && (
             <div
                 ref={mobileMenuRef}

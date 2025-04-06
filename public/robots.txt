@@ -1,0 +1,23 @@
+# robots.txt for Event Nora
+
+# Tüm botlara izin ver
+User-agent: *
+Allow: /
+
+# Yönetimsel ya da özel sayfaların taranmasını engelle
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /login/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /drafts/
+
+# Parametreli linkleri tarama (örneğin filtreli URL’ler)
+Disallow: /*?*
+Disallow: /*.pdf$
+
+# Sitemap dosyasını belirt (mutlaka olmalı)
+Sitemap: https://www.eventnora.com/sitemap.xml
+
+# Host adresi (bazı arama motorları kullanır, örneğin Yandex)
+Host: https://www.eventnora.com
