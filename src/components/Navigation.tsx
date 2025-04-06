@@ -1,25 +1,24 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
-import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
+import { Globe, Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useToast } from '@/components/ui/use-toast';
 import logo from '../images/eventnorasaydam.png';
-import '../App.css';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
-  const [mobileServicesDropdownOpen, setMobileServicesDropdownOpen] = useState(false);
-  const mobileMenuRef = useRef(null);
-  const desktopMenuRef = useRef(null);
   const location = useLocation();
-  const { language } = useLanguage();
+  const { language, setLanguage, t } = useLanguage();
   const { toast } = useToast();
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 10);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -27,22 +26,16 @@ const Navigation = () => {
   useEffect(() => {
     setMobileMenuOpen(false);
     setServicesDropdownOpen(false);
-    setMobileServicesDropdownOpen(false);
   }, [location.pathname]);
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target)) {
-        setMobileMenuOpen(false);
-        setMobileServicesDropdownOpen(false);
-      }
-      if (desktopMenuRef.current && !desktopMenuRef.current.contains(event.target)) {
-        setServicesDropdownOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
+  const handleLanguageChange = (lang) => {
+    setLanguage(lang);
+    toast({
+      title: lang === 'en' ? 'Language Changed' : 'Dil Değiştirildi',
+      description: lang === 'en' ? 'English is now active' : 'Türkçe şimdi aktif',
+      duration: 2000,
+    });
+  };
 
   const servicesItems = [
     { nameEn: 'Engagement and Wedding Organization', nameTr: 'Nişan ve Düğün Organizasyonu', slug: 'engagement-wedding-organization' },
@@ -66,110 +59,167 @@ const Navigation = () => {
     { nameEn: 'FAQ', nameTr: 'SSS', path: '/faq' },
   ];
 
+  const toggleServicesDropdown = () => {
+    setServicesDropdownOpen(!servicesDropdownOpen);
+  };
+
   return (
       <header className={cn('fixed w-full top-0 z-50 transition-all duration-300', isScrolled ? 'bg-black shadow-lg py-3' : 'bg-black py-5')}>
         <div className="container-custom flex items-center justify-between">
-          <Link to="/">
+          <Link to="/" className="flex items-center">
             <img src={logo} alt="EventNora Logo" className="h-24 w-auto" />
           </Link>
 
-          {/* Desktop Menü */}
-          <nav ref={desktopMenuRef} className="hidden md:flex items-center space-x-8">
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-                <div key={item.path} className="relative">
+                <div key={item.path} className="relative group">
                   {item.dropdown ? (
-                      <>
-                        <button
-                            className="flex items-center gap-1 cursor-pointer text-gold services-toggle"
-                            onClick={() => setServicesDropdownOpen((prev) => !prev)}
-                        >
-                    <span
-                        className={cn(
-                            'nav-link',
-                            (location.pathname === item.path || location.pathname.startsWith('/services')) && 'after:w-full font-medium'
-                        )}
-                    >
-                      {language === 'en' ? item.nameEn : item.nameTr}
-                    </span>
-                          {servicesDropdownOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-                        </button>
-                        {servicesDropdownOpen && (
-                            <div className="absolute left-0 mt-2 w-64 bg-black border border-gold/20 rounded-lg shadow-lg z-50 desktop-services-dropdown">
-                              {servicesItems.map((service) => (
-                                  <Link
-                                      key={service.slug}
-                                      to={`/services/${service.slug}`}
-                                      className="block px-4 py-2 text-gold hover:bg-gold/10 transition-colors"
-                                      onClick={() => setServicesDropdownOpen(false)}
-                                  >
-                                    {language === 'en' ? service.nameEn : service.nameTr}
-                                  </Link>
-                              ))}
-                            </div>
-                        )}
-                      </>
+                      <div className="flex items-center gap-1 cursor-pointer" onClick={toggleServicesDropdown}>
+                  <span className={cn('nav-link', (location.pathname === item.path || location.pathname.startsWith('/services')) && 'after:w-full font-medium')}>
+                    {language === 'en' ? item.nameEn : item.nameTr}
+                  </span>
+                        {servicesDropdownOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                      </div>
                   ) : (
-                      <Link
-                          to={item.path}
-                          className={cn('nav-link', location.pathname === item.path && 'after:w-full font-medium')}
-                      >
+                      <Link to={item.path} className={cn('nav-link', location.pathname === item.path && 'after:w-full font-medium')}>
                         {language === 'en' ? item.nameEn : item.nameTr}
                       </Link>
                   )}
+
+                  {item.dropdown && servicesDropdownOpen && (
+                      <div className="absolute left-0 mt-2 w-64 bg-black border border-gold/20 rounded-lg shadow-lg z-50">
+                        <div className="py-2">
+                          {servicesItems.map((service, index) => (
+                              <Link
+                                  key={index}
+                                  to={`/services/${service.slug}`}
+                                  className="block px-4 py-2 text-gold hover:bg-gold/10 transition-colors"
+                                  onClick={() => setServicesDropdownOpen(false)}
+                              >
+                                {language === 'en' ? service.nameEn : service.nameTr}
+                              </Link>
+                          ))}
+                        </div>
+                      </div>
+                  )}
                 </div>
             ))}
+
+            {/* Desktop Language Switcher */}
+            <div className="flex items-center gap-3">
+              <button
+                  className={cn('language-selector flex items-center gap-1', language === 'en' && 'text-gold font-semibold')}
+                  onClick={() => handleLanguageChange('en')}
+              >
+                <Globe size={16} />
+                <span>EN</span>
+              </button>
+              <button
+                  className={cn('language-selector flex items-center gap-1', language === 'tr' && 'text-gold font-semibold')}
+                  onClick={() => handleLanguageChange('tr')}
+              >
+                <Globe size={16} />
+                <span>TR</span>
+              </button>
+            </div>
           </nav>
 
-          {/* Mobil Menü Butonu */}
-          <button className="md:hidden text-gold" onClick={() => setMobileMenuOpen((prev) => !prev)}>
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile Menu Button */}
+          <div className="md:hidden flex items-center gap-3 text-gold">
+            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+
+            {/* Mobile Language Switcher */}
+            <div className="flex gap-2">
+              <button
+                  className={cn('language-selector flex items-center gap-1 text-sm', language === 'en' && 'text-gold font-semibold')}
+                  onClick={() => handleLanguageChange('en')}
+              >
+                <Globe size={16} />
+                <span>EN</span>
+              </button>
+              <button
+                  className={cn('language-selector flex items-center gap-1 text-sm', language === 'tr' && 'text-gold font-semibold')}
+                  onClick={() => handleLanguageChange('tr')}
+              >
+                <Globe size={16} />
+                <span>TR</span>
+              </button>
+            </div>
+          </div>
         </div>
 
-        {/* Mobil / Tablet Menü */}
+        {/* Mobile Navigation */}
         {mobileMenuOpen && (
-            <div ref={mobileMenuRef} className="md:hidden bg-black absolute top-full left-0 w-full border-t border-gold/20 animate-slideIn">
+            <div className="md:hidden bg-black absolute top-full left-0 w-full border-t border-gold/20 animate-slideIn">
               <div className="container-custom py-4">
                 <nav className="flex flex-col space-y-4">
-                  {navItems.map((item) =>
-                      item.dropdown ? (
-                          <div key={item.path}>
-                            <button
-                                className="flex items-center justify-between w-full text-gold font-semibold"
-                                onClick={() => setMobileServicesDropdownOpen((prev) => !prev)}
+                  {navItems.map((item) => (
+                      <div key={item.path}>
+                        {item.dropdown ? (
+                            <div>
+                              <div
+                                  className="flex items-center justify-between text-gold hover:text-gold-light transition-colors py-2 cursor-pointer"
+                                  onClick={toggleServicesDropdown}
+                              >
+                        <span className={cn(location.pathname === item.path && 'font-medium')}>
+                          {language === 'en' ? item.nameEn : item.nameTr}
+                        </span>
+                                {servicesDropdownOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                              </div>
+
+                              {servicesDropdownOpen && (
+                                  <div className="pl-4 mt-2 space-y-2 border-l border-gold/20">
+                                    {servicesItems.map((service, index) => (
+                                        <Link
+                                            key={index}
+                                            to={`/services/${service.slug}`}
+                                            className="block py-2 text-gold/80 hover:text-gold transition-colors"
+                                            onClick={() => {
+                                              setServicesDropdownOpen(false);
+                                              setMobileMenuOpen(false);
+                                            }}
+                                        >
+                                          {language === 'en' ? service.nameEn : service.nameTr}
+                                        </Link>
+                                    ))}
+                                  </div>
+                              )}
+                            </div>
+                        ) : (
+                            <Link
+                                to={item.path}
+                                className={cn(
+                                    'text-gold hover:text-gold-light transition-colors py-2 block',
+                                    location.pathname === item.path && 'font-medium'
+                                )}
+                                onClick={() => setMobileMenuOpen(false)}
                             >
                               {language === 'en' ? item.nameEn : item.nameTr}
-                              {mobileServicesDropdownOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
-                            </button>
-                            {mobileServicesDropdownOpen && (
-                                <div className="mt-2 pl-2 border-l border-gold/20 max-h-[60vh] overflow-y-auto pr-2 bg-black rounded-lg custom-scrollbar">
-                                  {servicesItems.map((service) => (
-                                      <Link
-                                          key={service.slug}
-                                          to={`/services/${service.slug}`}
-                                          className="block px-3 py-2 text-gold hover:bg-gold/10 rounded transition-colors"
-                                          onClick={() => {
-                                            setMobileMenuOpen(false);
-                                            setMobileServicesDropdownOpen(false);
-                                          }}
-                                      >
-                                        {language === 'en' ? service.nameEn : service.nameTr}
-                                      </Link>
-                                  ))}
-                                </div>
-                            )}
-                          </div>
-                      ) : (
-                          <Link
-                              key={item.path}
-                              to={item.path}
-                              className="text-gold"
-                              onClick={() => setMobileMenuOpen(false)}
-                          >
-                            {language === 'en' ? item.nameEn : item.nameTr}
-                          </Link>
-                      )
-                  )}
+                            </Link>
+                        )}
+                      </div>
+                  ))}
+
+                  {/* Mobile Dil Butonları */}
+                  <div className="flex gap-4 pt-4">
+                    <button
+                        className={cn('language-selector flex items-center gap-1', language === 'en' && 'text-gold font-semibold')}
+                        onClick={() => handleLanguageChange('en')}
+                    >
+                      <Globe size={16} />
+                      <span>English</span>
+                    </button>
+                    <button
+                        className={cn('language-selector flex items-center gap-1', language === 'tr' && 'text-gold font-semibold')}
+                        onClick={() => handleLanguageChange('tr')}
+                    >
+                      <Globe size={16} />
+                      <span>Türkçe</span>
+                    </button>
+                  </div>
                 </nav>
               </div>
             </div>
