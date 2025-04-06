@@ -86,8 +86,8 @@ const Footer = () => {
           <div className="border-t border-gold/20 pt-8 mt-8" />
 
           {/* Bottom Section with CORTEXSOFT Centered */}
-          <div className="mt-8 text-center">
-            <p className="text-sm text-gold/70 mb-4">
+          <div className="mt-6 text-center">
+            <p className="text-sm text-gold/70 mb-3">
               © {currentYear} EventNora. {t('All rights reserved.', 'Tüm hakları saklıdır.')}
             </p>
 
@@ -95,11 +95,17 @@ const Footer = () => {
                 href="https://www.cortexsoftdev.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block text-center text-2xl font-extrabold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-gold via-white to-gold hover:scale-105 hover:brightness-125 transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 group"
             >
-               CORTEXSOFT
+    <span className="text-xs text-gold/60 tracking-wide uppercase font-medium group-hover:text-gold transition">
+      Powered by
+    </span>
+              <span className="text-xl sm:text-2xl font-extrabold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-gold via-white to-gold group-hover:brightness-125 transition-all duration-300">
+      CORTEXSOFT
+    </span>
             </a>
           </div>
+
         </div>
       </footer>
   );
