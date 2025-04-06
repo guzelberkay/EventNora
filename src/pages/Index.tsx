@@ -68,26 +68,28 @@ const Index = () => {
             </span>
               <h1 className="heading-1 mb-6 text-black">
                 {t('Crafting ', 'Özel Etkinlikleriniz İçin ')}
-                <span className="text-gold">{t('Unforgettable', 'Unutulmaz')}</span>
+                <span className="text-black">{t('Unforgettable', 'Unutulmaz')}</span>
                 {t(' Moments For Your Special Occasions', ' Anlar Yaratıyoruz')}
               </h1>
-              <p className="paragraph mb-8 opacity-90 max-w-2xl mx-auto text-black">
+              <p className="paragraph mb-8 opacity-90 max-w-3xl mx-auto text-black text-2xl">
+
                 {t(
                     'We transform your vision into reality with meticulous planning, creative design, and flawless execution for all types of events.',
                     'Titiz planlama, yaratıcı tasarım ve kusursuz uygulama ile vizyonunuzu her türlü etkinlik için gerçeğe dönüştürüyoruz.'
                 )}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/contact" className="gold-button">
+                <Link to="/contact" className="gold-button text-xl">
                   {t('Get in Touch', 'İletişime Geçin')}
                 </Link>
                 <Link
                     to="/services"
-                    className="flex items-center justify-center gap-2 px-6 py-2.5 text-black hover:text-gold transition-colors duration-300"
+                    className="flex items-center justify-center gap-2 px-6 py-2.5 text-black hover:text-gold transition-colors duration-300 text-xl"
                 >
-                  {t('Our Services', 'Hizmetlerimiz')} <ArrowRight size={16} />
+                  {t('Our Services', 'Hizmetlerimiz')} <ArrowRight size={16}/>
                 </Link>
               </div>
+
             </div>
           </div>
         </section>

@@ -4,6 +4,8 @@ import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, MessageCircle } fro
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
 import logo from '../images/eventnorasaydam.png';
+import { FaLinkedin, FaGoogle } from 'react-icons/fa';
+
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -16,7 +18,7 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
             {/* Logo & About */}
             <div className="space-y-4">
-              <img src={logo} alt="EventNora Logo" className="h-36 w-auto" />
+              <img src={logo} alt="EventNora Logo" className="h-36 w-auto"/>
               <p className="text-sm text-gold/80 max-w-xs">
                 {t(
                     'Creating unforgettable moments with meticulous planning and elegant execution for all your special occasions.',
@@ -24,13 +26,25 @@ const Footer = () => {
                 )}
               </p>
               <div className="flex space-x-4">
-                <a href="https://wa.me/905327701208" target="_blank" rel="noopener noreferrer" className="hover:text-gold-light transition-colors">
-                  <MessageCircle size={20} />
+                <a href="https://wa.me/905327701208" target="_blank" rel="noopener noreferrer"
+                   className="hover:text-gold-light transition-colors" title="WhatsApp">
+                  <MessageCircle size={20}/>
                 </a>
-                <a href="https://www.instagram.com/eventnora/" className="hover:text-gold-light transition-colors">
-                  <Instagram size={20} />
+                <a href="https://www.instagram.com/eventnora/" target="_blank" rel="noopener noreferrer"
+                   className="hover:text-gold-light transition-colors" title="Instagram">
+                  <Instagram size={20}/>
+                </a>
+                <a href="https://www.linkedin.com/company/eventnora/" target="_blank"
+                   rel="noopener noreferrer" className="hover:text-gold-light transition-colors" title="LinkedIn">
+                  <FaLinkedin size={20}/>
+                </a>
+                <a href="https://g.co/kgs/MEC9u4e" target="_blank" rel="noopener noreferrer"
+                   className="hover:text-gold-light transition-colors" title="Google Reviews">
+                  <FaGoogle size={20}/>
                 </a>
               </div>
+
+
             </div>
 
             {/* Quick Links */}
@@ -47,19 +61,19 @@ const Footer = () => {
 
             {/* Contact Info */}
             <div>
-              <h4 className="text-lg font-semibold mb-4">{t('Contact Info', 'İletişim Bilgileri')}</h4>
+            <h4 className="text-lg font-semibold mb-4">{t('Contact Info', 'İletişim Bilgileri')}</h4>
               <div className="space-y-3 text-sm text-gold/80">
                 <div
                     onClick={() =>
                         window.open(
-                            'https://www.google.com/maps/search/?api=1&query=Çamlık Mah. İkbal Cad. Gülbeyaz Sok. No:22/2 Ümraniye/İSTANBUL',
+                            'https://maps.app.goo.gl/vfYVa31mdXVF4wLSA',
                             '_blank'
                         )
                     }
                     className="flex items-start space-x-3 cursor-pointer hover:underline"
                 >
                   <MapPin size={20} className="text-gold mt-0.5" />
-                  <span>Çamlık Mah. İkbal Cad. Gülbeyaz Sok. No:22/2 Ümraniye/İSTANBUL</span>
+                  <span>Altınşehir, Şenel Cd. No:78B, 34000 Ümraniye/İstanbul</span>
                 </div>
                 <a href="tel:+905327701208" className="flex items-center space-x-3 hover:text-gold">
                   <Phone size={18} className="text-gold" />

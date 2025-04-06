@@ -5,6 +5,7 @@ import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useToast } from '@/components/ui/use-toast';
 import logo from '../images/eventnorasaydam.png';
+import '../App.css';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -74,23 +75,33 @@ const Navigation = () => {
 
           {/* Desktop Menü */}
           <nav ref={desktopMenuRef} className="hidden md:flex items-center space-x-8">
-            {navItems.map(item => (
+            {navItems.map((item) => (
                 <div key={item.path} className="relative">
                   {item.dropdown ? (
                       <>
                         <button
                             className="flex items-center gap-1 cursor-pointer text-gold services-toggle"
-                            onClick={() => setServicesDropdownOpen(prev => !prev)}
+                            onClick={() => setServicesDropdownOpen((prev) => !prev)}
                         >
-                    <span className={cn('nav-link', (location.pathname === item.path || location.pathname.startsWith('/services')) && 'after:w-full font-medium')}>
+                    <span
+                        className={cn(
+                            'nav-link',
+                            (location.pathname === item.path || location.pathname.startsWith('/services')) && 'after:w-full font-medium'
+                        )}
+                    >
                       {language === 'en' ? item.nameEn : item.nameTr}
                     </span>
                           {servicesDropdownOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
                         </button>
                         {servicesDropdownOpen && (
                             <div className="absolute left-0 mt-2 w-64 bg-black border border-gold/20 rounded-lg shadow-lg z-50 desktop-services-dropdown">
-                              {servicesItems.map(service => (
-                                  <Link key={service.slug} to={`/services/${service.slug}`} className="block px-4 py-2 text-gold hover:bg-gold/10 transition-colors" onClick={() => setServicesDropdownOpen(false)}>
+                              {servicesItems.map((service) => (
+                                  <Link
+                                      key={service.slug}
+                                      to={`/services/${service.slug}`}
+                                      className="block px-4 py-2 text-gold hover:bg-gold/10 transition-colors"
+                                      onClick={() => setServicesDropdownOpen(false)}
+                                  >
                                     {language === 'en' ? service.nameEn : service.nameTr}
                                   </Link>
                               ))}
@@ -98,7 +109,10 @@ const Navigation = () => {
                         )}
                       </>
                   ) : (
-                      <Link to={item.path} className={cn('nav-link', location.pathname === item.path && 'after:w-full font-medium')}>
+                      <Link
+                          to={item.path}
+                          className={cn('nav-link', location.pathname === item.path && 'after:w-full font-medium')}
+                      >
                         {language === 'en' ? item.nameEn : item.nameTr}
                       </Link>
                   )}
@@ -107,37 +121,55 @@ const Navigation = () => {
           </nav>
 
           {/* Mobil Menü Butonu */}
-          <button className="md:hidden text-gold" onClick={() => setMobileMenuOpen(prev => !prev)}>
+          <button className="md:hidden text-gold" onClick={() => setMobileMenuOpen((prev) => !prev)}>
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
-        {/* Mobil Menü */}
+        {/* Mobil / Tablet Menü */}
         {mobileMenuOpen && (
             <div ref={mobileMenuRef} className="md:hidden bg-black absolute top-full left-0 w-full border-t border-gold/20 animate-slideIn">
               <div className="container-custom py-4">
                 <nav className="flex flex-col space-y-4">
-                  {navItems.map(item => item.dropdown ? (
-                      <div key={item.path}>
-                        <button className="flex items-center justify-between w-full text-gold" onClick={() => setMobileServicesDropdownOpen(prev => !prev)}>
-                          {language === 'en' ? item.nameEn : item.nameTr}
-                          {mobileServicesDropdownOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
-                        </button>
-                        {mobileServicesDropdownOpen && (
-                            <div className="mt-2 pl-2 max-h-60 overflow-y-auto border-l border-gold/20">
-                              {servicesItems.map(service => (
-                                  <Link key={service.slug} to={`/services/${service.slug}`} className="block px-3 py-2 text-gold hover:bg-gold/10 rounded transition" onClick={() => setMobileMenuOpen(false)}>
-                                    {language === 'en' ? service.nameEn : service.nameTr}
-                                  </Link>
-                              ))}
-                            </div>
-                        )}
-                      </div>
-                  ) : (
-                      <Link key={item.path} to={item.path} className="text-gold" onClick={() => setMobileMenuOpen(false)}>
-                        {language === 'en' ? item.nameEn : item.nameTr}
-                      </Link>
-                  ))}
+                  {navItems.map((item) =>
+                      item.dropdown ? (
+                          <div key={item.path}>
+                            <button
+                                className="flex items-center justify-between w-full text-gold font-semibold"
+                                onClick={() => setMobileServicesDropdownOpen((prev) => !prev)}
+                            >
+                              {language === 'en' ? item.nameEn : item.nameTr}
+                              {mobileServicesDropdownOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                            </button>
+                            {mobileServicesDropdownOpen && (
+                                <div className="mt-2 pl-2 border-l border-gold/20 max-h-[60vh] overflow-y-auto pr-2 bg-black rounded-lg custom-scrollbar">
+                                  {servicesItems.map((service) => (
+                                      <Link
+                                          key={service.slug}
+                                          to={`/services/${service.slug}`}
+                                          className="block px-3 py-2 text-gold hover:bg-gold/10 rounded transition-colors"
+                                          onClick={() => {
+                                            setMobileMenuOpen(false);
+                                            setMobileServicesDropdownOpen(false);
+                                          }}
+                                      >
+                                        {language === 'en' ? service.nameEn : service.nameTr}
+                                      </Link>
+                                  ))}
+                                </div>
+                            )}
+                          </div>
+                      ) : (
+                          <Link
+                              key={item.path}
+                              to={item.path}
+                              className="text-gold"
+                              onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {language === 'en' ? item.nameEn : item.nameTr}
+                          </Link>
+                      )
+                  )}
                 </nav>
               </div>
             </div>

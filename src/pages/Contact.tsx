@@ -59,7 +59,7 @@ const Contact = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {/* Address */}
                 <a
-                    href="https://maps.google.com/?q=Altınşehir Mah. Şenel Cad. No:78B Ümraniye/İstanbul"
+                    href="https://maps.app.goo.gl/vfYVa31mdXVF4wLSA"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-gray-50 p-6 rounded-xl text-center hover:shadow-md transition-all block"
@@ -129,10 +129,11 @@ const Contact = () => {
             </div>
             <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-lg">
               <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.123456789012!2d29.12345678901234!3d41.12345678901234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDA3JzI0LjQiTiAyOcKwMDcnNDIuMCJF!5e0!3m2!1sen!2str!4v1234567890123!5m2!1sen!2str"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.1580108449166!2d29.15012307644102!3d41.033750171347036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac8a0a5e9d7e7%3A0xd56c7b7897e1772f!2sAlt%C4%B1n%C5%9Fehir%2C%20%C5%9Eenel%20Cd.%20No%3A78B%2C%2034000%20%C3%9Cmraniye%2F%C4%B0stanbul!5e0!3m2!1str!2str!4v1712400000000!5m2!1str!2str"
                   width="100%"
                   height="450"
                   style={{ border: 0 }}
+                  allowFullScreen={true}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   title={isEnglish ? 'Event Nora Location' : 'Event Nora Konumu'}
