@@ -1,3 +1,5 @@
+// Navigation.jsx
+
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
@@ -18,7 +20,6 @@ const Navigation = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -55,6 +56,7 @@ const Navigation = () => {
     { nameEn: 'Home', nameTr: 'Ana Sayfa', path: '/' },
     { nameEn: 'About Us', nameTr: 'Hakkımızda', path: '/about' },
     { nameEn: 'Services', nameTr: 'Hizmetler', path: '/services', dropdown: true },
+    { nameEn: 'Blog', nameTr: 'Blog', path: '/blog' }, // ✅ Blog menüsü eklendi
     { nameEn: 'Contact', nameTr: 'İletişim', path: '/contact' },
     { nameEn: 'FAQ', nameTr: 'SSS', path: '/faq' },
   ];
@@ -87,6 +89,7 @@ const Navigation = () => {
                       </Link>
                   )}
 
+                  {/* Services Dropdown */}
                   {item.dropdown && servicesDropdownOpen && (
                       <div className="absolute left-0 mt-2 w-64 bg-black border border-gold/20 rounded-lg shadow-lg z-50">
                         <div className="py-2">
@@ -108,17 +111,11 @@ const Navigation = () => {
 
             {/* Desktop Language Switcher */}
             <div className="flex items-center gap-3">
-              <button
-                  className={cn('language-selector flex items-center gap-1', language === 'en' && 'text-gold font-semibold')}
-                  onClick={() => handleLanguageChange('en')}
-              >
+              <button className={cn('language-selector flex items-center gap-1', language === 'en' && 'text-gold font-semibold')} onClick={() => handleLanguageChange('en')}>
                 <Globe size={16} />
                 <span>EN</span>
               </button>
-              <button
-                  className={cn('language-selector flex items-center gap-1', language === 'tr' && 'text-gold font-semibold')}
-                  onClick={() => handleLanguageChange('tr')}
-              >
+              <button className={cn('language-selector flex items-center gap-1', language === 'tr' && 'text-gold font-semibold')} onClick={() => handleLanguageChange('tr')}>
                 <Globe size={16} />
                 <span>TR</span>
               </button>
@@ -130,20 +127,13 @@ const Navigation = () => {
             <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
-
             {/* Mobile Language Switcher */}
             <div className="flex gap-2">
-              <button
-                  className={cn('language-selector flex items-center gap-1 text-sm', language === 'en' && 'text-gold font-semibold')}
-                  onClick={() => handleLanguageChange('en')}
-              >
+              <button className={cn('language-selector flex items-center gap-1 text-sm', language === 'en' && 'text-gold font-semibold')} onClick={() => handleLanguageChange('en')}>
                 <Globe size={16} />
                 <span>EN</span>
               </button>
-              <button
-                  className={cn('language-selector flex items-center gap-1 text-sm', language === 'tr' && 'text-gold font-semibold')}
-                  onClick={() => handleLanguageChange('tr')}
-              >
+              <button className={cn('language-selector flex items-center gap-1 text-sm', language === 'tr' && 'text-gold font-semibold')} onClick={() => handleLanguageChange('tr')}>
                 <Globe size={16} />
                 <span>TR</span>
               </button>
@@ -169,7 +159,6 @@ const Navigation = () => {
                         </span>
                                 {servicesDropdownOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
                               </div>
-
                               {servicesDropdownOpen && (
                                   <div className="pl-4 mt-2 space-y-2 border-l border-gold/20">
                                     {servicesItems.map((service, index) => (
@@ -203,19 +192,13 @@ const Navigation = () => {
                       </div>
                   ))}
 
-                  {/* Mobile Dil Butonları */}
+                  {/* Mobile Language Buttons */}
                   <div className="flex gap-4 pt-4">
-                    <button
-                        className={cn('language-selector flex items-center gap-1', language === 'en' && 'text-gold font-semibold')}
-                        onClick={() => handleLanguageChange('en')}
-                    >
+                    <button className={cn('language-selector flex items-center gap-1', language === 'en' && 'text-gold font-semibold')} onClick={() => handleLanguageChange('en')}>
                       <Globe size={16} />
                       <span>English</span>
                     </button>
-                    <button
-                        className={cn('language-selector flex items-center gap-1', language === 'tr' && 'text-gold font-semibold')}
-                        onClick={() => handleLanguageChange('tr')}
-                    >
+                    <button className={cn('language-selector flex items-center gap-1', language === 'tr' && 'text-gold font-semibold')} onClick={() => handleLanguageChange('tr')}>
                       <Globe size={16} />
                       <span>Türkçe</span>
                     </button>
