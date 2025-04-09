@@ -1,4 +1,4 @@
-# robots.txt for Event Nora
+# robots.txt - Event Nora | https://www.eventnora.com
 
 User-agent: *
 Disallow: /admin/
@@ -8,14 +8,18 @@ Disallow: /private/
 Disallow: /temp/
 Disallow: /drafts/
 
-# Parametreli gereksiz URL'ler için (gerekiyorsa özelleştir)
+# Belirli URL parametrelerini engelle
 Disallow: /*?sessionid=
 Disallow: /*?temp=
-# NOT: Eğer tüm parametreli URL'leri engellemek istiyorsan aşağıdaki satırı ekle:
+
+# Gerekiyorsa tüm parametreli URL'leri engelle (DİKKATLE kullan)
 # Disallow: /*?*
 
-# PDF dosyaları taranmasın
+# Belirli dosya türlerini dışla
 Disallow: /*.pdf$
 
 # Site haritası
 Sitemap: https://www.eventnora.com/sitemap.xml
+
+# (İsteğe bağlı) Host belirtme — bazı botlar için
+# Host: https://www.eventnora.com
