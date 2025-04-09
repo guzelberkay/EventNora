@@ -11,12 +11,19 @@ const BlogPost = () => {
     const navigate = useNavigate();
     const { language, setLanguage } = useLanguage();
 
+    // ✅ Her blog değiştiğinde sayfayı en üste al
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [slug]);
+
+    // ✅ Dil senkronizasyonu
     useEffect(() => {
         if ((lang === 'en' || lang === 'tr') && lang !== language) {
             setLanguage(lang);
         }
     }, [lang]);
 
+    // ✅ Dil değiştirildiğinde URL'yi değiştir
     useEffect(() => {
         if ((language === 'en' || language === 'tr') && lang !== language && slug) {
             navigate(`/blog/${language}/${slug}`, { replace: true });

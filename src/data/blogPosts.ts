@@ -19,37 +19,104 @@ export const blogPosts = [
         image: weddingTrendImage,
         tags: ['Düğün', 'Davetiye', 'Trend', 'Minimal', 'QR Kod'],
         contentTr: `
-## 2025 Düğün Davetiye Trendleri
+## ✨ 2025 Düğün Davetiye Trendleri
 
-Yeni evlenecek çiftler için davetiye seçimi heyecanlı ama kafa karıştırıcı olabilir. 2025 yılında öne çıkan davetiye trendlerini sizin için derledik.
+Düğününüzde her detay sizin stilinizi yansıtır — özellikle de davetiye. 2025 yılında davetiye trendleri geçmişin nostaljisiyle modern dokunuşları bir araya getiriyor. İşte yılın öne çıkan trendleri:
 
-### Minimal Tasarımlar
-Abartıdan uzak, sade çizgilerle hazırlanan davetiyeler bu yıl çok moda. Beyaz arka plan, zarif fontlar ve soft renkler ön planda.
+### 🎨 **Minimalist Tasarımlar**
 
-### QR Kodlu Dijital Davetiyeler
-Hem çevre dostu hem pratik. QR kod üzerinden misafirler RSVP yapabiliyor, harita ve hediye listesi gibi bilgilere ulaşabiliyor.
+Az, çoktur. 2025’te sade çizgiler, beyaz veya pastel arka planlar, zarif serif fontlar ve temiz tasarımlar revaçta. Sadelik, şıklığın en etkileyici halini sunuyor.
 
-### Kişiselleştirilmiş Mesajlar
-Davetiye sadece bir bilgi kağıdı değil; çiftin hikayesini yansıtan bir anı. Kısa notlar ve düğün temasıyla uyumlu illüstrasyonlar ön planda.
+> 💡 **İpucu:** Mat baskılar ve kaligrafik dokunuşlarla zarafeti bir üst seviyeye taşıyabilirsiniz.
 
-💡 **Tavsiyemiz:** Davetiyenizi düğünün konseptiyle uyumlu hale getirerek misafirlerinize bir ön izlenim sunun.
+---
+
+### 📱 **QR Kodlu Dijital Davetiyeler**
+
+Hem çevreci hem pratik: QR kod içeren dijetli davetiyelerle misafirler;
+
+- RSVP yanıtlarını anında verebilir
+- Harita ve yol tarifine ulaşabilir
+- Hediye listesine erişebilir
+
+Bu yöntem, hem baskılı hem dijital davetiyeyi bir araya getirmek isteyen çiftler için ideal bir **hibrit model**.
+
+---
+
+### 💬 **Kişisel Mesajlar ve Hikayeler**
+
+Geleneksel bilgi içerikli davetiyeler yerine artık hikaye anlatımı ön planda. Davetiyenize:
+
+- Nasıl tanıştığınızdan kısa bir not
+- Düğün temanızla uyumlu bir illüstrasyon
+- Kendi cümlelerinizle minik bir davet yazısı
+
+ekleyerek fark yaratabilirsiniz.
+
+---
+
+### 📌 **Son Tavsiyemiz**
+
+> Düğün temanızla uyumlu bir davetiye, davetlilerinize daha düğün öncesinde bir atmosfer sunar. Renk paleti, yazı tipi, kağıt kalitesi — hepsi birer detay değil, **etki faktörüdür**.
+
+📎 **Ekstra Detaylar:**
+- Vegan mürekkep kullanılan kağıtlar
+- Geri dönüştürülebilir zarflar
+- Düğün web sitelerine entegre sistemler
+
+---
+
+💍 2025 yılı, zarif ama işlevsel davetiyelerin yılı. **Hem göz alıcı hem teknolojik olun — hem siz rahat edin, hem misafirleriniz mutlu olsun!**
 `,
+
         contentEn: `
-## 2025 Wedding Invitation Trends
+## ✨ 2025 Wedding Invitation Trends
 
-Planning your big day? Start with the right invitation! Here's what’s trending in 2025:
+Your wedding invitation is more than just a piece of paper — it’s the very first impression of your big day. And in 2025, it's all about **sophistication meets innovation**. Here’s what’s hot this year:
 
-### Minimal Design
-Simplicity is the new sophistication. Clean backgrounds, elegant fonts, and neutral tones are leading the style charts.
+### 🎨 **Minimalism Done Right**
 
-### QR Code Invitations
-A smart and eco-friendly option. Guests can RSVP, see location maps, and even gift registries via a quick scan.
+Less is more. Clean lines, soft tones like blush or ivory, and elegant fonts are taking over. A minimalist design isn’t boring — it’s timeless.
 
-### Personalized Touches
-Couples now tell their love story through their invites. Handwritten messages or cute illustrations are becoming very popular.
+> 💡 **Pro Tip:** Embossed printing and handwritten calligraphy can give it that luxury touch.
 
-💡 **Pro Tip:** Match your invitation’s design with your wedding theme for a unified experience.
-`,
+---
+
+### 📱 **QR Code Invitations**
+
+Say hello to smart invites. Couples are using **QR codes** to allow guests to:
+
+- RSVP instantly
+- Access maps and parking info
+- View gift registries and menus
+
+QRs make it simple, fast, and **eco-friendly** — and they look sleek when styled right.
+
+---
+
+### 💌 **Add a Personal Story**
+
+Invitations now carry emotion. A short paragraph about your love story or your wedding journey adds **warmth and connection**. You can include:
+
+- A favorite quote
+- An illustration of your first date
+- Your personal voice in the wording
+
+---
+
+### 📌 **Final Thoughts**
+
+> Your invite is the visual overture to your wedding symphony. Choose textures, typography, and color schemes that reflect who you are.
+
+📎 **Extra tips:**
+- Use recycled paper and soy ink
+- Consider animated digital versions
+- Include links to your wedding website
+
+---
+
+💍 2025 is all about intentional design. Make your invitation memorable — both for your guests and your wedding album.
+`
     },
     {
         slug: 'how-to-plan-perfect-engagement',
@@ -59,38 +126,97 @@ Couples now tell their love story through their invites. Handwritten messages or
         image: engagement,
         tags: ['Nişan', 'Organizasyon', 'Aile', 'Planlama'],
         contentTr: `
-## Kusursuz Bir Nişan Nasıl Planlanır?
+## 💍 Kusursuz Bir Nişan Nasıl Planlanır?
 
-Nişan töreni, evliliğe atılan ilk ciddi adımdır. Peki her şeyin yolunda gitmesi için nelere dikkat etmelisiniz?
+Nişan töreni, iki ailenin birleştiği ve evliliğe giden yolda atılan ilk adımdır. Peki, bu özel günü gerçekten unutulmaz kılmak için nelere dikkat etmelisiniz?
 
-### Tarihi ve Mekanı Belirleyin
-Ailelerin uygun olduğu bir tarih seçin. Evde samimi bir ortam mı yoksa dış mekanlı bir organizasyon mu istiyorsunuz?
+---
 
-### Tema ve Renk Seçimi
-Nişan konsepti genellikle düğünün habercisidir. Bohem, rustik veya klasik temaları düşünebilirsiniz.
+### 📅 **1. Tarih ve Mekân Seçimi**
 
-### Sözler, Takılar ve Pasta
-Unutulmaz anlar yaratmak istiyorsanız detaylara önem verin. Fotoğraf alanı, isimli yüzük tepsisi ve özel tasarımlı pasta işinizi görür.
+Aile bireylerinin uygun olduğu tarihi netleştirin. Ardından:
+- Samimi bir **ev nişanı mı**, yoksa şık bir **açık hava organizasyonu** mu istediğinize karar verin.
+- Mekânın kapasitesini, hava durumunu ve ulaşımı mutlaka değerlendirin.
 
-✨ **Unutmayın:** Nişan töreni sizin hikayenizin bir parçası. Kendi tarzınızı yansıtın!
+---
+
+### 🎨 **2. Tema ve Renk Uyumu**
+
+Nişan konsepti genellikle düğünün habercisidir. Bu yüzden:
+- Bohem, rustik, romantik ya da modern gibi temalardan birini seçin.
+- Renk paletinizi belirleyin: **Pudra-gül kurusu**, **yeşil-krem** gibi uyumlu ikililer çok tercih ediliyor.
+
+💡 *Masa örtüsü, çiçek aranjmanları ve hediyelikleri seçerken temaya sadık kalın.*
+
+---
+
+### 💎 **3. Söz Töreni, Takılar ve Pasta**
+
+Detaylar, anları unutulmaz kılar:
+- **İsimli yüzük tepsisi** ve söz kurdelesi organizasyonun merkezinde yer alır.
+- Pasta seçiminiz hem görsel hem lezzet olarak özenli olmalı.
+- Küçük ama anlamlı hediyelikler (mum, magnet, badem şekeri) dağıtabilirsiniz.
+
+---
+
+### 📸 **4. Fotoğraf Alanı ve Arka Fon Tasarımı**
+
+Özel günler için özel kareler gerek!
+- Çiçekli veya isimli arka plan tasarımı
+- Işıklı panolar, balon standları, rustik dekorlar çok popüler
+
+---
+
+✨ **Unutmayın:** Nişan, sadece bir tören değil, sizin hikayenizin sahnesidir. Kendi stilinizi ve duygunuzu her detayda yansıtın.
 `,
+
         contentEn: `
-## How to Plan the Perfect Engagement Party
+## 💍 How to Plan the Perfect Engagement Party
 
-Your engagement is the first step toward your wedding — and it deserves just as much attention.
+Your engagement party is a celebration of your love and your first official step into forever. Let's make it unforgettable with smart and stylish planning!
 
-### Set the Date & Venue
-Coordinate with families to find the best time. Do you prefer a cozy celebration at home or a chic garden party?
+---
 
-### Pick a Theme
-Rustic, boho, or elegant — your theme sets the mood. Match it with your decor, outfits, and even the cake.
+### 📅 **1. Choose the Right Date & Venue**
 
-### Add Personal Moments
-A heartfelt speech, a cute ring box, or a custom dessert table can make all the difference.
+Coordinate with both families to lock a date. Then decide:
+- Will it be a **cozy home event** or a **stylish outdoor celebration**?
+- Consider the weather, parking, and number of guests before booking a venue.
 
-✨ **Tip:** Let your personality shine through. Make the event feel like “you.”
-`,
-    },
+---
+
+### 🎨 **2. Select a Theme and Color Palette**
+
+Your engagement sets the tone for your wedding. So:
+- Choose a theme — **boho**, **classic**, **vintage**, or **minimalist**.
+- Create a color scheme: think **sage green + ivory**, **dusty rose + gold** — both elegant and trendy.
+
+💡 *Use your theme consistently across decor, outfits, and invitations.*
+
+---
+
+### 💎 **3. Include Meaningful Touches**
+
+What makes an event memorable is the details:
+- A **custom ring tray** engraved with your initials
+- A **heartfelt speech** or vow exchange
+- A **personalized cake** or dessert table
+
+---
+
+### 📸 **4. Design a Beautiful Photo Backdrop**
+
+Capture the magic forever!
+- Floral or neon signage
+- Photo booth with props
+- Fairy lights and wooden accents
+
+---
+
+✨ **Tip:** This event reflects you as a couple — add those signature elements that show your love, your story, and your style.
+`
+    }
+    ,
     {
         slug: 'why-digital-invitations',
         titleTr: 'Neden Dijital Davetiye Kullanmalısınız?',
@@ -99,38 +225,110 @@ A heartfelt speech, a cute ring box, or a custom dessert table can make all the 
         image: digital,
         tags: ['Dijital', 'E-Davetiye', 'QR Kod', 'Teknoloji'],
         contentTr: `
-## Neden Dijital Davetiye Kullanmalısınız?
+## 🌐 Neden Dijital Davetiye Kullanmalısınız?
 
-Dijital davetiyeler sadece bir trend değil, aynı zamanda sürdürülebilir bir tercih.
+Dijital davetiyeler yalnızca teknolojik bir yenilik değil, aynı zamanda modern yaşamın vazgeçilmez bir parçası haline geldi. Hem çevre dostu hem kullanıcı dostu olmasıyla öne çıkan dijital davetiyeler hakkında bilmeniz gereken her şey burada!
 
-### Çevre Dostu
-Kağıt israfı yok, kargo derdi yok. Doğaya katkı sağlarken zamandan da tasarruf edersiniz.
+---
 
-### Anında Ulaşım
-Davetiyeniz misafirlere anında ulaşır. E-posta, WhatsApp ya da sosyal medya üzerinden kolay paylaşılır.
+### 🌱 **1. Çevre Dostu ve Sürdürülebilir**
 
-### Takip Kolaylığı
-Kim geldi, kim gelmedi — hepsi sistemde kayıtlı olur. RSVP yanıtlarını toplamak artık çok kolay.
+- Kağıt israfı yok
+- Baskı ve kargo maliyeti sıfır
+- Karbon ayak izini azaltır
 
-📌 **Not:** Fiziksel davetiye nostaljisini yaşamak istiyorsanız hibrit model kullanabilirsiniz: hem QR kodlu baskı, hem dijital versiyon!
+**Ekolojik düğün planlayan çiftler için birebir!**
+
+---
+
+### ⚡ **2. Anında Ulaştırma ve Paylaşım Kolaylığı**
+
+- E-posta, WhatsApp, SMS ve sosyal medya üzerinden anında gönderim
+- Tek tıkla yüzlerce kişiye ulaşım
+- **Son dakika değişiklikleri** bile anında duyurulabilir
+
+> 💡 **Tavsiye:** Hikaye özelliği olan bir davetiye linki hazırlayarak Instagram'da paylaşabilirsiniz!
+
+---
+
+### 📊 **3. RSVP ve Katılım Takibi**
+
+- Kim geliyor, kim gelemiyor anında görürsünüz
+- Davetli listeleri otomatik güncellenir
+- Oturma düzeni planlaması kolaylaşır
+
+**Ekstra:** Yemek tercihi, özel notlar gibi detayları da toplayabilirsiniz!
+
+---
+
+### 🖨️ **4. Hibrit Model ile Estetik ve Teknoloji Bir Arada**
+
+Dijitali seviyor ama nostaljiden vazgeçemiyor musunuz?
+
+> ✨ **Hibrit çözüm:** QR kod içeren şık baskılı davetiyeler hazırlayarak hem eskiyi yaşatın, hem yeniliği kucaklayın.
+
+---
+
+### ✅ **Sonuç: Akıllı, Hızlı ve Etkili**
+
+Dijital davetiyeler, sadece zamandan tasarruf sağlamaz. Aynı zamanda misafirlerinize modern, şık ve işlevsel bir deneyim sunar. Üstelik sürdürülebilirliğe katkı sağlar.
+
+🎉 **Davetleriniz artık dijitalde — hem sizin için kolay, hem dünya için faydalı!**
 `,
+
         contentEn: `
-## Why Use Digital Invitations?
+## 🌐 Why Use Digital Invitations?
 
-Digital invitations are more than just modern — they're smart, sustainable, and super convenient.
+Digital invites aren't just a tech trend — they're a practical, eco-conscious, and elegant solution for modern celebrations. Here's why they’re worth the hype:
 
-### Eco-Friendly
-Skip the paper and printing. Go green with zero waste and no shipping hassle.
+---
 
-### Instant Delivery
-Send to everyone within seconds via email, WhatsApp, or even Instagram.
+### 🌱 **1. Eco-Friendly and Sustainable**
 
-### Easy RSVP Tracking
-Monitor responses, manage guest counts, and make seating easier with built-in tracking tools.
+- No paper waste
+- No printing or shipping cost
+- Reduces your carbon footprint
 
-📌 **Tip:** Prefer both? Use a hybrid system — printed cards with QR codes linking to digital experiences!
-`,
-    },
+Perfect for environmentally conscious couples!
+
+---
+
+### ⚡ **2. Instant Delivery & Easy Sharing**
+
+- Send via email, WhatsApp, SMS, or social media
+- Reach dozens of guests with a single click
+- Update everyone in real-time if plans change
+
+> 💡 **Pro Tip:** Share your digital invite in your Instagram story for instant visibility!
+
+---
+
+### 📊 **3. RSVP Tracking & Guest Management**
+
+- Track responses in real-time
+- Export your guest list anytime
+- Plan seating, meals, and special requests effortlessly
+
+**Bonus:** Collect notes, meal preferences, and song suggestions from guests!
+
+---
+
+### 🖨️ **4. Hybrid Options = Class + Convenience**
+
+Want both elegance and tech?
+
+> ✨ **Solution:** Send printed invites with QR codes linking to a digital RSVP page.
+
+---
+
+### ✅ **Final Verdict: Smart, Stylish, and Stress-Free**
+
+Digital invitations make your event planning smoother and greener — and they look amazing too.
+
+🎉 **Celebrate sustainably, efficiently, and with style — all in one click!**
+`
+    }
+    ,
 
     {
         slug: 'birthday-party-ideas',
@@ -140,42 +338,86 @@ Monitor responses, manage guest counts, and make seating easier with built-in tr
         image: birthdayparty,
         tags: ['Doğum Günü', 'Parti', 'Kutlama', 'Fikirler'],
         contentTr: `
-## Yaratıcı Doğum Günü Fikirleri
+## 🎉 Yaratıcı Doğum Günü Fikirleri
 
-Doğum günleri sadece yaş almak değil, sevdiklerimizle birlikte özel anılar biriktirme fırsatıdır. İster çocuk, ister yetişkin olun; herkesin hayatında unutulmaz bir doğum günü olmalı.
+Doğum günleri sadece yaş almak değil, aynı zamanda sevdiklerinizle paylaşacağınız unutulmaz anılar yaratmak için harika bir fırsattır. İşte her yaşa ve konsepte uygun yaratıcı fikirler:
 
-### Tema Seçimi
-Bir konsept belirlemek işleri kolaylaştırır. Öneriler:
-- **Çocuklar için:** Süper kahraman, prenses, uzay
-- **Yetişkinler için:** Retro, Gatsby, Doğa konsepti
+---
 
-### Mekan ve Dekorasyon
-Evde sıcak bir kutlama mı, açık hava partisi mi? Balonlar, ışıklar, masa süsleriyle atmosfer yaratabilirsiniz.
+### 🎭 **1. Tema Seçimiyle Fark Yaratın**
 
-### Etkinlikler ve Sürprizler
-Canlı müzik, fotoğraf köşesi, pasta kesimi gibi detaylar geceye damga vurur. Unutulmaz anılar yaratmak sizin elinizde!
+Konseptli partiler organizasyonu kolaylaştırır ve eğlenceyi artırır. Öneriler:
+- 👦 **Çocuklar için:** Süper kahraman, uzay macerası, denizaltı dünyası
+- 👩 **Yetişkinler için:** 90’lar retro, Gatsby, yoga & doğa temalı brunch
 
-🎉 **Tavsiye:** Hediyelik magnetler ya da kişisel notlar unutulmaz kılar.
+> 💡 **Tavsiyemiz:** Temaya uygun kıyafet kodu belirleyerek misafirlerin de eğlenceye katılımını artırın.
+
+---
+
+### 🏡 **2. Mekân ve Dekorasyonla Atmosfer Yaratın**
+
+- **Ev partisi:** Balon kemerleri, led ışıklar ve fotoğraf köşesi
+- **Açık hava:** Bahçede romantik piknik ya da sahil konsepti
+- Doğum günü masasını temaya uygun tabak, bardak ve süslemelerle hazırlayın
+
+---
+
+### 🎁 **3. Etkinlikler ve Sürprizlerle Dolu Bir Gün**
+
+- Fotoğraf köşesi veya polaroid anı panosu
+- Mini hediye avı oyunları
+- Sürpriz konuk ya da müzik performansı
+
+🎂 **Unutulmaz bir pasta gösterisi** ve havai fişekli kutlama da geceye damga vurur.
+
+---
+
+📌 **Bonus Fikir:** Misafirlere küçük hediyeler verin (kişiye özel magnet, lavanta kesesi, teşekkür kartı).
+
+✨ Doğum gününüz bir anıdan fazlası olsun — kendi tarzınızı ve enerjinizi yansıtan bir deneyime dönüşsün!
 `,
+
         contentEn: `
-## Creative Birthday Party Ideas
+## 🎉 Creative Birthday Party Ideas
 
-Birthdays are more than cake and candles — they’re about celebrating life with joy and loved ones.
+Birthdays are a chance to celebrate love, laughter, and life — no matter your age. Whether you're planning for a child, teen, or adult, these ideas will turn your party into a cherished memory.
 
-### Choose a Theme
-Having a theme sets the tone and helps plan everything easily:
-- **For kids:** Superheroes, princesses, space
-- **For adults:** 90s party, boho, luxury picnic
+---
 
-### Venue & Decor
-Indoor coziness or an outdoor bash? Decorate with balloons, fairy lights, custom banners, and themed tableware.
+### 🎭 **1. Choose an Engaging Theme**
 
-### Fun & Memorable Touches
-Plan a photo booth, live music, or unique games. A custom cake and surprise gifts always excite!
+Themes simplify planning and enhance the experience. Some popular ideas:
+- 🧒 **For kids:** superheroes, underwater world, space explorers
+- 🧑 **For adults:** 90s throwback, Great Gatsby glam, nature retreat
 
-🎁 **Tip:** Personalized thank-you gifts or mini frames make it extra special.
-`,
-    },
+💡 **Pro Tip:** Encourage guests to dress according to the theme to boost engagement!
+
+---
+
+### 🏡 **2. Transform Your Space with Decor**
+
+- **Indoor:** balloon arches, custom backdrops, fairy lights
+- **Outdoor:** garden brunch, beach picnic, rooftop bash
+- Use themed cups, plates, banners, and floral elements to complete the look.
+
+---
+
+### 🎁 **3. Add Personal & Fun Elements**
+
+- Photo booth with props or instant polaroid wall
+- Treasure hunts, trivia games, or karaoke sessions
+- Surprise performances or heartfelt speeches
+
+🎂 A stunning cake presentation and confetti countdown make for a magical moment.
+
+---
+
+📌 **Bonus Idea:** Hand out thank-you favors like mini candles, magnets, or handwritten notes.
+
+✨ Make your birthday not just a party, but a **personal experience** your guests will remember with joy!
+`
+    }
+    ,
 
     {
         slug: 'event-planning-mistakes',
@@ -185,50 +427,118 @@ Plan a photo booth, live music, or unique games. A custom cake and surprise gift
         image: eventmistakes,
         tags: ['Planlama', 'Organizasyon', 'Hatalar'],
         contentTr: `
-## Etkinlik Planlamada Yapılan 5 Hata
+## ⚠️ Etkinlik Planlamada Yapılan 5 Hata
 
-Bir etkinlik planlamak heyecanlı ama stresli olabilir. İşte en sık yapılan hatalar ve bunlardan nasıl kaçınılacağı:
+Bir etkinlik planlamak heyecan verici olabilir ama küçük hatalar, büyük aksaklıklara yol açabilir. İşte en sık yapılan 5 hata ve bu hatalardan nasıl kaçınılacağına dair ipuçları:
 
-### 1. Bütçe Hesaplarının Yetersizliği
-Küçük gibi görünen detaylar birikince ciddi maliyet oluşturabilir. Tüm kalemleri netleştirin.
+---
 
-### 2. Net Olmayan Zaman Planlaması
-Hazırlık süresi yetersiz kalabilir. Her detaya takvim belirleyin.
+### 1️⃣ Bütçe Hesaplarının Yetersizliği
 
-### 3. Yetersiz Ekip Yönetimi
-Her işi kendiniz yapmak zorunda değilsiniz. Destek almayı bilin.
+Küçük gibi görünen detaylar, bir araya geldiğinde ciddi maliyetlere dönüşebilir.
 
-### 4. Alternatif Plan (Plan B) Yokluğu
-Hava durumu ya da teknik arıza gibi risklere hazırlıklı olun.
+📌 **Ne Yapmalı?**  
+Önceden detaylı bir bütçe planı oluşturun ve kalem kalem her harcamayı not alın. Gizli maliyetler için mutlaka %10 ek pay ayırın.
 
-### 5. İletişim Eksikliği
-Misafirler, tedarikçiler ve ekip arasında kopukluk yaşanabilir.
+---
 
-🚨 **Tavsiye:** Liste yapın, delegasyon uygulayın ve her aşamada iletişimi güçlü tutun.
+### 2️⃣ Net Olmayan Zaman Planlaması
+
+"Zaman bol" diyerek geç kalmak, organizasyonu riske atar.
+
+📌 **Ne Yapmalı?**  
+Her iş için geri sayım takvimi oluşturun. Hazırlıklar için yeterli süre bırakın. Tüm görevleri gün gün planlayın.
+
+---
+
+### 3️⃣ Yetersiz Ekip Yönetimi
+
+Her işi tek başınıza yapmaya çalışmak sizi yorar ve işlerin aksamasına sebep olur.
+
+📌 **Ne Yapmalı?**  
+Görevleri ekip arkadaşlarınıza paylaştırın. Destek alın, gerekirse dış kaynak (freelancer, ajans) kullanın.
+
+---
+
+### 4️⃣ Alternatif Plan (Plan B) Yokluğu
+
+Hava durumu, teknik sorunlar, lojistik problemler... Her şey olabilir.
+
+📌 **Ne Yapmalı?**  
+Yedek senaryolar hazırlayın. Açık hava organizasyonlarında kapalı alan alternatifi mutlaka olsun.
+
+---
+
+### 5️⃣ İletişim Eksikliği
+
+Ekip, tedarikçi ve misafirlerle yeterince iletişim kurulmaması, yanlış anlaşılmalara neden olabilir.
+
+📌 **Ne Yapmalı?**  
+Düzenli kontrol listeleri ve ortak dijital platformlarla iletişimi sürekli tutun.
+
+---
+
+🚨 **Tavsiye:**  
+Başarılı bir etkinlik için “organize olmak” tek başına yetmez — **iletişim, zaman yönetimi ve esneklik** üçlüsü çok önemlidir.
 `,
+
         contentEn: `
-## 5 Event Planning Mistakes to Avoid
+## ⚠️ 5 Event Planning Mistakes to Avoid
 
-Planning an event is exciting, but small mistakes can lead to big trouble. Here are 5 pitfalls and how to dodge them:
+Planning an event can be a thrilling experience — but it comes with its challenges. Even small oversights can turn into major setbacks. Here are 5 common mistakes and how to steer clear of them:
 
-### 1. Inaccurate Budgeting
-Don’t underestimate small items — they add up! Track every cost.
+---
 
-### 2. Poor Time Management
-Running out of time is a major stressor. Build a realistic timeline.
+### 1️⃣ Inaccurate Budgeting
 
-### 3. No Team Delegation
-You can’t do it all. Assign roles and responsibilities.
+Small expenses may seem harmless, but they add up quickly and throw your budget off balance.
 
-### 4. No Backup Plan
-Expect the unexpected — rain, tech issues, delays. Have Plan B.
+📌 **What to do:**  
+Create a detailed budget sheet early on. Include every line item, and always reserve at least 10% for unforeseen costs.
 
-### 5. Communication Gaps
-Keep guests, vendors, and your team in the loop at every stage.
+---
 
-📝 **Pro Tip:** Use planning tools or checklists to stay organized and stress-free!
-`,
-    },
+### 2️⃣ Poor Time Management
+
+Procrastination can result in last-minute chaos.
+
+📌 **What to do:**  
+Build a reverse timeline. Assign clear deadlines to each task. Use project management tools to stay on track.
+
+---
+
+### 3️⃣ No Team Delegation
+
+Trying to do everything yourself leads to burnout and errors.
+
+📌 **What to do:**  
+Assign tasks to team members based on their strengths. Don’t hesitate to outsource when necessary.
+
+---
+
+### 4️⃣ No Backup Plan
+
+Rain, power failure, no-shows — unexpected problems can occur anytime.
+
+📌 **What to do:**  
+Have contingency plans for key aspects like venue, vendors, and technical support.
+
+---
+
+### 5️⃣ Communication Gaps
+
+Without proper communication, things fall through the cracks — fast.
+
+📌 **What to do:**  
+Use shared tools and regular check-ins. Make sure everyone — from guests to suppliers — is on the same page.
+
+---
+
+📝 **Pro Tip:**  
+Checklists, timelines, and clear roles are the foundation of a successful and **stress-free** event.
+`
+    }
+    ,
 
     {
         slug: 'rsvp-guide',
@@ -238,40 +548,80 @@ Keep guests, vendors, and your team in the loop at every stage.
         image: rsvp,
         tags: ['RSVP', 'Davet', 'Katılım', 'Takip'],
         contentTr: `
-## RSVP Nedir ve Nasıl Kullanılır?
+## 📨 RSVP Nedir ve Nasıl Kullanılır?
 
-"Répondez S’il Vous Plaît" yani "Lütfen cevap verin" ifadesinin kısaltması olan RSVP, organizasyon dünyasında hayati bir kavram.
+RSVP, Fransızca "Répondez S’il Vous Plaît" ifadesinin kısaltmasıdır ve "Lütfen cevap verin" anlamına gelir. Etkinlik organizasyonlarında **katılım takibinin** en etkili yollarından biridir.
 
-### Neden Önemlidir?
-- Katılımcı sayısını netleştirir
-- Masa düzeni ve yemek planını kolaylaştırır
-- Zaman kazandırır
+---
 
-### Nasıl Uygulanır?
-- Davetiyelere QR kod veya link yerleştirin
-- Cevap için son tarih belirleyin
-- Gelen cevapları dijital olarak toplayın
+### 📌 Neden Önemlidir?
 
-🎯 **Unutmayın:** Takip edilmeyen RSVP organizasyon krizine dönüşebilir!
+RSVP sistemi kullanmak, organizasyonunuzu daha profesyonel ve planlı hale getirir:
+
+- Katılımcı sayısını önceden belirleyebilirsiniz  
+- Masa düzeni, oturma planı ve yemek servisi gibi detayları kolayca planlarsınız  
+- Zamandan ve maliyetten tasarruf sağlarsınız
+
+> 💡 **Not:** RSVP kullanmayan organizasyonlarda son dakika sürprizleri kaçınılmaz olur.
+
+---
+
+### ⚙️ Nasıl Uygulanır?
+
+RSVP sistemini entegre etmek oldukça kolaydır:
+
+1. **Davetiyelere QR kod veya online link ekleyin**  
+   - Katılımcılar kolayca ulaşabilir  
+2. **Yanıt için son tarih belirleyin**  
+   - Belirsizlikleri ortadan kaldırır  
+3. **Gelen cevapları dijital olarak toplayın**  
+   - Excel, Google Form, özel RSVP sistemleri kullanılabilir
+
+---
+
+### 🎯 Unutmayın:
+
+> Güçlü bir RSVP sistemi, krizleri önceden engeller.  
+> Organizasyonun kontrolünü elinizde tutmanızı sağlar ve davetlilerinizle sağlıklı bir iletişim kurmanıza yardımcı olur.
 `,
+
         contentEn: `
-## What is RSVP and How to Use It?
+## 📨 What is RSVP and How to Use It?
 
-RSVP stands for “Répondez S’il Vous Plaît” — or “Please respond.” It’s a critical tool in event planning.
+RSVP is short for the French phrase **"Répondez S’il Vous Plaît"**, which means "Please respond." In event planning, it's an essential tool for managing guest attendance and logistics.
 
-### Why is it important?
-- Know how many guests to expect
-- Helps with seating, catering, and logistics
-- Saves time and money
+---
 
-### How to implement?
-- Add a QR code or RSVP link to your invite
-- Set a clear deadline
-- Track responses digitally
+### 📌 Why is RSVP Important?
 
-📌 **Tip:** A strong RSVP system prevents last-minute chaos!
-`,
-    },
+Using RSVP gives you a clear picture of your event and helps avoid last-minute surprises:
+
+- You know exactly how many guests to expect  
+- You can plan seating arrangements and catering accurately  
+- You save valuable time and reduce costs
+
+> 💡 **Reminder:** Without RSVP, you're likely to face overbooking, waste, or unexpected shortages.
+
+---
+
+### ⚙️ How to Implement RSVP Effectively
+
+1. **Include a QR code or RSVP link in your invitations**  
+   - Make it easy for guests to respond  
+2. **Set a clear response deadline**  
+   - Helps finalize numbers early  
+3. **Track responses digitally**  
+   - Use Google Forms, spreadsheets, or professional RSVP platforms
+
+---
+
+### 🎯 Pro Tip:
+
+> A well-managed RSVP system gives you **clarity, control, and confidence** in your planning.  
+> It keeps your event smooth and your guests informed — no stress, no chaos.
+`
+    }
+    ,
 
     {
         slug: 'festival-event-decorations',
@@ -281,38 +631,126 @@ RSVP stands for “Répondez S’il Vous Plaît” — or “Please respond.” 
         image: festival,
         tags: ['Dekorasyon', 'Festival', 'Renkli Fikirler'],
         contentTr: `
-## Festival & Etkinlik Süslemeleri
+## 🎪 Festival & Etkinlik Süslemeleri
 
-Etkinliğinizin enerjisini süslemeler belirler. Festival havası için nelere dikkat etmelisiniz?
+Bir etkinliğin ruhunu en çok yansıtan unsurlardan biri dekorasyondur. Festival havası yaratmak istiyorsanız renk, ışık ve doğallık üçlüsüne dikkat etmelisiniz.
 
-### Renk Paleti
-Canlı ve pozitif renkler: turuncu, pembe, mor, sarı! Kombinasyonlar yaratın.
+---
 
-### Aydınlatma
-Loş ışıklar, ışık zincirleri ve mumlar geceyi büyülü kılar.
+### 🎨 **1. Renk Paleti: Canlı ve Neşeli Tonlar**
 
-### Doğal Malzemeler
-Ahşap, keten, kuru çiçek gibi doğal malzemelerle özgünlük kazanın.
+Enerji dolu bir atmosfer yaratmak istiyorsanız renk seçiminiz cesur olmalı:
 
-🎨 **Tavsiye:** Fotoğraf köşeleri hazırlayarak etkileşimli alanlar yaratın.
+- Turuncu → Enerji
+- Pembe → Neşe
+- Mor → Yaratıcılık
+- Sarı → Pozitiflik
+
+> 💡 **Tavsiyemiz:** Tek renk yerine 2-3 rengin uyumlu kombinasyonlarını tercih edin.
+
+---
+
+### 💡 **2. Aydınlatma ile Büyülü Bir Hava Katın**
+
+Gece etkinliklerinde loş ama etkili ışık kullanımı çok önemlidir.
+
+- Işık zincirleri (fairy lights)  
+- Fenerler, mumlar, led lambalar  
+- Işıklı tabelalar veya neon yazılar
+
+📸 Işığın dans ettiği alanlar, fotoğraf çekimi için mükemmel kareler sunar.
+
+---
+
+### 🍃 **3. Doğal Malzemelerle Sıcaklık Katın**
+
+Festival dekorasyonları sadece şatafatlı değil, doğayla iç içe de olabilir:
+
+- Ahşap detaylar (masa, pankart çerçeveleri)  
+- Keten masa örtüleri  
+- Kuru çiçek buketleri veya çelenkler
+
+Doğallık, içtenliği temsil eder. Özellikle açık hava organizasyonları için birebirdir.
+
+---
+
+### 📸 **4. Etkileşimli Alanlar Oluşturun**
+
+Misafirler sadece izleyici değil, katılımcı da olmalı.
+
+- Renkli fotoğraf köşeleri  
+- Dilek ağacı veya anı defteri masası  
+- Boyama, müzik veya dans köşesi
+
+🎉 Böyle alanlar etkinliğinizin unutulmaz olmasını sağlar!
+
+---
+
+✨ **Sonuç:**  
+Dekorasyon yalnızca estetik değil, **duygu yaratma aracıdır.** Renkleri, ışıkları ve materyalleri bir bütün olarak düşünün. Festival temalı etkinlikler için yaratıcı olun, sınır tanımayın!
 `,
+
         contentEn: `
-## Festival & Event Decoration Tips
+## 🎪 Festival & Event Decoration Tips
 
-Decor sets the vibe. Want a festive atmosphere? Here’s what to consider:
+Your event’s mood starts with the decor. If you’re aiming for a vibrant festival vibe, focus on **color, lighting, and natural materials**. Here’s how to pull it off:
 
-### Color Palette
-Use joyful colors: orange, purple, pink, yellow. Be bold!
+---
 
-### Lighting
-String lights, lanterns, candles — all help create magic.
+### 🎨 **1. Color Palette: Bright & Joyful**
 
-### Natural Touches
-Incorporate wood, linen, and dried flowers for an earthy aesthetic.
+Go bold with your colors to energize the space:
 
-📸 **Pro Tip:** Set up interactive corners like photo booths for guest engagement!
-`,
-    },
+- Orange → Energy  
+- Pink → Cheerfulness  
+- Purple → Creativity  
+- Yellow → Positivity  
+
+> 💡 **Tip:** Combine 2–3 complementing tones for a richer visual effect.
+
+---
+
+### 💡 **2. Lighting: Set the Magic**
+
+Especially for evening events, lighting creates ambiance:
+
+- String lights and fairy lights  
+- Lanterns and LED candles  
+- Light-up signs or neon words
+
+📸 Use warm lighting for cozy corners and photogenic backdrops.
+
+---
+
+### 🍃 **3. Use Natural Elements**
+
+Balance vibrant energy with earthy textures:
+
+- Wooden tables or display frames  
+- Linen runners or burlap accents  
+- Dried flower bouquets and grass details
+
+This style adds warmth and charm — especially for outdoor festivals.
+
+---
+
+### 📸 **4. Interactive Corners for Guests**
+
+Let your guests participate, not just observe:
+
+- Creative photo booth areas  
+- Memory wall or wish tree  
+- Art stations or musical spots
+
+🎊 These create unforgettable experiences and boost guest engagement.
+
+---
+
+✨ **Final Thought:**  
+Decor isn’t just visual — it **evokes emotion**. Be intentional with colors, textures, and flow. A festival-themed setup allows you to get creative and **go beyond the ordinary!**
+`
+    }
+    ,
 
     {
         slug: 'technical-support-for-events',
@@ -322,38 +760,96 @@ Incorporate wood, linen, and dried flowers for an earthy aesthetic.
         image: teknikdestek,
         tags: ['Teknik', 'Ses Işık', 'Destek', 'Profesyonel'],
         contentTr: `
-## Etkinliklerde Teknik Destek Önemi
+## ⚙️ Etkinliklerde Teknik Destek Önemi
 
-Bir etkinlikte mükemmel içerik yetmez — teknik altyapı da kusursuz olmalı.
+Harika bir etkinlik planlamak; sadece davet, yemek ve dekorasyondan ibaret değildir. Teknik destek, etkinliğinizin **başarısı veya fiyaskosu** arasında fark yaratabilir.
 
-### Ses Sistemi
-Yetersiz ses ekipmanları, konuşmaların ya da müziğin bozulmasına neden olur.
+---
 
-### Aydınlatma
-Doğru ışık sahneyi güzelleştirir, yanlış ışık her şeyi gölgede bırakır.
+### 🔊 **1. Ses Sistemi: Anlaşılmak Her Şeydir**
 
-### Görüntüleme
-Projeksiyon, ekran, video gibi sistemlerin sorunsuz çalışması şarttır.
+- Mikrofonlar cızırtılıysa, konuşmalar boşa gider  
+- Müzik kaliteli değilse atmosfer eksik kalır  
+- Arka plan gürültüsü kontrol altına alınmalıdır
 
-⚙️ **Tavsiyemiz:** Teknik destek alın, hatta provalar yapmayı unutmayın.
+📌 **İpucu:** Kablosuz mikrofonlar ve yedek hoparlör sistemleri kullanın.
+
+---
+
+### 💡 **2. Aydınlatma: Sahneyi Doğru Gösterin**
+
+- Doğru ışık: enerjik, net ve etkileyici bir ortam sağlar  
+- Yanlış ışık: konuşmacıları ya da dekorasyonu gölgede bırakır  
+- Işık geçişleri profesyonelce yapılmalıdır
+
+🎯 Işık kontrol masası kullanarak renk geçişleri, sunum anları ve sahne vurgusu yaratabilirsiniz.
+
+---
+
+### 📺 **3. Görüntüleme: İzleyiciyle Bağ Kurmak**
+
+- Projeksiyon ve ekranlar net değilse bilgi aktarılamaz  
+- Video, sunum, animasyonlar sorunsuz çalışmalıdır  
+- Yedek HDMI, adaptör ve kablo seti her zaman hazır olmalı
+
+👁️‍🗨️ İzleyicinin gördüğü her şey, etkinliğin kalitesini yansıtır.
+
+---
+
+### 🔧 **Tavsiyemiz: Profesyonel Teknik Destek Alın**
+
+> Etkinliğiniz küçük de olsa; bir teknik aksaklık, tüm emeğinizi gölgede bırakabilir.  
+> Provalar yapın, teknik ekip ile iletişim halinde olun ve her ihtimale karşı **B planı** oluşturun.
+
+✨ Unutmayın: İçerik kalitesi + teknik başarı = Mükemmel Etkinlik!
 `,
+
         contentEn: `
-## Why Technical Support is Critical in Events
+## ⚙️ Why Technical Support is Critical in Events
 
-Even the best event can fall flat without solid tech support.
+An event’s success isn’t just about food and decor — it’s also about flawless **technical execution**. Without it, even the most exciting content can fall flat.
 
-### Sound Systems
-Bad audio ruins speeches, performances, and mood.
+---
 
-### Lighting
-Good lighting enhances; bad lighting hides the magic.
+### 🔊 **1. Sound System: Let Them Hear You**
 
-### Visuals
-Projectors, screens, and video setups must be reliable and tested.
+- Bad microphones = lost speeches  
+- Low-quality music = zero atmosphere  
+- Background noise = major distraction
 
-🔧 **Tip:** Always work with professionals — and rehearse everything!
-`,
-    },
+📌 **Pro Tip:** Use wireless mics and always have backup speakers ready.
+
+---
+
+### 💡 **2. Lighting: Set the Scene Right**
+
+- Good lighting = visibility and focus  
+- Bad lighting = speakers and decor hidden  
+- Light transitions need to be seamless and timed
+
+🎯 Use lighting consoles for color changes and scene transitions.
+
+---
+
+### 📺 **3. Visuals: Keep the Audience Engaged**
+
+- Projectors and screens must be crisp and visible  
+- Videos, slideshows, and animations should work without a glitch  
+- Always bring extra HDMI cables, adapters, and a clicker
+
+👁️‍🗨️ What your audience sees defines how professional your event feels.
+
+---
+
+### 🔧 **Final Tip: Work with Professionals**
+
+> Don’t underestimate the value of a tech rehearsal.  
+> Have a team on standby, prepare a Plan B, and run full technical checks.
+
+✨ Remember: Great content + flawless execution = a powerful, memorable event.
+`
+    }
+    ,
 
     {
         slug: 'event-colors-and-themes',
@@ -363,34 +859,96 @@ Projectors, screens, and video setups must be reliable and tested.
         image: weddingcolor,
         tags: ['Tasarım', 'Tema', 'Renk Uyum', 'Dekorasyon'],
         contentTr: `
-## Renk ve Tema Uyumuyla Etkinlik Tasarımı
+## 🎨 Renk ve Tema Uyumuyla Etkinlik Tasarımı
 
-Etkinliğin konsepti bir duygu yaratır. Bu duygu, seçtiğiniz renklerle ve temayla başlar.
+Bir etkinlik planlarken dekorasyondan menüye kadar her şeyin merkezinde **tema ve renk uyumu** vardır. Doğru seçimler yapmak, misafirlerinize unutulmaz bir atmosfer sunar.
 
-### Renk Psikolojisi
-- Mavi: Huzur
-- Kırmızı: Enerji
-- Yeşil: Doğa ve tazelik
+---
 
-### Tema Seçimi
-Vintage, bohem, tropikal, endüstriyel gibi temalarla etkinliğinizi kişiselleştirin.
+### 🌈 **1. Renklerin Duygusal Etkisi**
 
-🌈 **Tavsiye:** Renkleri dekor, kıyafet ve davetiyelerle uyumlu hale getirin.
+Renkler sadece görsel değildir, aynı zamanda his uyandırır:
+
+- **Mavi** → Huzur, sakinlik  
+- **Kırmızı** → Tutku, enerji  
+- **Yeşil** → Tazelik, doğallık  
+- **Altın** → Zarafet, zenginlik  
+- **Mor** → Yaratıcılık, gizem
+
+📌 **Tavsiye:** Davetli kitlenize ve etkinlik amacınıza uygun renkler tercih edin.
+
+---
+
+### 🖼️ **2. Tema Seçimi: Kimliğinizi Yansıtın**
+
+Etkinliğinizin kişiliğini tema belirler. İşte bazı trend temalar:
+
+- **Vintage:** Eski dokular, dantel, pastel tonlar  
+- **Bohem:** Makrome, kuru çiçek, doğal ahşap  
+- **Tropikal:** Palmiye yaprakları, ananas desenleri, canlı renkler  
+- **Endüstriyel:** Beton, metal, rustik ampuller
+
+🎯 Temanız tüm detaylarda hissedilmeli: masa düzeni, müzik, hediyelikler...
+
+---
+
+### 💡 **3. Renk-Tema Uyumunda Dikkat Edilmesi Gerekenler**
+
+- Seçilen tema ile renkler birbiriyle çelişmemeli  
+- Renk uyumu: maksimum 3 ana renk, 2 destekleyici renk  
+- Renkleri dekor, kıyafet, davetiye ve menü tasarımına entegre edin
+
+---
+
+✨ **Sonuç:**  
+Renkler ve temalar sadece süsleme değil, **duygu yönetimidir**. Etkinliğinizi hatırlanır kılmak için onları bilinçli ve bütünsel şekilde kullanın.
 `,
+
         contentEn: `
-## Using Colors & Themes in Event Design
+## 🎨 Using Colors & Themes in Event Design
 
-Your event theme tells a story — and it begins with color.
+The colors and theme you choose for your event are more than decor — they set the **tone, emotion, and energy** of the entire experience.
 
-### Color Psychology
-- Blue: calm
-- Red: energy
-- Green: freshness
+---
 
-### Theme Ideas
-From tropical to industrial, let your theme reflect your vibe.
+### 🌈 **1. Emotional Power of Colors**
 
-🎨 **Tip:** Keep colors consistent across decor, outfits, and stationery!
-`,
-    },
+Every color triggers a feeling:
+
+- **Blue** → Peace, calmness  
+- **Red** → Passion, excitement  
+- **Green** → Nature, freshness  
+- **Gold** → Luxury, elegance  
+- **Purple** → Creativity, sophistication
+
+📌 **Tip:** Choose colors that reflect your guests and the purpose of your event.
+
+---
+
+### 🖼️ **2. Theme Selection: Tell Your Story**
+
+Themes give your event personality. Popular choices include:
+
+- **Vintage:** Lace, pastels, nostalgic details  
+- **Boho:** Macrame, pampas, earthy tones  
+- **Tropical:** Palms, fruits, bold prints  
+- **Industrial:** Concrete, metals, exposed bulbs
+
+🎯 Reflect your theme consistently in decor, music, dress code, and favors.
+
+---
+
+### 💡 **3. Aligning Color with Theme**
+
+- Make sure your colors enhance (not clash with) your theme  
+- Limit your palette: 3 main + 2 accent colors  
+- Use colors across all event elements: invites, outfits, tables, and branding
+
+---
+
+✨ **Final Thought:**  
+Colors and themes aren't just visuals — they are your **emotional language**. Use them mindfully to leave a lasting impression.
+`
+    }
+    ,
 ];
