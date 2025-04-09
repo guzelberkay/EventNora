@@ -16,12 +16,17 @@ const BlogPost = () => {
         window.scrollTo(0, 0);
     }, [slug]);
 
-    // ✅ Dil senkronizasyonu
     useEffect(() => {
+        // Sayfa dilini sadece ilk yüklemede senkronize et
         if ((lang === 'en' || lang === 'tr') && lang !== language) {
             setLanguage(lang);
         }
-    }, [lang]);
+        // URL'de geçerli dil yoksa varsayılana yönlendir
+        if (!lang || (lang !== 'en' && lang !== 'tr')) {
+            navigate(`/en${window.location.pathname}`, { replace: true });
+        }
+    }, [lang, language]);
+
 
     // ✅ Dil değiştirildiğinde URL'yi değiştir
     useEffect(() => {
