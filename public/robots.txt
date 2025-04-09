@@ -21,3 +21,4 @@ Sitemap: https://www.eventnora.com/sitemap.xml
 
 # Host adresi (bazı arama motorları kullanır, örneğin Yandex)
 Host: https://www.eventnora.com
+
