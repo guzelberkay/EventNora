@@ -69,7 +69,7 @@ const Navigation = () => {
       <header className={cn('fixed w-full top-0 z-50 transition-all duration-300', isScrolled ? 'bg-black shadow-lg py-3' : 'bg-black py-5')}>
         <div className="container-custom flex items-center justify-between">
           <Link to="/" className="flex items-center">
-            <img src={logo} alt="EventNora Logo" className="h-24 w-auto" />
+            <img src={logo} alt="EventNora Logo" width={160} height={80} className="w-[160px] h-[80px]"/>
           </Link>
 
           {/* Desktop Navigation */}

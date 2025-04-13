@@ -52,7 +52,7 @@ const Index = () => {
 
         {/* Hero Section */}
         <section
-            className="relative py-20 md:py-32 overflow-hidden"
+            className="relative min-h-[600px] py-20 md:py-32 overflow-hidden"
             style={{
               backgroundImage: `radial-gradient(circle at center, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.2) 80%, rgba(255,255,255,0) 100%), url(${backgroundImage})`,
               backgroundSize: 'cover',

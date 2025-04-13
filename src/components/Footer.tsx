@@ -18,7 +18,7 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
             {/* Logo & About */}
             <div className="space-y-4">
-              <img src={logo} alt="EventNora Logo" className="h-36 w-auto"/>
+              <img src={logo} alt="EventNora Logo" width={180} height={90} className="w-[180px] h-[90px]"/>
               <p className="text-sm text-gold/80 max-w-xs">
                 {t(
                     'Creating unforgettable moments with meticulous planning and elegant execution for all your special occasions.',
