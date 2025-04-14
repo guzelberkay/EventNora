@@ -15,76 +15,79 @@ const EngagementWedding = () => {
         navigate('/en/contact');
     };
 
+    const seoTitle = 'Engagement & Wedding Organization Services | Event Nora';
+    const seoDescription =
+        'Turn your dream wedding into reality with Event Nora’s concept design, decoration, music, catering, and photography services.';
+    const canonicalUrl =
+        'https://www.eventnora.com/en/services/engagement-wedding-organization';
+
     return (
         <Layout>
             <Helmet>
-                <title>Engagement & Wedding Organization Services | Event Nora</title>
-                <meta
-                    name="description"
-                    content="Turn your dream wedding into reality with Event Nora’s concept design, decoration, music, catering, and photography services."
+                <title>{seoTitle}</title>
+                <meta name="description" content={seoDescription} />
+                <link rel="canonical" href={canonicalUrl} />
+                <link
+                    rel="alternate"
+                    hrefLang="tr"
+                    href="https://www.eventnora.com/tr/hizmetler/nisan-dugun-organizasyonu"
                 />
-                <link rel="canonical" href="https://www.eventnora.com/en/services/engagement-wedding-organization" />
-                <link rel="alternate" hrefLang="tr" href="https://www.eventnora.com/tr/hizmetler/nisan-dugun-organizasyonu" />
 
                 {/* Open Graph */}
                 <meta property="og:type" content="website" />
-                <meta property="og:title" content="Engagement & Wedding Organization Services | Event Nora" />
-                <meta property="og:description" content="Turn your dream wedding into reality with Event Nora’s concept design, decoration, music, catering, and photography services." />
-                <meta property="og:url" content="https://www.eventnora.com/en/services/engagement-wedding-organization" />
+                <meta property="og:title" content={seoTitle} />
+                <meta property="og:description" content={seoDescription} />
+                <meta property="og:url" content={canonicalUrl} />
                 <meta property="og:image" content="https://www.eventnora.com/images/wedding_event.png" />
                 <meta property="og:site_name" content="Event Nora" />
 
-                {/* Twitter Card */}
+                {/* Twitter */}
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Engagement & Wedding Organization Services | Event Nora" />
-                <meta name="twitter:description" content="Turn your dream wedding into reality with Event Nora’s concept design, decoration, music, catering, and photography services." />
+                <meta name="twitter:title" content={seoTitle} />
+                <meta name="twitter:description" content={seoDescription} />
                 <meta name="twitter:image" content="https://www.eventnora.com/images/wedding_event.png" />
 
-                {/* Schema.org - WebSite */}
+                {/* Structured Data */}
                 <script type="application/ld+json">
                     {JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "WebSite",
-                        "name": "Event Nora",
-                        "url": "https://www.eventnora.com"
+                        '@context': 'https://schema.org',
+                        '@type': 'WebSite',
+                        name: 'Event Nora',
+                        url: 'https://www.eventnora.com',
                     })}
                 </script>
-
-                {/* Schema.org - Organization */}
                 <script type="application/ld+json">
                     {JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "Organization",
-                        "name": "Event Nora",
-                        "url": "https://www.eventnora.com",
-                        "logo": {
-                            "@type": "ImageObject",
-                            "url": "https://www.eventnora.com/logo.png"
-                        }
+                        '@context': 'https://schema.org',
+                        '@type': 'Organization',
+                        name: 'Event Nora',
+                        url: 'https://www.eventnora.com',
+                        logo: {
+                            '@type': 'ImageObject',
+                            url: 'https://www.eventnora.com/logo.png',
+                        },
                     })}
                 </script>
-
-                {/* Schema.org - Service */}
                 <script type="application/ld+json">
                     {JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "Service",
-                        "serviceType": "Engagement & Wedding Organization",
-                        "provider": {
-                            "@type": "Organization",
-                            "name": "Event Nora",
-                            "url": "https://www.eventnora.com"
+                        '@context': 'https://schema.org',
+                        '@type': 'Service',
+                        serviceType: 'Engagement & Wedding Organization',
+                        provider: {
+                            '@type': 'Organization',
+                            name: 'Event Nora',
+                            url: 'https://www.eventnora.com',
                         },
-                        "areaServed": {
-                            "@type": "Place",
-                            "name": "Istanbul"
+                        areaServed: {
+                            '@type': 'Place',
+                            name: 'Istanbul',
                         },
-                        "description": "Turn your dream wedding into reality with Event Nora’s concept design, decoration, music, catering, and photography services."
+                        description: seoDescription,
                     })}
                 </script>
             </Helmet>
 
-
+            {/* Hero Section */}
             <section className="py-16 bg-black relative overflow-hidden">
                 <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gold to-transparent" />
                 <div className="container-custom relative z-10 text-center max-w-3xl mx-auto">
@@ -93,18 +96,22 @@ const EngagementWedding = () => {
                 </div>
             </section>
 
+            {/* Banner Image */}
             <section className="w-full h-auto">
                 <img
                     src={weddingImage}
-                    alt="Wedding Event Decoration"
+                    alt="Elegant wedding decoration with flowers and lights by Event Nora"
                     className="w-full h-auto object-cover object-center"
                     loading="lazy"
                 />
             </section>
 
+            {/* Service Details */}
             <section className="section bg-white">
                 <div className="container-custom max-w-6xl mx-auto">
-                    <h2 className="text-3xl font-bold text-black mb-10 text-center">About Our Wedding Services</h2>
+                    <h2 className="text-3xl font-bold text-black mb-10 text-center">
+                        About Our Wedding Services
+                    </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10 text-textGray text-sm leading-relaxed">
                         <ContentColumn
                             items={[
@@ -128,6 +135,7 @@ const EngagementWedding = () => {
                 </div>
             </section>
 
+            {/* Call to Action */}
             <section className="section bg-black text-center">
                 <div className="container-custom">
                     <h2 className="heading-2 text-gold mb-4">Ready to plan your dream event?</h2>
@@ -137,6 +145,7 @@ const EngagementWedding = () => {
                     <button
                         onClick={handleContactClick}
                         className="bg-gold hover:bg-gold-dark text-black font-medium py-3 px-8 rounded-full transition-colors"
+                        aria-label="Contact Event Nora to plan your wedding"
                     >
                         Get a Proposal
                     </button>

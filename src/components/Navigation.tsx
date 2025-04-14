@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { cn } from '@/lib/utils';
 import { Globe, Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useToast } from '@/components/ui/use-toast';
+import { cn } from '@/lib/utils';
 import logo from '../images/eventnorasaydam.png';
 
 const Navigation = () => {
@@ -15,21 +15,15 @@ const Navigation = () => {
   const { language, setLanguage } = useLanguage();
   const { toast } = useToast();
 
-  // ✅ URL'den dile göre set et
   useEffect(() => {
-    if (location.pathname.startsWith('/tr')) {
-      setLanguage('tr');
-    } else if (location.pathname.startsWith('/en')) {
-      setLanguage('en');
-    }
-  }, [location.pathname]);
+    const langPrefix = location.pathname.startsWith('/tr') ? 'tr' : 'en';
+    setLanguage(langPrefix);
+  }, [location.pathname, setLanguage]);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const onScroll = () => setIsScrolled(window.scrollY > 10);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   useEffect(() => {
@@ -65,51 +59,51 @@ const Navigation = () => {
     toast({
       title: lang === 'en' ? 'Language Changed' : 'Dil Değiştirildi',
       description: lang === 'en' ? 'English is now active' : 'Türkçe şimdi aktif',
-      duration: 2000,
     });
 
-    const currentPath = location.pathname;
-    const cleanedPath = currentPath.replace(/^\/(en|tr)/, '') || '/';
+    const current = location.pathname.replace(/^\/(en|tr)/, '') || '/';
 
-    if (cleanedPath === '/' || cleanedPath === '') {
-      navigate(lang === 'en' ? '/en' : '/tr');
+    if (current === '/' || current === '') {
+      navigate(`/${lang}`);
       return;
     }
 
-    if (cleanedPath.includes('/services/') || cleanedPath.includes('/hizmetler/')) {
-      const slug = cleanedPath.split('/').pop() || '';
-      const matchedService = servicesItems.find(item => item.slugEn === slug || item.slugTr === slug);
+    const matchedService = servicesItems.find(
+        item => item.slugEn === current.split('/').pop() || item.slugTr === current.split('/').pop()
+    );
 
+    if (current.includes('/services') || current.includes('/hizmetler')) {
       if (matchedService) {
-        const targetSlug = lang === 'en' ? matchedService.slugEn : matchedService.slugTr;
+        const slug = lang === 'en' ? matchedService.slugEn : matchedService.slugTr;
         const prefix = lang === 'en' ? '/en/services' : '/tr/hizmetler';
-        navigate(`${prefix}/${targetSlug}`);
+        navigate(`${prefix}/${slug}`);
         return;
       }
     }
 
-    const matchedItem = navItems.find(
-        (item) => item.pathEn === currentPath || item.pathTr === currentPath
+    const matchedNav = navItems.find(
+        item => item.pathEn === location.pathname || item.pathTr === location.pathname
     );
 
-    if (matchedItem) {
-      navigate(lang === 'en' ? matchedItem.pathEn : matchedItem.pathTr);
+    if (matchedNav) {
+      navigate(lang === 'en' ? matchedNav.pathEn : matchedNav.pathTr);
     } else {
-      navigate(`/${lang}${cleanedPath}`);
+      navigate(`/${lang}${current}`);
     }
   };
 
   const toggleServicesDropdown = () => {
-    setServicesDropdownOpen(!servicesDropdownOpen);
+    setServicesDropdownOpen(prev => !prev);
   };
 
   return (
       <header className={cn('fixed w-full top-0 z-50 transition-all duration-300', isScrolled ? 'bg-black shadow-lg py-3' : 'bg-black py-5')}>
         <div className="container-custom flex items-center justify-between">
           <Link to={language === 'en' ? '/en' : '/tr'} className="flex items-center">
-            <img src={logo} alt="EventNora Logo" className="h-24 w-auto" />
+            <img src={logo} alt="Event Nora Logo" className="h-24 w-auto" />
           </Link>
 
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
                 <div key={item.pathEn} className="relative group">
@@ -129,6 +123,7 @@ const Navigation = () => {
                       </Link>
                   )}
 
+                  {/* Services Dropdown */}
                   {item.dropdown && servicesDropdownOpen && (
                       <div className="absolute left-0 mt-2 w-64 bg-black border border-gold/20 rounded-lg shadow-lg z-50">
                         <div className="py-2">
@@ -154,24 +149,22 @@ const Navigation = () => {
                 </div>
             ))}
 
+            {/* Language Switch */}
             <div className="flex items-center gap-3">
-              <button
-                  className={cn('language-selector flex items-center gap-1', language === 'en' && 'text-gold font-semibold')}
-                  onClick={() => handleLanguageChange('en')}
-              >
-                <Globe size={16} />
-                <span>EN</span>
-              </button>
-              <button
-                  className={cn('language-selector flex items-center gap-1', language === 'tr' && 'text-gold font-semibold')}
-                  onClick={() => handleLanguageChange('tr')}
-              >
-                <Globe size={16} />
-                <span>TR</span>
-              </button>
+              {['en', 'tr'].map((lang) => (
+                  <button
+                      key={lang}
+                      className={cn('language-selector flex items-center gap-1', language === lang && 'text-gold font-semibold')}
+                      onClick={() => handleLanguageChange(lang as 'en' | 'tr')}
+                  >
+                    <Globe size={16} />
+                    <span>{lang.toUpperCase()}</span>
+                  </button>
+              ))}
             </div>
           </nav>
 
+          {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center gap-3 text-gold">
             <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -179,6 +172,7 @@ const Navigation = () => {
           </div>
         </div>
 
+        {/* Mobile Navigation */}
         {mobileMenuOpen && (
             <div className="md:hidden bg-black absolute top-full left-0 w-full border-t border-gold/20 animate-slideIn">
               <div className="container-custom py-4">
@@ -187,19 +181,13 @@ const Navigation = () => {
                       <div key={item.pathEn}>
                         {item.dropdown ? (
                             <>
-                              <div
-                                  className="flex items-center justify-between text-gold hover:text-gold-light transition-colors py-2 cursor-pointer"
-                                  onClick={toggleServicesDropdown}
-                              >
+                              <div className="flex items-center justify-between text-gold hover:text-gold-light transition-colors py-2 cursor-pointer" onClick={toggleServicesDropdown}>
                                 <span>{language === 'en' ? item.nameEn : item.nameTr}</span>
                                 {servicesDropdownOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
                               </div>
                               {servicesDropdownOpen && (
                                   <div className="pl-4 mt-2 space-y-2 border-l border-gold/20">
-                                    <Link
-                                        to={language === 'en' ? '/en/services' : '/tr/hizmetler'}
-                                        className="block py-2 text-gold/80 hover:text-gold transition-colors"
-                                    >
+                                    <Link to={language === 'en' ? '/en/services' : '/tr/hizmetler'} className="block py-2 text-gold/80 hover:text-gold transition-colors">
                                       {language === 'en' ? 'All Services' : 'Tüm Hizmetler'}
                                     </Link>
                                     {servicesItems.map((service, index) => (
@@ -208,8 +196,8 @@ const Navigation = () => {
                                             to={language === 'en' ? `/en/services/${service.slugEn}` : `/tr/hizmetler/${service.slugTr}`}
                                             className="block py-2 text-gold/80 hover:text-gold transition-colors"
                                             onClick={() => {
-                                              setServicesDropdownOpen(false);
                                               setMobileMenuOpen(false);
+                                              setServicesDropdownOpen(false);
                                             }}
                                         >
                                           {language === 'en' ? service.nameEn : service.nameTr}
@@ -231,26 +219,19 @@ const Navigation = () => {
                   ))}
 
                   <div className="flex gap-4 pt-4">
-                    <button
-                        className={cn('language-selector flex items-center gap-1', language === 'en' && 'text-gold font-semibold')}
-                        onClick={() => {
-                          handleLanguageChange('en');
-                          setMobileMenuOpen(false);
-                        }}
-                    >
-                      <Globe size={16} />
-                      <span>English</span>
-                    </button>
-                    <button
-                        className={cn('language-selector flex items-center gap-1', language === 'tr' && 'text-gold font-semibold')}
-                        onClick={() => {
-                          handleLanguageChange('tr');
-                          setMobileMenuOpen(false);
-                        }}
-                    >
-                      <Globe size={16} />
-                      <span>Türkçe</span>
-                    </button>
+                    {['en', 'tr'].map((lang) => (
+                        <button
+                            key={lang}
+                            className={cn('language-selector flex items-center gap-1', language === lang && 'text-gold font-semibold')}
+                            onClick={() => {
+                              handleLanguageChange(lang as 'en' | 'tr');
+                              setMobileMenuOpen(false);
+                            }}
+                        >
+                          <Globe size={16} />
+                          <span>{lang === 'en' ? 'English' : 'Türkçe'}</span>
+                        </button>
+                    ))}
                   </div>
                 </nav>
               </div>

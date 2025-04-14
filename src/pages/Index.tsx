@@ -15,21 +15,60 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import backgroundImage from '../images/a1.png';
 
 const IndexEn = () => {
-  const { language } = useLanguage(); // 'en'
+  const { language } = useLanguage();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  const pageTitle = 'Event Planning & Organization | Event Nora';
+  const pageDescription = 'We design unforgettable events through creativity, strategy, and flawless execution.';
+  const canonicalUrl = 'https://www.eventnora.com/en';
+
   return (
       <Layout>
         <Helmet>
-          <title>Event Planning & Organization | Event Nora</title>
-          <meta
-              name="description"
-              content="We design unforgettable events through creativity, strategy, and flawless execution."
-          />
-          <link rel="canonical" href="https://www.eventnora.com/en" />
+          <title>{pageTitle}</title>
+          <meta name="description" content={pageDescription} />
+          <link rel="canonical" href={canonicalUrl} />
+
+          {/* Open Graph */}
+          <meta property="og:type" content="website" />
+          <meta property="og:title" content={pageTitle} />
+          <meta property="og:description" content={pageDescription} />
+          <meta property="og:url" content={canonicalUrl} />
+          <meta property="og:image" content="https://www.eventnora.com/logo.png" />
+          <meta property="og:site_name" content="Event Nora" />
+
+          {/* Twitter */}
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content={pageTitle} />
+          <meta name="twitter:description" content={pageDescription} />
+          <meta name="twitter:image" content="https://www.eventnora.com/logo.png" />
+
+          {/* Schema - WebSite */}
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Event Nora",
+              url: "https://www.eventnora.com",
+            })}
+          </script>
+
+          {/* Schema - Organization */}
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Event Nora",
+              url: "https://www.eventnora.com",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://www.eventnora.com/logo.png",
+              },
+            })}
+          </script>
         </Helmet>
 
         {/* Hero */}
@@ -43,8 +82,8 @@ const IndexEn = () => {
             }}
         >
           <div className="absolute inset-0 bg-black/10 z-0" />
-          <div className="container-custom relative z-10">
-            <div className="max-w-3xl mx-auto text-center">
+          <div className="container-custom relative z-10 text-center">
+            <div className="max-w-3xl mx-auto">
             <span className="inline-block px-3 py-1 bg-black text-gold text-sm font-medium rounded-full mb-6">
               Premier Event Planning
             </span>

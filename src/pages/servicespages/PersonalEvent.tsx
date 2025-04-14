@@ -26,7 +26,7 @@ const PersonalEvent = () => {
                 <link rel="canonical" href="https://www.eventnora.com/en/services/personal-event" />
                 <link rel="alternate" hrefLang="tr" href="https://www.eventnora.com/tr/hizmetler/kisisel-etkinlik-planlamasi" />
 
-                {/* Open Graph (Facebook, LinkedIn vs.) */}
+                {/* Open Graph */}
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content="Personal Event Planning Services | Event Nora" />
                 <meta property="og:description" content="From birthdays to engagements and baby showers – we design your most special memories with elegant concepts and professional execution." />
@@ -34,13 +34,13 @@ const PersonalEvent = () => {
                 <meta property="og:image" content="https://www.eventnora.com/images/personal_event.png" />
                 <meta property="og:site_name" content="Event Nora" />
 
-                {/* Twitter Card */}
+                {/* Twitter */}
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="Personal Event Planning Services | Event Nora" />
                 <meta name="twitter:description" content="From birthdays to engagements and baby showers – we design your most special memories with elegant concepts and professional execution." />
                 <meta name="twitter:image" content="https://www.eventnora.com/images/personal_event.png" />
 
-                {/* Schema.org Structured Data */}
+                {/* Structured Data */}
                 <script type="application/ld+json">
                     {JSON.stringify({
                         "@context": "https://schema.org",
@@ -55,17 +55,21 @@ const PersonalEvent = () => {
                             "@type": "Place",
                             "name": "Istanbul"
                         },
+                        "audience": {
+                            "@type": "Audience",
+                            "audienceType": "Families, Friends, Couples"
+                        },
                         "description": "From birthdays to engagements and baby showers – we design your most special memories with elegant concepts and professional execution."
                     })}
                 </script>
             </Helmet>
 
-            {/* Hero Section */}
+            {/* Hero */}
             <section className="py-20 bg-black relative overflow-hidden">
                 <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gold to-transparent" />
                 <div className="container-custom relative z-10 text-center max-w-3xl mx-auto">
                     <h1 className="text-gold text-4xl md:text-5xl font-extrabold mb-6">
-                        🎈 Personal Event Planning
+                        <span aria-hidden="true">🎈</span> Personal Event Planning
                     </h1>
                     <p className="text-gold-light/90 text-xl leading-relaxed font-light">
                         Your most special moments, perfected with professional touches!
@@ -73,17 +77,17 @@ const PersonalEvent = () => {
                 </div>
             </section>
 
-            {/* Banner Image */}
+            {/* Banner */}
             <section className="w-full h-auto">
                 <img
                     src={personalImage}
-                    alt="Personal Event"
+                    alt="Decorated personal celebration venue with custom design elements"
                     className="w-full h-auto object-cover object-center"
                     loading="lazy"
                 />
             </section>
 
-            {/* Services Section */}
+            {/* Services */}
             <section className="section bg-white">
                 <div className="container-custom max-w-6xl mx-auto">
                     <h2 className="text-3xl md:text-4xl font-bold text-black mb-14 text-center">
@@ -124,6 +128,7 @@ const PersonalEvent = () => {
                     <button
                         onClick={handleContactClick}
                         className="bg-gold hover:bg-gold-dark text-black font-semibold text-lg py-4 px-10 rounded-full transition-colors shadow-md"
+                        aria-label="Start planning your personal event with Event Nora"
                     >
                         Contact Us
                     </button>
@@ -135,7 +140,7 @@ const PersonalEvent = () => {
 
 export default PersonalEvent;
 
-// Reusable Column Component
+// Reusable column for structured content
 const ContentColumn = ({ items }: { items: string[] }) => (
     <div className="space-y-6 text-base md:text-lg leading-relaxed">
         {items.map((item, index) => (

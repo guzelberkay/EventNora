@@ -1,12 +1,12 @@
 import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
+// import { Toaster as Sonner } from "@/components/ui/sonner"; // Eğer kullanılmıyorsa kaldır
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { FaWhatsapp } from "react-icons/fa";
 
-import { LanguageProvider } from "./contexts/LanguageContext";
+import { LanguageProvider, useLanguage } from "./contexts/LanguageContext";
 
 // Pages
 import Index from "./pages/Index";
@@ -34,27 +34,31 @@ import ServiceDetail from "./pages/servicespages/ServiceDetail";
 // TR Pages
 import TurkishIndex from "./pages/tr/index";
 import Hakkimizda from "./pages/tr/hakkimizda";
-import Hizmetler from "./pages/tr/hizmetler";
+import Hizmetlerimiz from "./pages/Hizmetlerimiz.tsx";
 import Iletisim from "./pages/tr/iletisim";
 import Sss from "./pages/tr/sss";
 import BlogTr from "./pages/tr/blog";
-import DogumGunuOzelGun from "./pages/servicespages/tr/DogumGunuOzelGun";
-import KongreFuarTr from "@/pages/servicespages/tr/KongreFuarTr.tsx";
-import DanismanlikTr from "@/pages/servicespages/tr/DanismanlikTr.tsx";
-import KurumsalEtkinlikler from "@/pages/servicespages/tr/KurumsalEtkinlikler.tsx";
-import YaraticiTasarimlar from "@/pages/servicespages/tr/YaraticiTasarimlar.tsx";
-import NisanDugun from "@/pages/servicespages/tr/NisanDugun.tsx";
-import FestivalEtkinligi from "@/pages/servicespages/tr/FestivalEtkinligi.tsx";
-import KisiselEtkinlik from "@/pages/servicespages/tr/KisiselEtkinlik.tsx";
-import SosyalSorumluluk from "@/pages/servicespages/tr/SosyalSorumluluk.tsx";
-import TeknikDestek from "@/pages/servicespages/tr/TeknikDestek.tsx";
-import Hizmetlerimiz from "@/pages/Hizmetlerimiz.tsx";
 
-// WhatsApp Floating Button Component
+// TR Services
+import DogumGunuOzelGun from "./pages/servicespages/tr/DogumGunuOzelGun";
+import KongreFuarTr from "@/pages/servicespages/tr/KongreFuarTr";
+import DanismanlikTr from "@/pages/servicespages/tr/DanismanlikTr";
+import KurumsalEtkinlikler from "@/pages/servicespages/tr/KurumsalEtkinlikler";
+import YaraticiTasarimlar from "@/pages/servicespages/tr/YaraticiTasarimlar";
+import NisanDugun from "@/pages/servicespages/tr/NisanDugun";
+import FestivalEtkinligi from "@/pages/servicespages/tr/FestivalEtkinligi";
+import KisiselEtkinlik from "@/pages/servicespages/tr/KisiselEtkinlik";
+import SosyalSorumluluk from "@/pages/servicespages/tr/SosyalSorumluluk";
+import TeknikDestek from "@/pages/servicespages/tr/TeknikDestek";
+
+// 🟢 WhatsApp Button
 const WhatsAppFloat = () => {
+  const { language } = useLanguage();
   const phoneNumber = "+905327701208";
   const message =
-      "📩 Merhaba, EventNora Sizden organizasyon hizmetleri hakkında bilgi almak istiyorum.";
+      language === "tr"
+          ? "📩 Merhaba, EventNora'dan organizasyon hizmetleri hakkında bilgi almak istiyorum."
+          : "📩 Hi, I'd like to get information about event services from EventNora.";
 
   return (
       <div className="fixed bottom-6 right-6 z-50">
@@ -80,23 +84,24 @@ const App = () => (
         <TooltipProvider>
           <LanguageProvider>
             <Toaster />
-            <Sonner />
+            {/* <Sonner /> Eğer aktif değilse yorumda bırak */}
             <BrowserRouter>
               <WhatsAppFloat />
               <Routes>
-                {/* REDIRECT ROOT TO /en */}
-                <Route path="/" element={<Navigate to="/en" />} />
+                {/* REDIRECT ROOT */}
+                <Route path="/" element={<Navigate to="/en" replace />} />
 
-                {/* ENGLISH ROUTES */}
+                {/* EN ROUTES */}
                 <Route path="/en" element={<Index />} />
                 <Route path="/en/about" element={<About />} />
                 <Route path="/en/services" element={<Services />} />
                 <Route path="/en/contact" element={<Contact />} />
                 <Route path="/en/faq" element={<FAQ />} />
                 <Route path="/en/blog" element={<Blog />} />
-                <Route path="/en/blog/:slug" element={<BlogPost />} /> {/* ✅ FIXED */}
+                <Route path="/en/blog/:slug" element={<BlogPost />} />
 
-                {/* EN Service Detail Pages */}
+                {/* EN Services */}
+                <Route path="/en/services/:slug" element={<ServiceDetail />} />
                 <Route path="/en/services/engagement-wedding-organization" element={<EngagementWedding />} />
                 <Route path="/en/services/corporate-events" element={<CorporateEvents />} />
                 <Route path="/en/services/birthday-special-day" element={<BirthdaySpecialDay />} />
@@ -107,18 +112,18 @@ const App = () => (
                 <Route path="/en/services/creative-designs" element={<CreativeDesigns />} />
                 <Route path="/en/services/technical-support" element={<TechnicalSupport />} />
                 <Route path="/en/services/consultancy" element={<Consultancy />} />
-                <Route path="/en/services/:slug" element={<ServiceDetail />} />
 
-                {/* TURKISH ROUTES */}
+                {/* TR ROUTES */}
                 <Route path="/tr" element={<TurkishIndex />} />
                 <Route path="/tr/hakkimizda" element={<Hakkimizda />} />
                 <Route path="/tr/hizmetler" element={<Hizmetlerimiz />} />
                 <Route path="/tr/iletisim" element={<Iletisim />} />
                 <Route path="/tr/sss" element={<Sss />} />
                 <Route path="/tr/blog" element={<BlogTr />} />
-                <Route path="/tr/blog/:slug" element={<BlogPost />} /> {/* ✅ FIXED */}
+                <Route path="/tr/blog/:slug" element={<BlogPost />} />
 
-                {/* TR Service Detail Pages */}
+                {/* TR Services */}
+                <Route path="/tr/hizmetler/:slug" element={<ServiceDetail />} />
                 <Route path="/tr/hizmetler/nisan-dugun-organizasyonu" element={<NisanDugun />} />
                 <Route path="/tr/hizmetler/kurumsal-etkinlikler" element={<KurumsalEtkinlikler />} />
                 <Route path="/tr/hizmetler/dogum-gunu-ozel-gun" element={<DogumGunuOzelGun />} />
@@ -129,7 +134,6 @@ const App = () => (
                 <Route path="/tr/hizmetler/yaratici-tasarim-susleme" element={<YaraticiTasarimlar />} />
                 <Route path="/tr/hizmetler/teknik-lojistik-destek" element={<TeknikDestek />} />
                 <Route path="/tr/hizmetler/danismanlik-hizmetleri" element={<DanismanlikTr />} />
-                <Route path="/tr/hizmetler/:slug" element={<ServiceDetail />} />
 
                 {/* 404 */}
                 <Route path="*" element={<NotFound />} />

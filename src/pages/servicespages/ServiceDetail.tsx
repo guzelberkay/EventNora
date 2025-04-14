@@ -14,7 +14,7 @@ const ServiceDetail = () => {
         window.scrollTo(0, 0);
     }, []);
 
-    const service = servicesData.find(item => item.slug === slug);
+    const service = servicesData.find((item) => item.slug === slug);
 
     if (!service) {
         return (
@@ -28,41 +28,41 @@ const ServiceDetail = () => {
         );
     }
 
-    const pageTitle = isEnglish ? `${service.nameEn} | EventNora` : `${service.nameTr} | EventNora`;
-    const pageDescription = isEnglish
-        ? service.descriptionEn.slice(0, 160) // SEO için max 160 karakter
+    const title = isEnglish ? service.nameEn : service.nameTr;
+    const description = isEnglish
+        ? service.descriptionEn.slice(0, 160)
         : service.descriptionTr.slice(0, 160);
+    const imageAlt = `${title} - Event Nora`;
+
+    const canonicalUrl = `https://www.eventnora.com/${language}/services/${slug}`;
 
     return (
         <Layout>
             <Helmet>
-                <title>{pageTitle.replace('EventNora', 'Event Nora')}</title>
-                <meta name="description" content={pageDescription} />
-                <link rel="canonical" href={`https://www.eventnora.com/${language}/services/${slug}`} />
+                <title>{`${title} | Event Nora`}</title>
+                <meta name="description" content={description} />
+                <link rel="canonical" href={canonicalUrl} />
 
                 {/* Open Graph */}
-                <meta property="og:title" content={pageTitle.replace('EventNora', 'Event Nora')} />
-                <meta property="og:description" content={pageDescription} />
+                <meta property="og:title" content={`${title} | Event Nora`} />
+                <meta property="og:description" content={description} />
                 <meta property="og:image" content={service.image} />
-                <meta property="og:url" content={`https://www.eventnora.com/${language}/services/${slug}`} />
+                <meta property="og:url" content={canonicalUrl} />
                 <meta property="og:type" content="article" />
                 <meta property="og:site_name" content="Event Nora" />
 
                 {/* Twitter Card */}
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content={pageTitle.replace('EventNora', 'Event Nora')} />
-                <meta name="twitter:description" content={pageDescription} />
+                <meta name="twitter:title" content={`${title} | Event Nora`} />
+                <meta name="twitter:description" content={description} />
                 <meta name="twitter:image" content={service.image} />
             </Helmet>
 
-
             {/* Hero Section */}
             <section className="py-16 bg-black relative overflow-hidden">
-                <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gold to-transparent"></div>
+                <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gold to-transparent" />
                 <div className="container-custom relative z-10 text-center max-w-3xl mx-auto">
-                    <h1 className="heading-1 text-gold mb-4">
-                        {isEnglish ? service.nameEn : service.nameTr}
-                    </h1>
+                    <h1 className="heading-1 text-gold mb-4">{title}</h1>
                     <p className="text-gold-light/80 text-lg">
                         {isEnglish ? 'Detailed service information' : 'Detaylı hizmet bilgisi'}
                     </p>
@@ -76,7 +76,7 @@ const ServiceDetail = () => {
                         <div className="relative h-96 rounded-lg overflow-hidden">
                             <img
                                 src={service.image}
-                                alt={isEnglish ? service.nameEn : service.nameTr}
+                                alt={imageAlt}
                                 className="w-full h-full object-cover"
                                 loading="lazy"
                             />

@@ -15,79 +15,75 @@ const ConsultancyEn = () => {
         navigate('/en/contact');
     };
 
-    const seoTitle = 'Consultancy Services | Event Strategy & Planning';
+    const seoTitle = 'Consultancy Services | Event Strategy & Planning - Event Nora';
     const seoDescription =
         'We provide consultancy services for every step of event planning — from strategy to execution and evaluation.';
 
     return (
         <Layout>
             <Helmet>
-                <title>Consultancy Services | Event Strategy & Planning - Event Nora</title>
-                <meta
-                    name="description"
-                    content="We provide consultancy services for every step of event planning — from strategy to execution and evaluation."
-                />
+                <title>{seoTitle}</title>
+                <meta name="description" content={seoDescription} />
                 <link rel="canonical" href="https://www.eventnora.com/en/services/consultancy" />
-                <link rel="alternate" hrefLang="tr" href="https://www.eventnora.com/tr/hizmetler/danismanlik-hizmetleri" />
+                <link
+                    rel="alternate"
+                    hrefLang="tr"
+                    href="https://www.eventnora.com/tr/hizmetler/danismanlik-hizmetleri"
+                />
 
-                {/* Open Graph (Facebook, LinkedIn) */}
+                {/* Open Graph */}
                 <meta property="og:type" content="website" />
-                <meta property="og:title" content="Consultancy Services | Event Strategy & Planning - Event Nora" />
-                <meta property="og:description" content="We provide consultancy services for every step of event planning — from strategy to execution and evaluation." />
+                <meta property="og:title" content={seoTitle} />
+                <meta property="og:description" content={seoDescription} />
                 <meta property="og:url" content="https://www.eventnora.com/en/services/consultancy" />
                 <meta property="og:site_name" content="Event Nora" />
                 <meta property="og:image" content="https://www.eventnora.com/logo.png" />
 
                 {/* Twitter */}
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Consultancy Services | Event Strategy & Planning - Event Nora" />
-                <meta name="twitter:description" content="We provide consultancy services for every step of event planning — from strategy to execution and evaluation." />
+                <meta name="twitter:title" content={seoTitle} />
+                <meta name="twitter:description" content={seoDescription} />
                 <meta name="twitter:image" content="https://www.eventnora.com/logo.png" />
 
-                {/* JSON-LD Structured Data: WebSite */}
+                {/* Structured Data */}
                 <script type="application/ld+json">
                     {JSON.stringify({
                         "@context": "https://schema.org",
                         "@type": "WebSite",
-                        "name": "Event Nora",
-                        "url": "https://www.eventnora.com"
+                        name: "Event Nora",
+                        url: "https://www.eventnora.com",
                     })}
                 </script>
-
-                {/* JSON-LD Structured Data: Organization */}
                 <script type="application/ld+json">
                     {JSON.stringify({
                         "@context": "https://schema.org",
                         "@type": "Organization",
-                        "name": "Event Nora",
-                        "url": "https://www.eventnora.com",
-                        "logo": {
+                        name: "Event Nora",
+                        url: "https://www.eventnora.com",
+                        logo: {
                             "@type": "ImageObject",
-                            "url": "https://www.eventnora.com/logo.png"
-                        }
+                            url: "https://www.eventnora.com/logo.png",
+                        },
                     })}
                 </script>
-
-                {/* JSON-LD Structured Data: Service */}
                 <script type="application/ld+json">
                     {JSON.stringify({
                         "@context": "https://schema.org",
                         "@type": "Service",
-                        "serviceType": "Event Consultancy Services",
-                        "provider": {
+                        serviceType: "Event Consultancy Services",
+                        provider: {
                             "@type": "Organization",
-                            "name": "Event Nora",
-                            "url": "https://www.eventnora.com"
+                            name: "Event Nora",
+                            url: "https://www.eventnora.com",
                         },
-                        "areaServed": {
+                        areaServed: {
                             "@type": "Place",
-                            "name": "Istanbul"
+                            name: "Istanbul",
                         },
-                        "description": "We provide consultancy services for every step of event planning — from strategy to execution and evaluation."
+                        description: seoDescription,
                     })}
                 </script>
             </Helmet>
-
 
             {/* Hero */}
             <section className="py-20 bg-black relative overflow-hidden">
@@ -102,11 +98,11 @@ const ConsultancyEn = () => {
                 </div>
             </section>
 
-            {/* Banner */}
+            {/* Image */}
             <section className="w-full h-auto">
                 <img
                     src={consultancyImg}
-                    alt="Professional Event Consultancy Services"
+                    alt="Consultancy services for event planning by Event Nora"
                     loading="lazy"
                     className="w-full h-full object-cover object-center"
                 />
@@ -178,6 +174,7 @@ const ConsultancyEn = () => {
                     </h2>
                     <button
                         onClick={handleContactClick}
+                        aria-label="Contact Event Nora for event consultancy"
                         className="bg-gold hover:bg-gold-dark text-black font-semibold text-lg py-4 px-10 rounded-full transition-colors shadow-md"
                     >
                         Get Consultation
@@ -190,7 +187,7 @@ const ConsultancyEn = () => {
 
 export default ConsultancyEn;
 
-// Reusable content column
+// 🔁 Reusable Content Column
 const ContentColumn = ({
                            content,
                        }: {
@@ -199,7 +196,9 @@ const ContentColumn = ({
     <div className="space-y-6">
         {content.map((block, index) =>
             typeof block === 'string' ? (
-                <p key={index} className="text-base md:text-lg">{block}</p>
+                <p key={index} className="text-base md:text-lg whitespace-pre-line">
+                    {block}
+                </p>
             ) : (
                 <div key={index}>
                     <h3 className="text-xl font-semibold mb-2">{block.title}</h3>

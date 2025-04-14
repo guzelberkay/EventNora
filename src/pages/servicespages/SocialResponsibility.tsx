@@ -27,8 +27,6 @@ const SocialResponsibility = () => {
                     rel="canonical"
                     href="https://www.eventnora.com/en/services/social-responsibility"
                 />
-
-                {/* Open Graph */}
                 <meta property="og:title" content="Social Responsibility Projects | Event Nora" />
                 <meta
                     property="og:description"
@@ -39,7 +37,6 @@ const SocialResponsibility = () => {
                 <meta property="og:type" content="article" />
                 <meta property="og:site_name" content="Event Nora" />
 
-                {/* Twitter Card */}
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="Social Responsibility Projects | Event Nora" />
                 <meta
@@ -48,7 +45,6 @@ const SocialResponsibility = () => {
                 />
                 <meta name="twitter:image" content={socialResponsibilityImage} />
             </Helmet>
-
 
             {/* Hero Section */}
             <section className="py-20 bg-black relative overflow-hidden">
@@ -63,8 +59,8 @@ const SocialResponsibility = () => {
                 </div>
             </section>
 
-            {/* Banner Image */}
-            <section className="w-full h-auto">
+            {/* Banner */}
+            <section>
                 <img
                     src={socialResponsibilityImage}
                     alt="Social Responsibility Event"
@@ -73,7 +69,7 @@ const SocialResponsibility = () => {
                 />
             </section>
 
-            {/* Content Section */}
+            {/* Content */}
             <section className="section bg-white">
                 <div className="container-custom max-w-6xl mx-auto">
                     <h2 className="text-3xl md:text-4xl font-bold text-black mb-14 text-center">
@@ -91,7 +87,6 @@ const SocialResponsibility = () => {
                                 '🌍 <strong>Event Organization</strong><br />• Thematic workshops, seminars, awareness walks<br />• Recycling, tree planting, cleanup campaigns<br />• Donation drives (food, clothes, books)<br />• Youth camps, social entrepreneurship events',
                             ]}
                         />
-
                         <ContentColumn
                             items={[
                                 '📣 <strong>Communication & Outreach</strong><br />• Social media campaigns<br />• Posters, brochures, digital materials<br />• Media relations, visibility strategy<br />• Post-event reporting, feedback collection',
@@ -103,7 +98,7 @@ const SocialResponsibility = () => {
                 </div>
             </section>
 
-            {/* CTA Section */}
+            {/* CTA */}
             <section className="section bg-black text-center">
                 <div className="container-custom">
                     <h2 className="text-gold text-3xl md:text-4xl font-extrabold mb-6">
@@ -126,7 +121,7 @@ const SocialResponsibility = () => {
 
 export default SocialResponsibility;
 
-// Reusable content column
+// Reusable content column component
 const ContentColumn = ({ items }: { items: string[] }) => (
     <div className="space-y-6 text-base md:text-lg leading-relaxed">
         {items.map((item, index) => (

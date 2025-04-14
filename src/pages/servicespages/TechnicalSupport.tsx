@@ -25,43 +25,36 @@ const TechnicalSupport = () => {
                 />
                 <link rel="canonical" href="https://www.eventnora.com/en/services/technical-support" />
 
-                {/* Open Graph for social media */}
+                {/* Open Graph */}
+                <meta property="og:type" content="article" />
                 <meta property="og:title" content="Technical & Logistics Support | Event Nora" />
-                <meta
-                    property="og:description"
-                    content="We provide professional technical infrastructure and logistics services for flawless event execution."
-                />
+                <meta property="og:description" content="We provide professional technical infrastructure and logistics services for flawless event execution." />
                 <meta property="og:image" content={technicalImg} />
                 <meta property="og:url" content="https://www.eventnora.com/en/services/technical-support" />
-                <meta property="og:type" content="article" />
                 <meta property="og:site_name" content="Event Nora" />
 
-                {/* Twitter Card */}
+                {/* Twitter */}
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="Technical & Logistics Support | Event Nora" />
-                <meta
-                    name="twitter:description"
-                    content="We provide professional technical infrastructure and logistics services for flawless event execution."
-                />
+                <meta name="twitter:description" content="We provide professional technical infrastructure and logistics services for flawless event execution." />
                 <meta name="twitter:image" content={technicalImg} />
             </Helmet>
 
-
-            {/* Hero Section */}
+            {/* Hero */}
             <section className="py-20 bg-black relative overflow-hidden">
-                <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gold to-transparent" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gold to-transparent opacity-20" />
                 <div className="container-custom relative z-10 text-center max-w-3xl mx-auto">
                     <h1 className="text-gold text-4xl md:text-5xl font-extrabold mb-6">
                         🔧 Technical & Logistics Support
                     </h1>
-                    <p className="text-gold-light/90 text-xl leading-relaxed font-light">
+                    <p className="text-gold-light/90 text-xl font-light">
                         Strong infrastructure for flawless events!
                     </p>
                 </div>
             </section>
 
-            {/* Banner Image */}
-            <section className="w-full h-auto">
+            {/* Banner */}
+            <section>
                 <img
                     src={technicalImg}
                     alt="Technical Support"
@@ -70,7 +63,7 @@ const TechnicalSupport = () => {
                 />
             </section>
 
-            {/* Content Section */}
+            {/* Content */}
             <section className="section bg-white">
                 <div className="container-custom max-w-6xl mx-auto">
                     <h2 className="text-3xl md:text-4xl font-bold text-black mb-14 text-center">
@@ -95,7 +88,7 @@ const TechnicalSupport = () => {
                 </div>
             </section>
 
-            {/* CTA Section */}
+            {/* CTA */}
             <section className="section bg-black text-center">
                 <div className="container-custom">
                     <h2 className="text-gold text-3xl md:text-4xl font-extrabold mb-6">
@@ -115,7 +108,6 @@ const TechnicalSupport = () => {
 
 export default TechnicalSupport;
 
-// Reusable column component
 const ContentColumn = ({ items }: { items: string[] }) => (
     <div className="space-y-6 text-base md:text-lg leading-relaxed">
         {items.map((item, index) => (

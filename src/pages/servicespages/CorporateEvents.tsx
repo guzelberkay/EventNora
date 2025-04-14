@@ -15,32 +15,37 @@ const CorporateEn = () => {
         navigate('/en/contact');
     };
 
+    const seoTitle = 'Corporate Events | Professional Event Planning - Event Nora';
+    const seoDescription =
+        'Stand out with corporate event services reflecting your brand value. Discover our comprehensive event management solutions.';
+
     return (
         <Layout>
             <Helmet>
-                <title>Corporate Events | Professional Event Planning - Event Nora</title>
-                <meta
-                    name="description"
-                    content="Stand out with corporate event services reflecting your brand value. Discover our comprehensive event management solutions."
-                />
+                <title>{seoTitle}</title>
+                <meta name="description" content={seoDescription} />
                 <link rel="canonical" href="https://www.eventnora.com/en/services/corporate-events" />
-                <link rel="alternate" hrefLang="tr" href="https://www.eventnora.com/tr/hizmetler/kurumsal-etkinlikler" />
+                <link
+                    rel="alternate"
+                    hrefLang="tr"
+                    href="https://www.eventnora.com/tr/hizmetler/kurumsal-etkinlikler"
+                />
 
-                {/* Open Graph Meta Tags */}
+                {/* Open Graph */}
                 <meta property="og:type" content="website" />
-                <meta property="og:title" content="Corporate Events | Professional Event Planning - Event Nora" />
-                <meta property="og:description" content="Stand out with corporate event services reflecting your brand value. Discover our comprehensive event management solutions." />
+                <meta property="og:title" content={seoTitle} />
+                <meta property="og:description" content={seoDescription} />
                 <meta property="og:url" content="https://www.eventnora.com/en/services/corporate-events" />
                 <meta property="og:site_name" content="Event Nora" />
                 <meta property="og:image" content="https://www.eventnora.com/logo.png" />
 
-                {/* Twitter Card Meta Tags */}
+                {/* Twitter */}
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Corporate Events | Professional Event Planning - Event Nora" />
-                <meta name="twitter:description" content="Stand out with corporate event services reflecting your brand value. Discover our comprehensive event management solutions." />
+                <meta name="twitter:title" content={seoTitle} />
+                <meta name="twitter:description" content={seoDescription} />
                 <meta name="twitter:image" content="https://www.eventnora.com/logo.png" />
 
-                {/* Schema.org - WebSite */}
+                {/* Structured Data */}
                 <script type="application/ld+json">
                     {JSON.stringify({
                         "@context": "https://schema.org",
@@ -49,8 +54,6 @@ const CorporateEn = () => {
                         "url": "https://www.eventnora.com"
                     })}
                 </script>
-
-                {/* Schema.org - Organization */}
                 <script type="application/ld+json">
                     {JSON.stringify({
                         "@context": "https://schema.org",
@@ -63,8 +66,6 @@ const CorporateEn = () => {
                         }
                     })}
                 </script>
-
-                {/* Schema.org - Service */}
                 <script type="application/ld+json">
                     {JSON.stringify({
                         "@context": "https://schema.org",
@@ -79,11 +80,10 @@ const CorporateEn = () => {
                             "@type": "Place",
                             "name": "Istanbul"
                         },
-                        "description": "Stand out with corporate event services reflecting your brand value. Discover our comprehensive event management solutions."
+                        "description": seoDescription
                     })}
                 </script>
             </Helmet>
-
 
             {/* Hero */}
             <section className="py-16 bg-black relative overflow-hidden">
@@ -100,7 +100,7 @@ const CorporateEn = () => {
             <section className="w-full h-auto">
                 <img
                     src={corporateBanner}
-                    alt="Corporate Event Banner"
+                    alt="Corporate event setup by Event Nora with branding and lighting"
                     loading="lazy"
                     className="w-full h-auto object-cover object-center"
                 />
@@ -147,6 +147,7 @@ const CorporateEn = () => {
                     </p>
                     <button
                         onClick={handleContactClick}
+                        aria-label="Contact Event Nora for corporate event planning"
                         className="bg-gold hover:bg-gold-dark text-black font-medium py-3 px-8 rounded-full transition-colors"
                     >
                         Get a Proposal
@@ -159,10 +160,11 @@ const CorporateEn = () => {
 
 export default CorporateEn;
 
+// 💡 Modular Content Renderer
 const ServiceColumn = ({ items }: { items: string[] }) => (
     <div className="w-full md:w-[48%] space-y-4">
         {items.map((item, index) => (
-            <p key={index} dangerouslySetInnerHTML={{ __html: item }}></p>
+            <p key={index} dangerouslySetInnerHTML={{ __html: item }} />
         ))}
     </div>
 );

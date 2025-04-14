@@ -103,33 +103,27 @@ const Hizmetler = () => {
                 />
                 <meta name="twitter:image" content="https://www.eventnora.com/logo.png" />
 
-                {/* WebSite Schema */}
+                {/* Structured Data */}
                 <script type="application/ld+json">
                     {JSON.stringify({
                         "@context": "https://schema.org",
-                        "@type": "WebSite",
-                        "name": "Event Nora",
-                        "url": "https://www.eventnora.com"
-                    })}
-                </script>
-
-                {/* Organization Schema */}
-                <script type="application/ld+json">
-                    {JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "Organization",
-                        "name": "Event Nora",
-                        "url": "https://www.eventnora.com",
-                        "logo": {
-                            "@type": "ImageObject",
-                            "url": "https://www.eventnora.com/logo.png"
+                        "@type": "Service",
+                        "serviceType": "Event Planning & Organization",
+                        "provider": {
+                            "@type": "Organization",
+                            "name": "Event Nora",
+                            "url": "https://www.eventnora.com",
+                            "logo": "https://www.eventnora.com/logo.png",
+                        },
+                        "areaServed": {
+                            "@type": "Place",
+                            "name": "İstanbul"
                         }
                     })}
                 </script>
             </Helmet>
 
-
-            {/* Hero Section */}
+            {/* Hero */}
             <section className="py-16 bg-black relative overflow-hidden">
                 <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gold to-transparent" />
                 <div className="container-custom relative z-10 text-center">
@@ -147,21 +141,23 @@ const Hizmetler = () => {
                         {services.map((item, index) => (
                             <div
                                 key={index}
-                                onClick={() => navigate(item.link)} // Linki kullanarak yönlendirme yapılacak
-                                className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition cursor-pointer"
+                                onClick={() => navigate(item.link)}
+                                className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition cursor-pointer group"
+                                role="button"
+                                aria-label={`Detaylı bilgi: ${item.name}`}
                             >
                                 <img
                                     src={item.img}
                                     alt={item.name}
-                                    className="w-full h-48 object-cover"
+                                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                                     loading="lazy"
                                 />
                                 <div className="p-5">
                                     <h3 className="text-lg font-bold text-black mb-2">{item.name}</h3>
                                     <p className="text-textGray text-sm mb-4">{item.desc}</p>
                                     <span className="text-gold font-medium hover:text-gold-dark transition">
-                                        Detaylar →
-                                    </span>
+                    Detaylar →
+                  </span>
                                 </div>
                             </div>
                         ))}

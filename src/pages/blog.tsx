@@ -4,7 +4,7 @@ import Layout from '@/components/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 
-// Resimler
+// Images
 import weddingTrendImage from '../images/wedding_trend.png';
 import engagement from '../images/perfect_engagement_party.png';
 import digital from '../images/digital_invitations.png';
@@ -47,7 +47,7 @@ const Blog: React.FC = () => {
         ? 'event blog, wedding trends, digital invitation, RSVP online, party tips, creative event design'
         : 'düğün blogu, dijital davetiye, qr kod, rsvp nedir, davetiye trendleri, etkinlik tasarımı';
 
-    const canonicalUrl = `https://eventnora.com/${language}/blog`;
+    const canonicalUrl = `https://www.eventnora.com/${language}/blog`;
 
     const posts: BlogPost[] = [
         {
@@ -152,46 +152,41 @@ const Blog: React.FC = () => {
                 <meta name="keywords" content={keywords} />
                 <link rel="canonical" href={canonicalUrl} />
 
-                {/* Open Graph */}
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content={pageTitle} />
                 <meta property="og:description" content={pageDescription} />
                 <meta property="og:url" content={canonicalUrl} />
                 <meta property="og:image" content={weddingTrendImage} />
-                <meta property="og:site_name" content="Event Nora" /> {/* ✅ Bu önemli */}
+                <meta property="og:site_name" content="Event Nora" />
 
-                {/* Twitter */}
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={pageTitle} />
                 <meta name="twitter:description" content={pageDescription} />
                 <meta name="twitter:image" content={weddingTrendImage} />
-                <meta name="twitter:site" content="@eventnora" /> {/* Opsiyonel - varsa ekleyebilirsin */}
+                <meta name="twitter:site" content="@eventnora" />
 
-                {/* Schema.org - WebSite */}
                 <script type="application/ld+json">
                     {JSON.stringify({
                         "@context": "https://schema.org",
                         "@type": "WebSite",
                         "name": "Event Nora",
-                        "url": "https://eventnora.com",
+                        "url": "https://www.eventnora.com",
                     })}
                 </script>
 
-                {/* Schema.org - Organization */}
                 <script type="application/ld+json">
                     {JSON.stringify({
                         "@context": "https://schema.org",
                         "@type": "Organization",
                         "name": "Event Nora",
-                        "url": "https://eventnora.com",
+                        "url": "https://www.eventnora.com",
                         "logo": {
                             "@type": "ImageObject",
-                            "url": "https://eventnora.com/logo.png",
+                            "url": "https://www.eventnora.com/logo.png",
                         },
                     })}
                 </script>
             </Helmet>
-
 
             <section className="py-20 bg-black text-center text-gold">
                 <div className="container mx-auto px-4">
@@ -209,7 +204,7 @@ const Blog: React.FC = () => {
             <section className="py-16 bg-white">
                 <div className="container mx-auto px-4 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                     {visiblePosts.map((post, index) => {
-                        const url = `https://eventnora.com/${language}/blog/${post.slug}`;
+                        const url = `https://www.eventnora.com/${language}/blog/${post.slug}`;
                         const title = isEnglish ? post.titleEn : post.titleTr;
                         const excerpt = isEnglish ? post.excerptEn : post.excerptTr;
 
@@ -230,7 +225,7 @@ const Blog: React.FC = () => {
                                                 name: 'Event Nora',
                                                 logo: {
                                                     '@type': 'ImageObject',
-                                                    url: 'https://eventnora.com/logo.png',
+                                                    url: 'https://www.eventnora.com/logo.png',
                                                 },
                                             },
                                             datePublished: post.date,

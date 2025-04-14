@@ -16,19 +16,21 @@ const Contact = () => {
   const pageDescription = isEnglish
       ? "Let's talk about your next unforgettable event. Reach us anytime to bring your vision to life."
       : 'Bir sonraki unutulmaz etkinliğiniz için bizimle iletişime geçin. Hayalinizi birlikte gerçeğe dönüştürelim.';
+  const canonicalUrl = `https://www.eventnora.com/${isEnglish ? 'en' : 'tr'}/contact`;
 
   return (
       <Layout>
         <Helmet>
           <title>{pageTitle}</title>
           <meta name="description" content={pageDescription} />
-          <link rel="canonical" href={`https://www.eventnora.com/${isEnglish ? 'en' : 'tr'}/contact`} />
+          <meta name="keywords" content="event contact, iletişim, düğün planlama, organizasyon, Event Nora iletişim" />
+          <link rel="canonical" href={canonicalUrl} />
 
           {/* Open Graph */}
           <meta property="og:type" content="website" />
           <meta property="og:title" content={pageTitle} />
           <meta property="og:description" content={pageDescription} />
-          <meta property="og:url" content={`https://www.eventnora.com/${isEnglish ? 'en' : 'tr'}/contact`} />
+          <meta property="og:url" content={canonicalUrl} />
           <meta property="og:site_name" content="Event Nora" />
           <meta property="og:image" content="https://www.eventnora.com/logo.png" />
 
@@ -38,33 +40,39 @@ const Contact = () => {
           <meta name="twitter:description" content={pageDescription} />
           <meta name="twitter:image" content="https://www.eventnora.com/logo.png" />
 
-          {/* WebSite Schema */}
+          {/* Schema.org - WebSite */}
           <script type="application/ld+json">
             {JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              "name": "Event Nora",
-              "url": "https://www.eventnora.com"
+              name: "Event Nora",
+              url: "https://www.eventnora.com"
             })}
           </script>
 
-          {/* Organization Schema */}
+          {/* Schema.org - Organization */}
           <script type="application/ld+json">
             {JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              "name": "Event Nora",
-              "url": "https://www.eventnora.com",
-              "logo": {
+              name: "Event Nora",
+              url: "https://www.eventnora.com",
+              logo: {
                 "@type": "ImageObject",
-                "url": "https://www.eventnora.com/logo.png"
+                url: "https://www.eventnora.com/logo.png"
+              },
+              contactPoint: {
+                "@type": "ContactPoint",
+                telephone: "+90-532-770-1208",
+                contactType: "Customer Service",
+                areaServed: "TR",
+                availableLanguage: ["Turkish", "English"]
               }
             })}
           </script>
         </Helmet>
 
-
-        {/* Hero */}
+        {/* HERO */}
         <section className="py-20 bg-black relative overflow-hidden">
           <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gold to-transparent" />
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -81,80 +89,48 @@ const Contact = () => {
           </div>
         </section>
 
-        {/* Info Grid */}
+        {/* INFO */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                  {isEnglish ? 'Get in Touch' : 'Bize Ulaşın'}
-                </h2>
-                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                  {isEnglish
-                      ? "We're here to help bring your vision to life. Contact us using the information below to start planning your next event."
-                      : 'Vizyonunuzu hayata geçirmenize yardımcı olmak için buradayız. Bir sonraki etkinliğinizi planlamak için aşağıdaki bilgileri kullanabilirsiniz.'}
-                </p>
-              </div>
+            <div className="max-w-4xl mx-auto text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                {isEnglish ? 'Get in Touch' : 'Bize Ulaşın'}
+              </h2>
+              <p className="text-lg text-gray-600">
+                {isEnglish
+                    ? "We're here to help bring your vision to life. Contact us using the information below."
+                    : 'Hayalinizi gerçekleştirmek için buradayız. Aşağıdaki bilgilerle bize ulaşabilirsiniz.'}
+              </p>
+            </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {/* Address */}
-                <a
-                    href="https://maps.app.goo.gl/vfYVa31mdXVF4wLSA"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-gray-50 p-6 rounded-xl text-center hover:shadow-md transition-all block"
-                >
-                  <div className="flex justify-center mb-4">
-                    <div className="p-3 bg-gold/10 rounded-lg inline-flex">
-                      <MapPin className="w-6 h-6 text-gold" />
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                    {isEnglish ? 'Visit Us' : 'Bizi Ziyaret Edin'}
-                  </h3>
-                  <p className="text-gray-600">
-                    Altınşehir Mah. Şenel Cad. No:78B Ümraniye/İstanbul
-                  </p>
-                  <p className="text-gray-600">{isEnglish ? 'Turkey' : 'Türkiye'}</p>
-                </a>
-
-                {/* Phone */}
-                <a
-                    href="tel:+905327701208"
-                    className="bg-gray-50 p-6 rounded-xl text-center hover:shadow-md transition-all block"
-                >
-                  <div className="flex justify-center mb-4">
-                    <div className="p-3 bg-gold/10 rounded-lg inline-flex">
-                      <Phone className="w-6 h-6 text-gold" />
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                    {isEnglish ? 'Call Us' : 'Bizi Arayın'}
-                  </h3>
-                  <p className="text-gray-600">+90 532 770 12 08</p>
-                </a>
-
-                {/* Email */}
-                <a
-                    href="mailto:yesimerdogan@eventnora.com"
-                    className="bg-gray-50 p-6 rounded-xl text-center hover:shadow-md transition-all block"
-                >
-                  <div className="flex justify-center mb-4">
-                    <div className="p-3 bg-gold/10 rounded-lg inline-flex">
-                      <Mail className="w-6 h-6 text-gold" />
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                    {isEnglish ? 'Email Us' : 'E-posta Gönderin'}
-                  </h3>
-                  <p className="text-gray-600">yesimerdogan@eventnora.com</p>
-                </a>
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <ContactCard
+                  href="https://maps.app.goo.gl/vfYVa31mdXVF4wLSA"
+                  icon={<MapPin className="w-6 h-6 text-gold" />}
+                  title={isEnglish ? 'Visit Us' : 'Bizi Ziyaret Edin'}
+                  lines={[
+                    'Altınşehir Mah. Şenel Cad. No:78B',
+                    'Ümraniye / İstanbul',
+                    isEnglish ? 'Turkey' : 'Türkiye',
+                  ]}
+              />
+              <ContactCard
+                  href="tel:+905327701208"
+                  icon={<Phone className="w-6 h-6 text-gold" />}
+                  title={isEnglish ? 'Call Us' : 'Bizi Arayın'}
+                  lines={['+90 532 770 12 08']}
+              />
+              <ContactCard
+                  href="mailto:yesimerdogan@eventnora.com"
+                  icon={<Mail className="w-6 h-6 text-gold" />}
+                  title={isEnglish ? 'Email Us' : 'E-posta Gönderin'}
+                  lines={['yesimerdogan@eventnora.com']}
+              />
             </div>
           </div>
         </section>
 
-        {/* Map */}
+        {/* MAP */}
         <section className="bg-gray-100 py-12">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center mb-8">
@@ -173,7 +149,7 @@ const Contact = () => {
                   width="100%"
                   height="450"
                   style={{ border: 0 }}
-                  allowFullScreen={true}
+                  allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   title={isEnglish ? 'Event Nora Location' : 'Event Nora Konumu'}
@@ -186,3 +162,33 @@ const Contact = () => {
 };
 
 export default Contact;
+
+// 💡 Reusable Card Component
+const ContactCard = ({
+                       href,
+                       icon,
+                       title,
+                       lines,
+                     }: {
+  href: string;
+  icon: React.ReactNode;
+  title: string;
+  lines: string[];
+}) => (
+    <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="bg-gray-50 p-6 rounded-xl text-center hover:shadow-md transition-all block"
+    >
+      <div className="flex justify-center mb-4">
+        <div className="p-3 bg-gold/10 rounded-lg inline-flex">{icon}</div>
+      </div>
+      <h3 className="text-xl font-semibold text-gray-900 mb-3">{title}</h3>
+      {lines.map((line, idx) => (
+          <p key={idx} className="text-gray-600">
+            {line}
+          </p>
+      ))}
+    </a>
+);

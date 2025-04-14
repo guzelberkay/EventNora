@@ -10,11 +10,16 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   const { language, setLanguage, t } = useLanguage();
 
+  const address = 'Altınşehir, Şenel Cd. No:78B, 34000 Ümraniye/İstanbul';
+  const phone = '+90 532 770 12 08';
+  const email = 'yesimerdogan@eventnora.com';
+
   return (
       <footer className="bg-black text-gold/90 pt-16 pb-8">
         <div className="container-custom">
-          {/* Top Content */}
+          {/* Grid Sections */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
+
             {/* Logo & About */}
             <div className="space-y-4">
               <img src={logo} alt="EventNora Logo" className="h-36 w-auto" />
@@ -25,16 +30,16 @@ const Footer = () => {
                 )}
               </p>
               <div className="flex space-x-4">
-                <a href="https://wa.me/905327701208" target="_blank" rel="noopener noreferrer" className="hover:text-gold-light transition-colors" title="WhatsApp">
+                <a href="https://wa.me/905327701208" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="hover:text-gold-light">
                   <MessageCircle size={20} />
                 </a>
-                <a href="https://www.instagram.com/eventnora/" target="_blank" rel="noopener noreferrer" className="hover:text-gold-light transition-colors" title="Instagram">
+                <a href="https://www.instagram.com/eventnora/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-gold-light">
                   <Instagram size={20} />
                 </a>
-                <a href="https://www.linkedin.com/company/eventnora/" target="_blank" rel="noopener noreferrer" className="hover:text-gold-light transition-colors" title="LinkedIn">
+                <a href="https://www.linkedin.com/company/eventnora/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-gold-light">
                   <FaLinkedin size={20} />
                 </a>
-                <a href="https://g.co/kgs/MEC9u4e" target="_blank" rel="noopener noreferrer" className="hover:text-gold-light transition-colors" title="Google Reviews">
+                <a href="https://g.co/kgs/MEC9u4e" target="_blank" rel="noopener noreferrer" aria-label="Google Reviews" className="hover:text-gold-light">
                   <FaGoogle size={20} />
                 </a>
               </div>
@@ -44,29 +49,11 @@ const Footer = () => {
             <div>
               <h4 className="text-lg font-semibold mb-4">{t('Quick Links', 'Hızlı Bağlantılar')}</h4>
               <ul className="space-y-2 text-sm text-gold/80">
-                <li>
-                  <Link to={`/${language}`} className="hover:text-gold">🏠 {t('Home', 'Ana Sayfa')}</Link>
-                </li>
-                <li>
-                  <Link to={`/${language}/${language === 'tr' ? 'hakkimizda' : 'about'}`} className="hover:text-gold">
-                    👥 {t('About Us', 'Hakkımızda')}
-                  </Link>
-                </li>
-                <li>
-                  <Link to={`/${language}/${language === 'tr' ? 'hizmetler' : 'services'}`} className="hover:text-gold">
-                    🛠️ {t('Services', 'Hizmetler')}
-                  </Link>
-                </li>
-                <li>
-                  <Link to={`/${language}/${language === 'tr' ? 'iletisim' : 'contact'}`} className="hover:text-gold">
-                    📞 {t('Contact', 'İletişim')}
-                  </Link>
-                </li>
-                <li>
-                  <Link to={`/${language}/${language === 'tr' ? 'sss' : 'faq'}`} className="hover:text-gold">
-                    ❓ {t('FAQ', 'SSS')}
-                  </Link>
-                </li>
+                <li><Link to={`/${language}`} className="hover:text-gold">🏠 {t('Home', 'Ana Sayfa')}</Link></li>
+                <li><Link to={`/${language}/${language === 'tr' ? 'hakkimizda' : 'about'}`} className="hover:text-gold">👥 {t('About Us', 'Hakkımızda')}</Link></li>
+                <li><Link to={`/${language}/${language === 'tr' ? 'hizmetler' : 'services'}`} className="hover:text-gold">🛠️ {t('Services', 'Hizmetler')}</Link></li>
+                <li><Link to={`/${language}/${language === 'tr' ? 'iletisim' : 'contact'}`} className="hover:text-gold">📞 {t('Contact', 'İletişim')}</Link></li>
+                <li><Link to={`/${language}/${language === 'tr' ? 'sss' : 'faq'}`} className="hover:text-gold">❓ {t('FAQ', 'SSS')}</Link></li>
               </ul>
             </div>
 
@@ -75,19 +62,19 @@ const Footer = () => {
               <h4 className="text-lg font-semibold mb-4">{t('Contact Info', 'İletişim Bilgileri')}</h4>
               <div className="space-y-3 text-sm text-gold/80">
                 <div
-                    onClick={() => window.open('https://maps.app.goo.gl/vfYVa31mdXVF4wLSA', '_blank')}
                     className="flex items-start space-x-3 cursor-pointer hover:underline"
+                    onClick={() => window.open('https://maps.app.goo.gl/vfYVa31mdXVF4wLSA', '_blank')}
                 >
                   <MapPin size={20} className="text-gold mt-0.5" />
-                  <span>Altınşehir, Şenel Cd. No:78B, 34000 Ümraniye/İstanbul</span>
+                  <span>{address}</span>
                 </div>
-                <a href="tel:+905327701208" className="flex items-center space-x-3 hover:text-gold">
+                <a href={`tel:${phone.replace(/\s/g, '')}`} className="flex items-center space-x-3 hover:text-gold">
                   <Phone size={18} className="text-gold" />
-                  <span>+90 532 770 12 08</span>
+                  <span>{phone}</span>
                 </a>
-                <a href="mailto:yesimerdogan@eventnora.com" className="flex items-center space-x-3 hover:text-gold">
+                <a href={`mailto:${email}`} className="flex items-center space-x-3 hover:text-gold">
                   <Mail size={18} className="text-gold" />
-                  <span>yesimerdogan@eventnora.com</span>
+                  <span>{email}</span>
                 </a>
               </div>
             </div>
@@ -96,8 +83,18 @@ const Footer = () => {
             <div>
               <h4 className="text-lg font-semibold mb-4">{t('Language', 'Dil')}</h4>
               <div className="flex space-x-4">
-                <button onClick={() => setLanguage('en')} className={cn('hover:text-gold', language === 'en' && 'text-gold font-semibold')}>English</button>
-                <button onClick={() => setLanguage('tr')} className={cn('hover:text-gold', language === 'tr' && 'text-gold font-semibold')}>Türkçe</button>
+                <button
+                    onClick={() => setLanguage('en')}
+                    className={cn('hover:text-gold', language === 'en' && 'text-gold font-semibold')}
+                >
+                  English
+                </button>
+                <button
+                    onClick={() => setLanguage('tr')}
+                    className={cn('hover:text-gold', language === 'tr' && 'text-gold font-semibold')}
+                >
+                  Türkçe
+                </button>
               </div>
             </div>
           </div>
@@ -105,7 +102,7 @@ const Footer = () => {
           {/* Divider */}
           <div className="border-t border-gold/20 pt-8 mt-8" />
 
-          {/* Bottom Section with CORTEXSOFT Centered */}
+          {/* Footer Bottom */}
           <div className="mt-6 text-center">
             <p className="text-sm text-gold/70 mb-3">
               © {currentYear} EventNora. {t('All rights reserved.', 'Tüm hakları saklıdır.')}

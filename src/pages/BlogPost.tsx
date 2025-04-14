@@ -31,7 +31,7 @@ const BlogPost = () => {
     const pageTitle = isEnglish ? post.titleEn : post.titleTr;
     const pageDescription = (isEnglish ? post.contentEn : post.contentTr).slice(0, 160);
     const content = isEnglish ? post.contentEn : post.contentTr;
-    const canonicalUrl = `https://eventnora.com/${language}/blog/${post.slug}`;
+    const canonicalUrl = `https://www.eventnora.com/${language}/blog/${post.slug}`;
     const postDate = new Date(post.date).toISOString();
     const previousPost = blogPosts[index - 1];
     const nextPost = blogPosts[index + 1];
@@ -41,16 +41,24 @@ const BlogPost = () => {
             <Helmet>
                 <title>{pageTitle} | Event Nora Blog</title>
                 <meta name="description" content={pageDescription} />
+                <meta name="keywords" content={post.tags.join(', ')} />
                 <link rel="canonical" href={canonicalUrl} />
+
+                {/* Open Graph */}
                 <meta property="og:title" content={pageTitle} />
                 <meta property="og:description" content={pageDescription} />
                 <meta property="og:type" content="article" />
                 <meta property="og:url" content={canonicalUrl} />
                 <meta property="og:image" content={post.image} />
+                <meta property="og:site_name" content="Event Nora" />
+
+                {/* Twitter */}
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={pageTitle} />
                 <meta name="twitter:description" content={pageDescription} />
                 <meta name="twitter:image" content={post.image} />
+
+                {/* Schema.org JSON-LD */}
                 <script type="application/ld+json">
                     {JSON.stringify({
                         '@context': 'https://schema.org',
@@ -71,7 +79,7 @@ const BlogPost = () => {
                             name: 'Event Nora',
                             logo: {
                                 '@type': 'ImageObject',
-                                url: 'https://eventnora.com/logo.png',
+                                url: 'https://www.eventnora.com/logo.png',
                             },
                         },
                         datePublished: postDate,
@@ -94,6 +102,7 @@ const BlogPost = () => {
                     <ReactMarkdown>{content}</ReactMarkdown>
                 </div>
 
+                {/* Tags */}
                 <div className="mt-12">
                     <h4 className="text-sm font-semibold text-gray-500 mb-2">
                         {isEnglish ? 'Tags:' : 'Etiketler:'}
@@ -111,6 +120,7 @@ const BlogPost = () => {
                     </div>
                 </div>
 
+                {/* Navigation */}
                 <div className="flex justify-between mt-16 pt-6 border-t border-gray-200 text-sm">
                     {previousPost ? (
                         <Link
@@ -119,9 +129,7 @@ const BlogPost = () => {
                         >
                             👈 {isEnglish ? previousPost.titleEn : previousPost.titleTr}
                         </Link>
-                    ) : (
-                        <div />
-                    )}
+                    ) : <div />}
 
                     {nextPost ? (
                         <Link
@@ -130,9 +138,7 @@ const BlogPost = () => {
                         >
                             {isEnglish ? nextPost.titleEn : nextPost.titleTr} 👉
                         </Link>
-                    ) : (
-                        <div />
-                    )}
+                    ) : <div />}
                 </div>
             </section>
         </Layout>

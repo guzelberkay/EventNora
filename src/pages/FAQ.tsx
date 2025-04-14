@@ -21,6 +21,7 @@ const FAQ = () => {
   const pageDescription = isEnglish
       ? 'Get answers to frequently asked questions about our event planning services.'
       : 'Etkinlik planlama hizmetlerimizle ilgili sıkça sorulan sorulara göz atın.';
+  const canonicalUrl = `https://www.eventnora.com/${isEnglish ? 'en' : 'tr'}/faq`;
 
   const faqs = {
     en: [
@@ -84,13 +85,14 @@ const FAQ = () => {
         <Helmet>
           <title>{pageTitle}</title>
           <meta name="description" content={pageDescription} />
-          <link rel="canonical" href={`https://www.eventnora.com/${isEnglish ? 'en' : 'tr'}/faq`} />
+          <meta name="keywords" content="event planning faq, sıkça sorulan sorular, etkinlik organizasyonu, düğün soruları, Event Nora" />
+          <link rel="canonical" href={canonicalUrl} />
 
           {/* Open Graph */}
           <meta property="og:type" content="website" />
           <meta property="og:title" content={pageTitle} />
           <meta property="og:description" content={pageDescription} />
-          <meta property="og:url" content={`https://www.eventnora.com/${isEnglish ? 'en' : 'tr'}/faq`} />
+          <meta property="og:url" content={canonicalUrl} />
           <meta property="og:site_name" content="Event Nora" />
           <meta property="og:image" content="https://www.eventnora.com/logo.png" />
 
@@ -100,49 +102,48 @@ const FAQ = () => {
           <meta name="twitter:description" content={pageDescription} />
           <meta name="twitter:image" content="https://www.eventnora.com/logo.png" />
 
-          {/* WebSite Schema */}
+          {/* Schema - WebSite */}
           <script type="application/ld+json">
             {JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              "name": "Event Nora",
-              "url": "https://www.eventnora.com"
+              name: "Event Nora",
+              url: "https://www.eventnora.com",
             })}
           </script>
 
-          {/* Organization Schema */}
+          {/* Schema - Organization */}
           <script type="application/ld+json">
             {JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              "name": "Event Nora",
-              "url": "https://www.eventnora.com",
-              "logo": {
+              name: "Event Nora",
+              url: "https://www.eventnora.com",
+              logo: {
                 "@type": "ImageObject",
-                "url": "https://www.eventnora.com/logo.png"
-              }
+                url: "https://www.eventnora.com/logo.png",
+              },
             })}
           </script>
 
-          {/* FAQ Schema – Rich Results için (otomatik oluşturulmuş) */}
+          {/* Schema - FAQPage */}
           <script type="application/ld+json">
             {JSON.stringify({
               "@context": "https://schema.org",
               "@type": "FAQPage",
-              "mainEntity": selectedFaqs.map((faq) => ({
+              mainEntity: selectedFaqs.map((faq) => ({
                 "@type": "Question",
-                "name": faq.question,
-                "acceptedAnswer": {
+                name: faq.question,
+                acceptedAnswer: {
                   "@type": "Answer",
-                  "text": faq.answer
-                }
-              }))
+                  text: faq.answer,
+                },
+              })),
             })}
           </script>
         </Helmet>
 
-
-        {/* Hero Section */}
+        {/* Hero */}
         <section className="py-16 bg-black relative overflow-hidden">
           <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gold to-transparent" />
           <div className="container-custom relative z-10 text-center max-w-3xl mx-auto">
@@ -153,7 +154,7 @@ const FAQ = () => {
           </div>
         </section>
 
-        {/* FAQ Content */}
+        {/* Content */}
         <section className="section">
           <div className="container-custom max-w-3xl">
             <Accordion type="single" collapsible className="space-y-4">

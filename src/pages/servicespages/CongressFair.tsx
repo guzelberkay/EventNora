@@ -15,79 +15,75 @@ const CongressFairEn = () => {
         navigate('/en/contact');
     };
 
-    const seoTitle = 'Congress and Fair Organizations | Professional Event Planning';
+    const seoTitle = 'Congress and Fair Organizations | Professional Event Planning - Event Nora';
     const seoDescription =
         'We offer expert services for congress and fair organizations, including logistics, media, and technical support.';
 
     return (
         <Layout>
             <Helmet>
-                <title>Congress and Fair Organizations | Professional Event Planning - Event Nora</title>
-                <meta
-                    name="description"
-                    content="We offer expert services for congress and fair organizations, including logistics, media, and technical support."
-                />
+                <title>{seoTitle}</title>
+                <meta name="description" content={seoDescription} />
                 <link rel="canonical" href="https://www.eventnora.com/en/services/congress-fair" />
-                <link rel="alternate" hrefLang="tr" href="https://www.eventnora.com/tr/hizmetler/kongre-fuar-organizasyonu" />
+                <link
+                    rel="alternate"
+                    hrefLang="tr"
+                    href="https://www.eventnora.com/tr/hizmetler/kongre-fuar-organizasyonu"
+                />
 
-                {/* Open Graph (Facebook / LinkedIn) */}
+                {/* Open Graph */}
                 <meta property="og:type" content="website" />
-                <meta property="og:title" content="Congress and Fair Organizations | Event Nora" />
-                <meta property="og:description" content="We offer expert services for congress and fair organizations, including logistics, media, and technical support." />
+                <meta property="og:title" content={seoTitle} />
+                <meta property="og:description" content={seoDescription} />
                 <meta property="og:url" content="https://www.eventnora.com/en/services/congress-fair" />
                 <meta property="og:site_name" content="Event Nora" />
                 <meta property="og:image" content="https://www.eventnora.com/logo.png" />
 
                 {/* Twitter Card */}
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Congress and Fair Organizations | Event Nora" />
-                <meta name="twitter:description" content="We offer expert services for congress and fair organizations, including logistics, media, and technical support." />
+                <meta name="twitter:title" content={seoTitle} />
+                <meta name="twitter:description" content={seoDescription} />
                 <meta name="twitter:image" content="https://www.eventnora.com/logo.png" />
 
-                {/* Structured Data: WebSite */}
+                {/* Structured Data */}
                 <script type="application/ld+json">
                     {JSON.stringify({
                         "@context": "https://schema.org",
                         "@type": "WebSite",
-                        "name": "Event Nora",
-                        "url": "https://www.eventnora.com"
+                        name: "Event Nora",
+                        url: "https://www.eventnora.com",
                     })}
                 </script>
-
-                {/* Structured Data: Organization */}
                 <script type="application/ld+json">
                     {JSON.stringify({
                         "@context": "https://schema.org",
                         "@type": "Organization",
-                        "name": "Event Nora",
-                        "url": "https://www.eventnora.com",
-                        "logo": {
+                        name: "Event Nora",
+                        url: "https://www.eventnora.com",
+                        logo: {
                             "@type": "ImageObject",
-                            "url": "https://www.eventnora.com/logo.png"
-                        }
+                            url: "https://www.eventnora.com/logo.png",
+                        },
                     })}
                 </script>
-
-                {/* Structured Data: Service */}
                 <script type="application/ld+json">
                     {JSON.stringify({
                         "@context": "https://schema.org",
                         "@type": "Service",
-                        "serviceType": "Congress and Fair Organization",
-                        "provider": {
+                        serviceType: "Congress and Fair Organization",
+                        provider: {
                             "@type": "Organization",
-                            "name": "Event Nora",
-                            "url": "https://www.eventnora.com"
+                            name: "Event Nora",
+                            url: "https://www.eventnora.com",
                         },
-                        "areaServed": {
+                        areaServed: {
                             "@type": "Place",
-                            "name": "Istanbul"
+                            name: "Istanbul",
                         },
-                        "description": "We offer expert services for congress and fair organizations, including logistics, media, and technical support."
+                        description: seoDescription,
                     })}
                 </script>
             </Helmet>
-
 
             {/* Hero */}
             <section className="py-20 bg-black relative overflow-hidden">
@@ -102,17 +98,17 @@ const CongressFairEn = () => {
                 </div>
             </section>
 
-            {/* Banner */}
+            {/* Image */}
             <section className="w-full h-auto">
                 <img
                     src={congressImage}
-                    alt="Congress and Fair Organization"
+                    alt="Professional congress and fair event organized by Event Nora"
                     loading="lazy"
                     className="w-full h-full object-cover object-center"
                 />
             </section>
 
-            {/* Services */}
+            {/* Service Content */}
             <section className="section bg-white">
                 <div className="container-custom max-w-6xl mx-auto">
                     <h2 className="text-3xl md:text-4xl font-bold text-black mb-14 text-center">
@@ -185,7 +181,7 @@ const CongressFairEn = () => {
                 </div>
             </section>
 
-            {/* Call to Action */}
+            {/* CTA */}
             <section className="section bg-black text-center">
                 <div className="container-custom">
                     <h2 className="text-gold text-3xl md:text-4xl font-extrabold mb-6">
@@ -197,6 +193,7 @@ const CongressFairEn = () => {
                     <button
                         onClick={handleContactClick}
                         className="bg-gold hover:bg-gold-dark text-black font-semibold text-lg py-4 px-10 rounded-full transition-colors shadow-md"
+                        aria-label="Contact Event Nora for congress or fair event"
                     >
                         Contact Us
                     </button>
@@ -208,7 +205,7 @@ const CongressFairEn = () => {
 
 export default CongressFairEn;
 
-// Reusable content block
+// ✅ Reusable Column Block
 const ContentColumn = ({
                            content,
                        }: {
