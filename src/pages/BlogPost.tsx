@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Layout from '@/components/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -7,35 +7,14 @@ import ReactMarkdown from 'react-markdown';
 import { blogPosts } from '@/data/blogPosts';
 
 const BlogPost = () => {
-    const { lang, slug } = useParams();
-    const navigate = useNavigate();
-    const { language, setLanguage } = useLanguage();
+    const { slug } = useParams();
+    const { language } = useLanguage();
+    const isEnglish = language === 'en';
 
-    // ✅ Her blog değiştiğinde sayfayı en üste al
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [slug]);
 
-    useEffect(() => {
-        // Sayfa dilini sadece ilk yüklemede senkronize et
-        if ((lang === 'en' || lang === 'tr') && lang !== language) {
-            setLanguage(lang);
-        }
-        // URL'de geçerli dil yoksa varsayılana yönlendir
-        if (!lang || (lang !== 'en' && lang !== 'tr')) {
-            navigate(`/en${window.location.pathname}`, { replace: true });
-        }
-    }, [lang, language]);
-
-
-    // ✅ Dil değiştirildiğinde URL'yi değiştir
-    useEffect(() => {
-        if ((language === 'en' || language === 'tr') && lang !== language && slug) {
-            navigate(`/blog/${language}/${slug}`, { replace: true });
-        }
-    }, [language]);
-
-    const isEnglish = lang === 'en';
     const index = blogPosts.findIndex((p) => p.slug === slug);
     const post = blogPosts[index];
 
@@ -52,7 +31,7 @@ const BlogPost = () => {
     const pageTitle = isEnglish ? post.titleEn : post.titleTr;
     const pageDescription = (isEnglish ? post.contentEn : post.contentTr).slice(0, 160);
     const content = isEnglish ? post.contentEn : post.contentTr;
-    const canonicalUrl = `https://eventnora.com/blog/${lang}/${post.slug}`;
+    const canonicalUrl = `https://eventnora.com/${language}/blog/${post.slug}`;
     const postDate = new Date(post.date).toISOString();
     const previousPost = blogPosts[index - 1];
     const nextPost = blogPosts[index + 1];
@@ -63,42 +42,39 @@ const BlogPost = () => {
                 <title>{pageTitle} | Event Nora Blog</title>
                 <meta name="description" content={pageDescription} />
                 <link rel="canonical" href={canonicalUrl} />
-                {/* Open Graph */}
                 <meta property="og:title" content={pageTitle} />
                 <meta property="og:description" content={pageDescription} />
                 <meta property="og:type" content="article" />
                 <meta property="og:url" content={canonicalUrl} />
                 <meta property="og:image" content={post.image} />
-                {/* Twitter */}
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={pageTitle} />
                 <meta name="twitter:description" content={pageDescription} />
                 <meta name="twitter:image" content={post.image} />
-                {/* Structured Data */}
                 <script type="application/ld+json">
                     {JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "BlogPosting",
-                        "mainEntityOfPage": {
-                            "@type": "WebPage",
-                            "@id": canonicalUrl
+                        '@context': 'https://schema.org',
+                        '@type': 'BlogPosting',
+                        mainEntityOfPage: {
+                            '@type': 'WebPage',
+                            '@id': canonicalUrl,
                         },
-                        "headline": pageTitle,
-                        "description": pageDescription,
-                        "image": post.image,
-                        "author": {
-                            "@type": "Organization",
-                            "name": "Event Nora"
+                        headline: pageTitle,
+                        description: pageDescription,
+                        image: post.image,
+                        author: {
+                            '@type': 'Organization',
+                            name: 'Event Nora',
                         },
-                        "publisher": {
-                            "@type": "Organization",
-                            "name": "Event Nora",
-                            "logo": {
-                                "@type": "ImageObject",
-                                "url": "https://eventnora.com/logo.png"
-                            }
+                        publisher: {
+                            '@type': 'Organization',
+                            name: 'Event Nora',
+                            logo: {
+                                '@type': 'ImageObject',
+                                url: 'https://eventnora.com/logo.png',
+                            },
                         },
-                        "datePublished": postDate,
+                        datePublished: postDate,
                     })}
                 </script>
             </Helmet>
@@ -118,7 +94,6 @@ const BlogPost = () => {
                     <ReactMarkdown>{content}</ReactMarkdown>
                 </div>
 
-                {/* Etiketler */}
                 <div className="mt-12">
                     <h4 className="text-sm font-semibold text-gray-500 mb-2">
                         {isEnglish ? 'Tags:' : 'Etiketler:'}
@@ -136,11 +111,10 @@ const BlogPost = () => {
                     </div>
                 </div>
 
-                {/* Önceki / Sonraki Yazı */}
                 <div className="flex justify-between mt-16 pt-6 border-t border-gray-200 text-sm">
                     {previousPost ? (
                         <Link
-                            to={`/blog/${lang}/${previousPost.slug}`}
+                            to={`/${language}/blog/${previousPost.slug}`}
                             className="text-gold hover:underline"
                         >
                             👈 {isEnglish ? previousPost.titleEn : previousPost.titleTr}
@@ -151,7 +125,7 @@ const BlogPost = () => {
 
                     {nextPost ? (
                         <Link
-                            to={`/blog/${lang}/${nextPost.slug}`}
+                            to={`/${language}/blog/${nextPost.slug}`}
                             className="text-gold hover:underline text-right"
                         >
                             {isEnglish ? nextPost.titleEn : nextPost.titleTr} 👉

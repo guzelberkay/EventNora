@@ -33,12 +33,48 @@ const About = () => {
 
   return (
       <Layout>
-        <Helmet>
-          <title>{pageTitle}</title>
-          <meta name="description" content={pageDescription} />
-        </Helmet>
+          <Helmet>
+              <title>{pageTitle}</title>
+              <meta name="description" content={pageDescription} />
 
-        {/* Hero Section */}
+              {/* Open Graph (Facebook ve sosyal medya için) */}
+              <meta property="og:type" content="website" />
+              <meta property="og:title" content={pageTitle} />
+              <meta property="og:description" content={pageDescription} />
+              <meta property="og:url" content={`https://www.eventnora.com/${isEnglish ? 'en' : 'tr'}/about`} />
+              <meta property="og:site_name" content="Event Nora" />
+              <meta property="og:image" content="https://www.eventnora.com/logo.png" />
+
+              {/* Twitter Card */}
+              <meta name="twitter:card" content="summary_large_image" />
+              <meta name="twitter:title" content={pageTitle} />
+              <meta name="twitter:description" content={pageDescription} />
+              <meta name="twitter:image" content="https://www.eventnora.com/logo.png" />
+
+              {/* Structured Data - WebSite */}
+              <script type="application/ld+json">
+                  {JSON.stringify({
+                      "@context": "https://schema.org",
+                      "@type": "WebSite",
+                      "name": "Event Nora",
+                      "url": "https://www.eventnora.com",
+                  })}
+              </script>
+
+              {/* Structured Data - Organization */}
+              <script type="application/ld+json">
+                  {JSON.stringify({
+                      "@context": "https://schema.org",
+                      "@type": "Organization",
+                      "name": "Event Nora",
+                      "url": "https://www.eventnora.com",
+                      "logo": "https://www.eventnora.com/logo.png",
+                  })}
+              </script>
+          </Helmet>
+
+
+          {/* Hero Section */}
         <section className="py-16 bg-black relative overflow-hidden">
           <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gold to-transparent" />
           <div className="container-custom relative z-10 text-center max-w-3xl mx-auto">

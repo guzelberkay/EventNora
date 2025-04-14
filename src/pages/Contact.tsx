@@ -22,7 +22,47 @@ const Contact = () => {
         <Helmet>
           <title>{pageTitle}</title>
           <meta name="description" content={pageDescription} />
+          <link rel="canonical" href={`https://www.eventnora.com/${isEnglish ? 'en' : 'tr'}/contact`} />
+
+          {/* Open Graph */}
+          <meta property="og:type" content="website" />
+          <meta property="og:title" content={pageTitle} />
+          <meta property="og:description" content={pageDescription} />
+          <meta property="og:url" content={`https://www.eventnora.com/${isEnglish ? 'en' : 'tr'}/contact`} />
+          <meta property="og:site_name" content="Event Nora" />
+          <meta property="og:image" content="https://www.eventnora.com/logo.png" />
+
+          {/* Twitter */}
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content={pageTitle} />
+          <meta name="twitter:description" content={pageDescription} />
+          <meta name="twitter:image" content="https://www.eventnora.com/logo.png" />
+
+          {/* WebSite Schema */}
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "Event Nora",
+              "url": "https://www.eventnora.com"
+            })}
+          </script>
+
+          {/* Organization Schema */}
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Event Nora",
+              "url": "https://www.eventnora.com",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.eventnora.com/logo.png"
+              }
+            })}
+          </script>
         </Helmet>
+
 
         {/* Hero */}
         <section className="py-20 bg-black relative overflow-hidden">

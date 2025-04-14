@@ -6,7 +6,6 @@ import { cn } from '@/lib/utils';
 import logo from '../images/eventnorasaydam.png';
 import { FaLinkedin, FaGoogle } from 'react-icons/fa';
 
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const { language, setLanguage, t } = useLanguage();
@@ -18,7 +17,7 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
             {/* Logo & About */}
             <div className="space-y-4">
-              <img src={logo} alt="EventNora Logo" className="h-36 w-auto"/>
+              <img src={logo} alt="EventNora Logo" className="h-36 w-auto" />
               <p className="text-sm text-gold/80 max-w-xs">
                 {t(
                     'Creating unforgettable moments with meticulous planning and elegant execution for all your special occasions.',
@@ -26,50 +25,57 @@ const Footer = () => {
                 )}
               </p>
               <div className="flex space-x-4">
-                <a href="https://wa.me/905327701208" target="_blank" rel="noopener noreferrer"
-                   className="hover:text-gold-light transition-colors" title="WhatsApp">
-                  <MessageCircle size={20}/>
+                <a href="https://wa.me/905327701208" target="_blank" rel="noopener noreferrer" className="hover:text-gold-light transition-colors" title="WhatsApp">
+                  <MessageCircle size={20} />
                 </a>
-                <a href="https://www.instagram.com/eventnora/" target="_blank" rel="noopener noreferrer"
-                   className="hover:text-gold-light transition-colors" title="Instagram">
-                  <Instagram size={20}/>
+                <a href="https://www.instagram.com/eventnora/" target="_blank" rel="noopener noreferrer" className="hover:text-gold-light transition-colors" title="Instagram">
+                  <Instagram size={20} />
                 </a>
-                <a href="https://www.linkedin.com/company/eventnora/" target="_blank"
-                   rel="noopener noreferrer" className="hover:text-gold-light transition-colors" title="LinkedIn">
-                  <FaLinkedin size={20}/>
+                <a href="https://www.linkedin.com/company/eventnora/" target="_blank" rel="noopener noreferrer" className="hover:text-gold-light transition-colors" title="LinkedIn">
+                  <FaLinkedin size={20} />
                 </a>
-                <a href="https://g.co/kgs/MEC9u4e" target="_blank" rel="noopener noreferrer"
-                   className="hover:text-gold-light transition-colors" title="Google Reviews">
-                  <FaGoogle size={20}/>
+                <a href="https://g.co/kgs/MEC9u4e" target="_blank" rel="noopener noreferrer" className="hover:text-gold-light transition-colors" title="Google Reviews">
+                  <FaGoogle size={20} />
                 </a>
               </div>
-
-
             </div>
 
             {/* Quick Links */}
             <div>
               <h4 className="text-lg font-semibold mb-4">{t('Quick Links', 'Hızlı Bağlantılar')}</h4>
               <ul className="space-y-2 text-sm text-gold/80">
-                <li><Link to="/" className="hover:text-gold">🏠 {t('Home', 'Ana Sayfa')}</Link></li>
-                <li><Link to="/about" className="hover:text-gold">👥 {t('About Us', 'Hakkımızda')}</Link></li>
-                <li><Link to="/services" className="hover:text-gold">🛠️ {t('Services', 'Hizmetler')}</Link></li>
-                <li><Link to="/contact" className="hover:text-gold">📞 {t('Contact', 'İletişim')}</Link></li>
-                <li><Link to="/faq" className="hover:text-gold">❓ {t('FAQ', 'SSS')}</Link></li>
+                <li>
+                  <Link to={`/${language}`} className="hover:text-gold">🏠 {t('Home', 'Ana Sayfa')}</Link>
+                </li>
+                <li>
+                  <Link to={`/${language}/${language === 'tr' ? 'hakkimizda' : 'about'}`} className="hover:text-gold">
+                    👥 {t('About Us', 'Hakkımızda')}
+                  </Link>
+                </li>
+                <li>
+                  <Link to={`/${language}/${language === 'tr' ? 'hizmetler' : 'services'}`} className="hover:text-gold">
+                    🛠️ {t('Services', 'Hizmetler')}
+                  </Link>
+                </li>
+                <li>
+                  <Link to={`/${language}/${language === 'tr' ? 'iletisim' : 'contact'}`} className="hover:text-gold">
+                    📞 {t('Contact', 'İletişim')}
+                  </Link>
+                </li>
+                <li>
+                  <Link to={`/${language}/${language === 'tr' ? 'sss' : 'faq'}`} className="hover:text-gold">
+                    ❓ {t('FAQ', 'SSS')}
+                  </Link>
+                </li>
               </ul>
             </div>
 
             {/* Contact Info */}
             <div>
-            <h4 className="text-lg font-semibold mb-4">{t('Contact Info', 'İletişim Bilgileri')}</h4>
+              <h4 className="text-lg font-semibold mb-4">{t('Contact Info', 'İletişim Bilgileri')}</h4>
               <div className="space-y-3 text-sm text-gold/80">
                 <div
-                    onClick={() =>
-                        window.open(
-                            'https://maps.app.goo.gl/vfYVa31mdXVF4wLSA',
-                            '_blank'
-                        )
-                    }
+                    onClick={() => window.open('https://maps.app.goo.gl/vfYVa31mdXVF4wLSA', '_blank')}
                     className="flex items-start space-x-3 cursor-pointer hover:underline"
                 >
                   <MapPin size={20} className="text-gold mt-0.5" />
@@ -104,22 +110,20 @@ const Footer = () => {
             <p className="text-sm text-gold/70 mb-3">
               © {currentYear} EventNora. {t('All rights reserved.', 'Tüm hakları saklıdır.')}
             </p>
-
             <a
                 href="https://www.cortexsoftdev.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 group"
             >
-    <span className="text-xs text-gold/60 tracking-wide uppercase font-medium group-hover:text-gold transition">
-      Powered by
-    </span>
+            <span className="text-xs text-gold/60 tracking-wide uppercase font-medium group-hover:text-gold transition">
+              Powered by
+            </span>
               <span className="text-xl sm:text-2xl font-extrabold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-gold via-white to-gold group-hover:brightness-125 transition-all duration-300">
-      CORTEXSOFT
-    </span>
+              CORTEXSOFT
+            </span>
             </a>
           </div>
-
         </div>
       </footer>
   );

@@ -1,43 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Event Nora ile İstanbul'da dijital davetiye, düğün, nişan, doğum günü, kurumsal etkinlik organizasyonları. Kişiye özel tasarımlar, hızlı dijital çözümler, online davetiye hizmetleri."
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.ico" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>Event Nora | Dijital Davetiye, Etkinlik ve Organizasyon - Ümraniye & Altınşehir</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.ico" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+  <!-- 🌍 Language declarations -->
+  <link rel="alternate" href="https://eventnora.com/" hreflang="en" />
+  <link rel="alternate" href="https://eventnora.com/tr/" hreflang="tr" />
+  <link rel="alternate" href="https://eventnora.com/" hreflang="x-default" />
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+  <!-- ✅ SEO Basics -->
+  <title>Event Nora | Digital Invitations & Event Planning</title>
+  <meta name="description" content="Event Nora offers custom digital invitations, event planning, birthday and corporate organization services in Istanbul. Check our blog, services, and contact page.">
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Schema Markup -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Event Nora",
+      "url": "https://eventnora.com",
+      "logo": "https://eventnora.com/favicon.ico",
+      "sameAs": [
+        "https://www.instagram.com/eventnora",
+        "https://www.facebook.com/eventnora"
+      ]
+    }
+  </script>
+</head>
+<body>
+<noscript>JavaScript must be enabled to run this app.</noscript>
+<div id="root"></div>
+
+<!-- 🔗 SEO Yardımcı Gizli Menü -->
+<nav style="display:none;">
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/services">Services</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/contact">Contact</a></li>
+    <li><a href="/tr/">Türkçe Sürüm</a></li>
+  </ul>
+</nav>
+</body>
 </html>

@@ -15,10 +15,21 @@ import teknikdestek from '../images/teknik-destek-hizmetleri.jpg';
 import weddingcolor from '../images/wedding-color-ideas.jpg';
 import rsvp from '../images/rsvp.png';
 
-const Blog = () => {
+interface BlogPost {
+    slug: string;
+    titleTr: string;
+    titleEn: string;
+    excerptTr: string;
+    excerptEn: string;
+    image: string;
+    tags: string[];
+    date: string;
+}
+
+const Blog: React.FC = () => {
     const { language } = useLanguage();
     const isEnglish = language === 'en';
-    const [visibleCount, setVisibleCount] = useState(6);
+    const [visibleCount, setVisibleCount] = useState<number>(6);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -36,9 +47,9 @@ const Blog = () => {
         ? 'event blog, wedding trends, digital invitation, RSVP online, party tips, creative event design'
         : 'düğün blogu, dijital davetiye, qr kod, rsvp nedir, davetiye trendleri, etkinlik tasarımı';
 
-    const canonicalUrl = `https://eventnora.com/blog/${isEnglish ? 'en' : 'tr'}`;
+    const canonicalUrl = `https://eventnora.com/${language}/blog`;
 
-    const posts = [
+    const posts: BlogPost[] = [
         {
             slug: '2025-wedding-invitation-trends',
             titleTr: '2025 Düğün Davetiye Trendleri',
@@ -140,16 +151,47 @@ const Blog = () => {
                 <meta name="description" content={pageDescription} />
                 <meta name="keywords" content={keywords} />
                 <link rel="canonical" href={canonicalUrl} />
+
+                {/* Open Graph */}
+                <meta property="og:type" content="website" />
                 <meta property="og:title" content={pageTitle} />
                 <meta property="og:description" content={pageDescription} />
                 <meta property="og:url" content={canonicalUrl} />
-                <meta property="og:type" content="website" />
                 <meta property="og:image" content={weddingTrendImage} />
+                <meta property="og:site_name" content="Event Nora" /> {/* ✅ Bu önemli */}
+
+                {/* Twitter */}
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={pageTitle} />
                 <meta name="twitter:description" content={pageDescription} />
                 <meta name="twitter:image" content={weddingTrendImage} />
+                <meta name="twitter:site" content="@eventnora" /> {/* Opsiyonel - varsa ekleyebilirsin */}
+
+                {/* Schema.org - WebSite */}
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "WebSite",
+                        "name": "Event Nora",
+                        "url": "https://eventnora.com",
+                    })}
+                </script>
+
+                {/* Schema.org - Organization */}
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Organization",
+                        "name": "Event Nora",
+                        "url": "https://eventnora.com",
+                        "logo": {
+                            "@type": "ImageObject",
+                            "url": "https://eventnora.com/logo.png",
+                        },
+                    })}
+                </script>
             </Helmet>
+
 
             <section className="py-20 bg-black text-center text-gold">
                 <div className="container mx-auto px-4">
@@ -167,7 +209,7 @@ const Blog = () => {
             <section className="py-16 bg-white">
                 <div className="container mx-auto px-4 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                     {visiblePosts.map((post, index) => {
-                        const url = `https://eventnora.com/blog/${isEnglish ? 'en' : 'tr'}/${post.slug}`;
+                        const url = `https://eventnora.com/${language}/blog/${post.slug}`;
                         const title = isEnglish ? post.titleEn : post.titleTr;
                         const excerpt = isEnglish ? post.excerptEn : post.excerptTr;
 
@@ -176,28 +218,28 @@ const Blog = () => {
                                 <Helmet>
                                     <script type="application/ld+json">
                                         {JSON.stringify({
-                                            "@context": "https://schema.org",
-                                            "@type": "BlogPosting",
-                                            "mainEntityOfPage": { "@type": "WebPage", "@id": url },
-                                            "headline": title,
-                                            "description": excerpt,
-                                            "image": post.image,
-                                            "author": { "@type": "Organization", "name": "Event Nora" },
-                                            "publisher": {
-                                                "@type": "Organization",
-                                                "name": "Event Nora",
-                                                "logo": {
-                                                    "@type": "ImageObject",
-                                                    "url": "https://eventnora.com/logo.png",
+                                            '@context': 'https://schema.org',
+                                            '@type': 'BlogPosting',
+                                            mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+                                            headline: title,
+                                            description: excerpt,
+                                            image: post.image,
+                                            author: { '@type': 'Organization', name: 'Event Nora' },
+                                            publisher: {
+                                                '@type': 'Organization',
+                                                name: 'Event Nora',
+                                                logo: {
+                                                    '@type': 'ImageObject',
+                                                    url: 'https://eventnora.com/logo.png',
                                                 },
                                             },
-                                            "datePublished": post.date,
+                                            datePublished: post.date,
                                         })}
                                     </script>
                                 </Helmet>
 
                                 <Link
-                                    to={`/blog/${isEnglish ? 'en' : 'tr'}/${post.slug}`}
+                                    to={`/${language}/blog/${post.slug}`}
                                     className="block bg-gray-50 rounded-xl shadow hover:shadow-lg transition-all"
                                 >
                                     <img

@@ -2,48 +2,73 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Layout from '@/components/Layout';
-import { useLanguage } from '@/contexts/LanguageContext';
 import personalImage from '@/images/personal_event.png';
 
 const PersonalEvent = () => {
-    const { language } = useLanguage();
     const navigate = useNavigate();
-    const isEnglish = language === 'en';
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
 
     const handleContactClick = () => {
-        navigate('/contact');
+        navigate('/en/contact');
     };
-
-    const seoTitle = isEnglish
-        ? 'Personal Event Planning Services | EventNora'
-        : 'Kişisel Etkinlik Planlama Hizmetleri | EventNora';
-
-    const seoDescription = isEnglish
-        ? 'From birthdays to engagements and baby showers – we design your most special memories with elegant concepts and professional execution.'
-        : 'Doğum gününden nişana, baby shower’dan mezuniyete kadar en özel anlarınızı profesyonelce ve yaratıcı konseptlerle planlıyoruz.';
 
     return (
         <Layout>
             <Helmet>
-                <title>{seoTitle}</title>
-                <meta name="description" content={seoDescription} />
+                <title>Personal Event Planning Services | Event Nora</title>
+                <meta
+                    name="description"
+                    content="From birthdays to engagements and baby showers – we design your most special memories with elegant concepts and professional execution."
+                />
+                <link rel="canonical" href="https://www.eventnora.com/en/services/personal-event" />
+                <link rel="alternate" hrefLang="tr" href="https://www.eventnora.com/tr/hizmetler/kisisel-etkinlik-planlamasi" />
+
+                {/* Open Graph (Facebook, LinkedIn vs.) */}
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content="Personal Event Planning Services | Event Nora" />
+                <meta property="og:description" content="From birthdays to engagements and baby showers – we design your most special memories with elegant concepts and professional execution." />
+                <meta property="og:url" content="https://www.eventnora.com/en/services/personal-event" />
+                <meta property="og:image" content="https://www.eventnora.com/images/personal_event.png" />
+                <meta property="og:site_name" content="Event Nora" />
+
+                {/* Twitter Card */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Personal Event Planning Services | Event Nora" />
+                <meta name="twitter:description" content="From birthdays to engagements and baby showers – we design your most special memories with elegant concepts and professional execution." />
+                <meta name="twitter:image" content="https://www.eventnora.com/images/personal_event.png" />
+
+                {/* Schema.org Structured Data */}
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Service",
+                        "name": "Personal Event Planning",
+                        "provider": {
+                            "@type": "Organization",
+                            "name": "Event Nora",
+                            "url": "https://www.eventnora.com"
+                        },
+                        "areaServed": {
+                            "@type": "Place",
+                            "name": "Istanbul"
+                        },
+                        "description": "From birthdays to engagements and baby showers – we design your most special memories with elegant concepts and professional execution."
+                    })}
+                </script>
             </Helmet>
 
             {/* Hero Section */}
-            <section className="py-16 bg-black relative overflow-hidden">
-                <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gold to-transparent"></div>
+            <section className="py-20 bg-black relative overflow-hidden">
+                <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gold to-transparent" />
                 <div className="container-custom relative z-10 text-center max-w-3xl mx-auto">
-                    <h1 className="heading-1 text-gold mb-4">
-                        {isEnglish ? '🎈 Personal Event Planning' : '🎈 Kişisel Etkinlik Planlaması'}
+                    <h1 className="text-gold text-4xl md:text-5xl font-extrabold mb-6">
+                        🎈 Personal Event Planning
                     </h1>
-                    <p className="text-gold-light/80 text-lg">
-                        {isEnglish
-                            ? 'Your most special moments, perfected with professional touches!'
-                            : 'Hayatınızın En Özel Anları, Profesyonel Dokunuşlarla Mükemmelleşir!'}
+                    <p className="text-gold-light/90 text-xl leading-relaxed font-light">
+                        Your most special moments, perfected with professional touches!
                     </p>
                 </div>
             </section>
@@ -52,7 +77,7 @@ const PersonalEvent = () => {
             <section className="w-full h-auto">
                 <img
                     src={personalImage}
-                    alt={isEnglish ? 'Personal Event' : 'Kişisel Etkinlik'}
+                    alt="Personal Event"
                     className="w-full h-auto object-cover object-center"
                     loading="lazy"
                 />
@@ -61,70 +86,46 @@ const PersonalEvent = () => {
             {/* Services Section */}
             <section className="section bg-white">
                 <div className="container-custom max-w-6xl mx-auto">
-                    <h2 className="text-3xl font-bold text-black mb-10 text-center">
-                        {isEnglish
-                            ? 'Our Personal Event Services'
-                            : 'Kişisel Etkinlik Hizmetlerimiz'}
+                    <h2 className="text-3xl md:text-4xl font-bold text-black mb-14 text-center">
+                        Our Personal Event Services
                     </h2>
 
-                    <div className="flex flex-wrap gap-10 text-textGray justify-center text-sm leading-relaxed">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-textGray">
                         <ContentColumn
-                            items={
-                                isEnglish
-                                    ? [
-                                        '🌟 From birthdays to engagements, baby showers to graduations — we plan every detail of your special moments to perfection.',
-                                        '📍 <strong>Our Service Content:</strong>',
-                                        '🎉 <strong>Event Planning</strong><br />• Event concept planning<br />• Guest list, invitations, seating<br />• Music, entertainment, and activities<br />• Scheduling & time management',
-                                        '🎨 <strong>Decoration & Design</strong><br />• Personalized themes<br />• Venue and backdrop decoration<br />• Balloons, flowers, table setups<br />• Photo booth & entrance design',
-                                        '🍰 <strong>Food & Beverage</strong><br />• Menu planning & catering<br />• Cake & snack tables<br />• Drink bar setups<br />• Special dietary options',
-                                    ]
-                                    : [
-                                        '🌟 Doğum gününden nişana, baby shower’dan mezuniyete kadar özel anlarınızı sizin için mükemmel şekilde planlıyoruz.',
-                                        '📍 <strong>Hizmet İçeriğimiz:</strong>',
-                                        '🎉 <strong>Organizasyon Planlaması</strong><br />• Konsept belirleme<br />• Davetli listesi, davetiye ve oturma düzeni<br />• Müzik, eğlence ve aktiviteler<br />• Zaman yönetimi ve günlük akış',
-                                        '🎨 <strong>Dekorasyon & Tasarım</strong><br />• Kişiye özel temalar<br />• Mekân & arka plan süslemeleri<br />• Balon, çiçek ve masa düzenlemeleri<br />• Fotoğraf köşesi ve giriş tasarımı',
-                                        '🍰 <strong>Yiyecek & İkram</strong><br />• Menü & catering hizmeti<br />• Pasta, kurabiye, özel atıştırmalıklar<br />• Kokteyl bar sunumu<br />• Diyet ve özel menüler',
-                                    ]
-                            }
+                            items={[
+                                '🌟 From birthdays to engagements, baby showers to graduations — we plan every detail of your special moments to perfection.',
+                                '📍 <strong>Our Service Content:</strong>',
+                                '🎉 <strong>Event Planning</strong><br />• Event concept planning<br />• Guest list, invitations, seating<br />• Music, entertainment, and activities<br />• Scheduling & time management',
+                                '🎨 <strong>Decoration & Design</strong><br />• Personalized themes<br />• Venue and backdrop decoration<br />• Balloons, flowers, table setups<br />• Photo booth & entrance design',
+                                '🍰 <strong>Food & Beverage</strong><br />• Menu planning & catering<br />• Cake & snack tables<br />• Drink bar setups<br />• Special dietary options',
+                            ]}
                         />
 
                         <ContentColumn
-                            items={
-                                isEnglish
-                                    ? [
-                                        '📸 <strong>Memory Creation</strong><br />• Photo & video coverage<br />• Drone & live stream<br />• Event aftermovie & gallery<br />• Souvenirs & custom prints',
-                                        '🎈 <strong>Event Types</strong><br />• Birthday Parties<br />• Engagement & Henna<br />• Baby Shower & Gender Reveal<br />• Graduation & Private Celebrations<br />• Marriage Proposals',
-                                        '💫 We plan your dream moment — you just enjoy it!<br />📍 Contact us now for details.',
-                                    ]
-                                    : [
-                                        '📸 <strong>Anı Yaratımı</strong><br />• Fotoğraf & video çekimi<br />• Canlı yayın ve drone görüntüleri<br />• Etkinlik sonrası video & galeri<br />• Anı defteri ve özel hediyelikler',
-                                        '🎈 <strong>Etkinlik Türleri</strong><br />• Doğum Günleri<br />• Nişan & Kına<br />• Baby Shower & Cinsiyet Partisi<br />• Mezuniyet & Özel Kutlamalar<br />• Evlilik Teklifi Organizasyonları',
-                                        '💫 Hayal ettiğiniz anı sizin için planlıyoruz — size sadece keyfini çıkarmak kalıyor!<br />📍 Detaylar için bizimle iletişime geçin.',
-                                    ]
-                            }
+                            items={[
+                                '📸 <strong>Memory Creation</strong><br />• Photo & video coverage<br />• Drone & live stream<br />• Event aftermovie & gallery<br />• Souvenirs & custom prints',
+                                '🎈 <strong>Event Types</strong><br />• Birthday Parties<br />• Engagement & Henna<br />• Baby Shower & Gender Reveal<br />• Graduation & Private Celebrations<br />• Marriage Proposals',
+                                '💫 We plan your dream moment — you just enjoy it!<br />📍 Contact us now for details.',
+                            ]}
                         />
                     </div>
                 </div>
             </section>
 
-            {/* CTA Section */}
+            {/* Call to Action */}
             <section className="section bg-black text-center">
                 <div className="container-custom">
-                    <h2 className="heading-2 text-gold mb-4">
-                        {isEnglish
-                            ? 'Let’s Make It Unforgettable!'
-                            : 'Haydi, Bu Anı Unutulmaz Kılalım!'}
+                    <h2 className="text-gold text-3xl md:text-4xl font-extrabold mb-6">
+                        Let’s Make It Unforgettable!
                     </h2>
-                    <p className="text-gold-light/80 mb-8 max-w-2xl mx-auto">
-                        {isEnglish
-                            ? 'Contact us today to begin planning your event!'
-                            : 'Etkinliğinizi planlamaya başlamak için hemen bizimle iletişime geçin!'}
+                    <p className="text-gold-light/80 mb-8 max-w-2xl mx-auto text-lg leading-relaxed">
+                        Contact us today to begin planning your event!
                     </p>
                     <button
                         onClick={handleContactClick}
-                        className="bg-gold hover:bg-gold-dark text-black font-medium py-3 px-8 rounded-full transition-colors"
+                        className="bg-gold hover:bg-gold-dark text-black font-semibold text-lg py-4 px-10 rounded-full transition-colors shadow-md"
                     >
-                        {isEnglish ? 'Contact Us' : 'İletişime Geçin'}
+                        Contact Us
                     </button>
                 </div>
             </section>
@@ -134,9 +135,9 @@ const PersonalEvent = () => {
 
 export default PersonalEvent;
 
-// Reusable content column component
+// Reusable Column Component
 const ContentColumn = ({ items }: { items: string[] }) => (
-    <div className="w-full md:w-[48%] space-y-4">
+    <div className="space-y-6 text-base md:text-lg leading-relaxed">
         {items.map((item, index) => (
             <p key={index} dangerouslySetInnerHTML={{ __html: item }} />
         ))}

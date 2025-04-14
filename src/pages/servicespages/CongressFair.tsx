@@ -1,12 +1,10 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import Layout from '@/components/Layout';
-import { useLanguage } from '@/contexts/LanguageContext';
 import congressImage from '@/images/congressfair_event.png';
 
-const CongressFair = () => {
-    const { language } = useLanguage();
+const CongressFairEn = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -14,117 +12,193 @@ const CongressFair = () => {
     }, []);
 
     const handleContactClick = () => {
-        navigate('/contact');
+        navigate('/en/contact');
     };
 
-    const isEnglish = language === 'en';
-
-    const seoTitle = isEnglish
-        ? 'Congress and Fair Organizations | Professional Event Planning'
-        : 'Kongre ve Fuar Organizasyonları | Profesyonel Etkinlik Planlama';
-
-    const seoDescription = isEnglish
-        ? 'We offer expert services for congress and fair organizations, including logistics, media, and technical support.'
-        : 'Kongre ve fuar organizasyonlarında lojistikten teknik desteğe kadar profesyonel hizmet sunuyoruz.';
+    const seoTitle = 'Congress and Fair Organizations | Professional Event Planning';
+    const seoDescription =
+        'We offer expert services for congress and fair organizations, including logistics, media, and technical support.';
 
     return (
         <Layout>
             <Helmet>
-                <title>{seoTitle}</title>
-                <meta name="description" content={seoDescription} />
+                <title>Congress and Fair Organizations | Professional Event Planning - Event Nora</title>
+                <meta
+                    name="description"
+                    content="We offer expert services for congress and fair organizations, including logistics, media, and technical support."
+                />
+                <link rel="canonical" href="https://www.eventnora.com/en/services/congress-fair" />
+                <link rel="alternate" hrefLang="tr" href="https://www.eventnora.com/tr/hizmetler/kongre-fuar-organizasyonu" />
+
+                {/* Open Graph (Facebook / LinkedIn) */}
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content="Congress and Fair Organizations | Event Nora" />
+                <meta property="og:description" content="We offer expert services for congress and fair organizations, including logistics, media, and technical support." />
+                <meta property="og:url" content="https://www.eventnora.com/en/services/congress-fair" />
+                <meta property="og:site_name" content="Event Nora" />
+                <meta property="og:image" content="https://www.eventnora.com/logo.png" />
+
+                {/* Twitter Card */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Congress and Fair Organizations | Event Nora" />
+                <meta name="twitter:description" content="We offer expert services for congress and fair organizations, including logistics, media, and technical support." />
+                <meta name="twitter:image" content="https://www.eventnora.com/logo.png" />
+
+                {/* Structured Data: WebSite */}
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "WebSite",
+                        "name": "Event Nora",
+                        "url": "https://www.eventnora.com"
+                    })}
+                </script>
+
+                {/* Structured Data: Organization */}
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Organization",
+                        "name": "Event Nora",
+                        "url": "https://www.eventnora.com",
+                        "logo": {
+                            "@type": "ImageObject",
+                            "url": "https://www.eventnora.com/logo.png"
+                        }
+                    })}
+                </script>
+
+                {/* Structured Data: Service */}
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Service",
+                        "serviceType": "Congress and Fair Organization",
+                        "provider": {
+                            "@type": "Organization",
+                            "name": "Event Nora",
+                            "url": "https://www.eventnora.com"
+                        },
+                        "areaServed": {
+                            "@type": "Place",
+                            "name": "Istanbul"
+                        },
+                        "description": "We offer expert services for congress and fair organizations, including logistics, media, and technical support."
+                    })}
+                </script>
             </Helmet>
 
-            <section className="py-16 bg-black relative overflow-hidden">
-                <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gold to-transparent"></div>
+
+            {/* Hero */}
+            <section className="py-20 bg-black relative overflow-hidden">
+                <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gold to-transparent" />
                 <div className="container-custom relative z-10 text-center max-w-3xl mx-auto">
-                    <h1 className="heading-1 text-gold mb-4">
-                        {isEnglish ? 'Congress and Fair Organizations' : 'Kongre ve Fuar Organizasyonları'}
+                    <h1 className="text-gold text-4xl md:text-5xl font-extrabold mb-6">
+                        🏛️ Congress and Fair Organizations
                     </h1>
-                    <p className="text-gold-light/80 text-lg">
-                        {isEnglish
-                            ? 'Professional organization for business and knowledge-sharing events'
-                            : 'İş ve bilgi paylaşım etkinlikleri için profesyonel organizasyon'}
+                    <p className="text-gold-light/90 text-xl leading-relaxed font-light">
+                        Professional support for business and knowledge-sharing events
                     </p>
                 </div>
             </section>
 
+            {/* Banner */}
             <section className="w-full h-auto">
                 <img
                     src={congressImage}
+                    alt="Congress and Fair Organization"
                     loading="lazy"
-                    alt={isEnglish ? 'Congress and Fair Organization' : 'Kongre ve Fuar Organizasyonu'}
                     className="w-full h-full object-cover object-center"
                 />
             </section>
 
+            {/* Services */}
             <section className="section bg-white">
                 <div className="container-custom max-w-6xl mx-auto">
-                    <h2 className="text-3xl font-bold text-black mb-10 text-center">
-                        {isEnglish ? 'Our Services' : 'Hizmetlerimiz'}
+                    <h2 className="text-3xl md:text-4xl font-bold text-black mb-14 text-center">
+                        Our Services
                     </h2>
-                    <div className="flex flex-wrap gap-10 text-textGray justify-center">
-                        {isEnglish ? (
-                            <>
-                                <ServiceColumn
-                                    items={[
-                                        '🎓 Where Knowledge, Collaboration, and Success Meet!',
-                                        '🌟 From scientific congresses to industry fairs, academic meetings to product launches — we plan and execute every event with professionalism.',
-                                        '📍 Our Service Scope Includes:',
-                                        '🗣️ Congress Management\n• Academic and professional congresses\n• Abstract submission and call management\n• Participant registration and badge system\n• Hall planning, simultaneous translation, technical setup',
-                                        '🏢 Fair Organization\n• Booth layout planning for companies\n• Visual setup of fairgrounds\n• Visitor flow and guidance system\n• Booth material, brochures, and product display support',
-                                        '📋 Logistics and Technical Support\n• Transportation, accommodation, and transfer\n• Venue selection and contract processes\n• Sound, light, projection systems\n• Registration, IT, and guidance services',
-                                    ]}
-                                />
-                                <ServiceColumn
-                                    items={[
-                                        '📸 Promotion & Media Management\n• Printed & digital invitations, catalogs, banners\n• Press releases, livestreams, post-event content\n• Social media content planning & management\n• Photography, videography, drone shots',
-                                        '🎯 Types of Events\n• National & International Academic Congresses\n• Health, Education, Technology & Industrial Fairs\n• Product Launches & Business Forums\n• Symposiums, Panels, and Workshops',
-                                        '📍 We handle every detail to enhance your corporate prestige.\n🧠 You focus on the content, we’ll handle the rest!',
-                                    ]}
-                                />
-                            </>
-                        ) : (
-                            <>
-                                <ServiceColumn
-                                    items={[
-                                        '🎓 Bilgi, İş Birliği ve Başarının Buluşma Noktası!',
-                                        '🌟 Bilimsel kongrelerden sektörel fuarlara, akademik toplantılardan ürün lansmanlarına kadar her ölçekte organizasyonu profesyonelce planlıyoruz.',
-                                        '📍 Hizmet İçeriğimiz:',
-                                        '🗣️ Kongre Yönetimi\n• Akademik ve mesleki kongre organizasyonları\n• Bildiri yönetimi ve çağrı takibi\n• Katılımcı kayıt sistemi ve yaka kartı\n• Salon planlaması, simultane çeviri ve teknik altyapı',
-                                        '🏢 Fuar Organizasyonu\n• Firma stand yerleşimi\n• Fuar alanı kurulumu ve görselliği\n• Ziyaretçi yönlendirme sistemleri\n• Stand malzeme ve ürün sunum desteği',
-                                        '📋 Lojistik ve Teknik Destek\n• Ulaşım, konaklama ve transfer\n• Mekân seçimi ve sözleşme süreçleri\n• Ses, ışık, projeksiyon sistemleri\n• Kayıt ve bilgi işlem hizmetleri',
-                                    ]}
-                                />
-                                <ServiceColumn
-                                    items={[
-                                        '📸 Tanıtım & Medya Yönetimi\n• Basılı/dijital davetiyeler, kataloglar\n• Basın bülteni, canlı yayın, içerik üretimi\n• Sosyal medya planlama ve yönetim\n• Fotoğraf, video ve drone çekimi',
-                                        '🎯 Organizasyon Türleri\n• Ulusal & Uluslararası Akademik Kongreler\n• Sağlık, Eğitim, Teknoloji & Sanayi Fuarları\n• Ürün Lansmanları & İş Forumları\n• Sempozyum, Panel, Çalıştaylar',
-                                        '📍 Kurumsal prestijinize değer katacak her detayı biz düşünüyoruz.\n🧠 Siz içeriğe odaklanın, organizasyonu biz üstlenelim!',
-                                    ]}
-                                />
-                            </>
-                        )}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-textGray text-lg leading-relaxed">
+                        <ContentColumn
+                            content={[
+                                {
+                                    type: 'text',
+                                    text: '🎓 Where knowledge, collaboration and success meet — we plan and execute every scale of congress and fair with professionalism.',
+                                },
+                                {
+                                    title: '🗣️ Congress Management',
+                                    items: [
+                                        'Academic and professional congresses',
+                                        'Abstract submission and call management',
+                                        'Participant registration and badge system',
+                                        'Hall planning, simultaneous translation, technical setup',
+                                    ],
+                                },
+                                {
+                                    title: '🏢 Fair Organization',
+                                    items: [
+                                        'Booth layout planning for companies',
+                                        'Visual setup and design of fairgrounds',
+                                        'Visitor flow and navigation systems',
+                                        'Support for booth materials and product display',
+                                    ],
+                                },
+                            ]}
+                        />
+
+                        <ContentColumn
+                            content={[
+                                {
+                                    title: '📋 Logistics & Technical Support',
+                                    items: [
+                                        'Transportation, accommodation and transfers',
+                                        'Venue selection and contract processes',
+                                        'Sound, light and projection systems',
+                                        'Registration, IT and guidance services',
+                                    ],
+                                },
+                                {
+                                    title: '📸 Promotion & Media Management',
+                                    items: [
+                                        'Printed/digital invitations, catalogs, banners',
+                                        'Press releases, livestreams, post-event content',
+                                        'Social media content planning and management',
+                                        'Photography, videography, drone shots',
+                                    ],
+                                },
+                                {
+                                    title: '🎯 Types of Events',
+                                    items: [
+                                        'National & International Academic Congresses',
+                                        'Health, Education, Technology & Industry Fairs',
+                                        'Product Launches & Business Forums',
+                                        'Symposiums, Panels, and Workshops',
+                                    ],
+                                },
+                                {
+                                    type: 'text',
+                                    text: '📍 We handle every detail to enhance your corporate image.\n🧠 You focus on the content, we’ll take care of the rest.',
+                                },
+                            ]}
+                        />
                     </div>
                 </div>
             </section>
 
+            {/* Call to Action */}
             <section className="section bg-black text-center">
                 <div className="container-custom">
-                    <h2 className="heading-2 text-gold mb-4">
-                        {isEnglish
-                            ? 'Ready to organize your professional event?'
-                            : 'Profesyonel etkinliğinizi organize etmeye hazır mısınız?'}
+                    <h2 className="text-gold text-3xl md:text-4xl font-extrabold mb-6">
+                        Ready to organize your next professional event?
                     </h2>
-                    <p className="text-gold-light/80 mb-8 max-w-2xl mx-auto">
-                        {isEnglish
-                            ? 'Contact us for expert event organization services'
-                            : 'Uzman etkinlik organizasyon hizmetleri için bizimle iletişime geçin'}
+                    <p className="text-gold-light/80 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
+                        Contact us today for strategic and effective event planning.
                     </p>
                     <button
                         onClick={handleContactClick}
-                        className="bg-gold hover:bg-gold-dark text-black font-medium py-3 px-8 rounded-full transition-colors"
+                        className="bg-gold hover:bg-gold-dark text-black font-semibold text-lg py-4 px-10 rounded-full transition-colors shadow-md"
                     >
-                        {isEnglish ? 'Contact Us' : 'İletişime Geçin'}
+                        Contact Us
                     </button>
                 </div>
             </section>
@@ -132,13 +206,33 @@ const CongressFair = () => {
     );
 };
 
-// Reusable service column component
-const ServiceColumn = ({ items }: { items: string[] }) => (
-    <div className="w-full md:w-[48%] space-y-4">
-        {items.map((item, index) => (
-            <p key={index} dangerouslySetInnerHTML={{ __html: item.replace(/\n/g, '<br />') }}></p>
-        ))}
+export default CongressFairEn;
+
+// Reusable content block
+const ContentColumn = ({
+                           content,
+                       }: {
+    content: (
+        | { type: 'text'; text: string }
+        | { title: string; items: string[] }
+        )[];
+}) => (
+    <div className="space-y-6">
+        {content.map((block, index) =>
+            'text' in block ? (
+                <p key={index} className="text-base md:text-lg whitespace-pre-line">
+                    {block.text}
+                </p>
+            ) : (
+                <div key={index}>
+                    <h3 className="text-xl font-semibold mb-2">{block.title}</h3>
+                    <ul className="space-y-1 pl-4 list-disc marker:text-gold">
+                        {block.items.map((item, idx) => (
+                            <li key={idx}>{item}</li>
+                        ))}
+                    </ul>
+                </div>
+            )
+        )}
     </div>
 );
-
-export default CongressFair;
