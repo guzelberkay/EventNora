@@ -15,104 +15,76 @@ const Services = () => {
 
   const services = [
     {
-      name: isEnglish ? 'Engagement and Wedding Organization' : 'Nişan ve Düğün Organizasyonu',
-      desc: isEnglish
-          ? 'Complete planning and coordination for your perfect wedding day.'
-          : 'Hayalinizdeki düğün günü için eksiksiz planlama ve koordinasyon.',
+      name: 'Engagement and Wedding Organization',
+      desc: 'Complete planning and coordination for your perfect wedding day.',
       img: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&q=80',
-      link: `/${language}/services/engagement-wedding-organization`,
+      link: '/services/engagement-wedding-organization',
     },
     {
-      name: isEnglish ? 'Birthday and Special Day Organizations' : 'Doğum Günü & Özel Gün Organizasyonları',
-      desc: isEnglish
-          ? 'Memorable birthday parties and milestone celebrations.'
-          : 'Unutulmaz doğum günü partileri ve özel kutlamalar.',
+      name: 'Birthday and Special Day Organizations',
+      desc: 'Memorable birthday parties and milestone celebrations.',
       img: 'https://images.unsplash.com/photo-1513151233558-d860c5398176?w=800&q=80',
-      link: `/${language}/services/birthday-special-day`,
+      link: '/services/birthday-special-day',
     },
     {
-      name: isEnglish ? 'Corporate Events' : 'Kurumsal Etkinlikler',
-      desc: isEnglish
-          ? 'Strengthen your brand with professional business events.'
-          : 'Markanızı güçlendirecek profesyonel kurumsal organizasyonlar.',
+      name: 'Corporate Events',
+      desc: 'Strengthen your brand with professional business events.',
       img: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=80',
-      link: `/${language}/services/corporate-events`,
+      link: '/services/corporate-events',
     },
     {
-      name: isEnglish ? 'Festival and Public Events' : 'Festival & Kamu Etkinlikleri',
-      desc: isEnglish
-          ? 'Unforgettable large-scale public and music events.'
-          : 'Büyük ölçekli festival ve müzik etkinlikleri.',
+      name: 'Festival and Public Events',
+      desc: 'Unforgettable large-scale public and music events.',
       img: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80',
-      link: `/${language}/services/festival-event`,
+      link: '/services/festival-event',
     },
     {
-      name: isEnglish ? 'Congress and Fair Organizations' : 'Kongre ve Fuar Organizasyonları',
-      desc: isEnglish
-          ? 'Professional fair booths and corporate congress management.'
-          : 'Kurumsal fuar stantları ve kongre yönetimi.',
+      name: 'Congress and Fair Organizations',
+      desc: 'Professional fair booths and corporate congress management.',
       img: 'https://images.unsplash.com/photo-1503428593586-e225b39bddfe?w=800&q=80',
-      link: `/${language}/services/congress-fair`,
+      link: '/services/congress-fair',
     },
     {
-      name: isEnglish ? 'Personal Event Planning' : 'Kişisel Etkinlik Planlaması',
-      desc: isEnglish
-          ? 'Tailored events designed for your unique style.'
-          : 'Size özel tarzda kişiselleştirilmiş etkinlik tasarımı.',
+      name: 'Personal Event Planning',
+      desc: 'Tailored events designed for your unique style.',
       img: 'https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=800&q=80',
-      link: `/${language}/services/personal-event`,
+      link: '/services/personal-event',
     },
     {
-      name: isEnglish ? 'Social Responsibility Projects' : 'Sosyal Sorumluluk Projeleri',
-      desc: isEnglish
-          ? 'Impactful community and environmental initiatives.'
-          : 'Toplumsal fayda odaklı sosyal sorumluluk projeleri.',
+      name: 'Social Responsibility Projects',
+      desc: 'Impactful community and environmental initiatives.',
       img: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80',
-      link: `/${language}/services/social-responsibility`,
+      link: '/services/social-responsibility',
     },
     {
-      name: isEnglish ? 'Creative Designs and Decoration Services' : 'Yaratıcı Tasarım & Süsleme',
-      desc: isEnglish
-          ? 'Custom themes, decor, flowers, balloons, and more.'
-          : 'Tema, dekor, çiçek, balon ve yaratıcı süsleme hizmetleri.',
+      name: 'Creative Designs and Decoration Services',
+      desc: 'Custom themes, decor, flowers, balloons, and more.',
       img: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=800&q=80',
-      link: `/${language}/services/creative-designs`,
+      link: '/services/creative-designs',
     },
     {
-      name: isEnglish ? 'Technical and Logistics Support' : 'Teknik ve Lojistik Destek',
-      desc: isEnglish
-          ? 'Sound, light, stage, video and on-site setup services.'
-          : 'Ses, ışık, sahne, video ve alan kurulumu hizmetleri.',
+      name: 'Technical and Logistics Support',
+      desc: 'Sound, light, stage, video and on-site setup services.',
       img: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80',
-      link: `/${language}/services/technical-support`,
+      link: '/services/technical-support',
     },
     {
-      name: isEnglish ? 'Consultancy Services' : 'Danışmanlık Hizmetleri',
-      desc: isEnglish
-          ? 'Professional guidance for event concept and strategy.'
-          : 'Etkinlik konsepti ve stratejisi için profesyonel danışmanlık.',
+      name: 'Consultancy Services',
+      desc: 'Professional guidance for event concept and strategy.',
       img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80',
-      link: `/${language}/services/consultancy`,
+      link: '/services/consultancy',
     },
   ];
 
-  const canonicalUrl = `https://www.eventnora.com/${language}/services`;
+  const canonicalUrl = `https://www.eventnora.com/services`;
 
   return (
       <Layout>
         <Helmet>
-          <title>
-            {isEnglish
-                ? 'Event Services in Istanbul | Event Nora'
-                : 'İstanbul Etkinlik Hizmetleri | Event Nora'}
-          </title>
+          <title>Event Services in Istanbul | Event Nora</title>
           <meta
               name="description"
-              content={
-                isEnglish
-                    ? 'Discover premium event planning in Istanbul: weddings, corporate, festivals, birthdays, congress, and more.'
-                    : 'İstanbul’da düğün, kurumsal, festival, doğum günü, kongre ve diğer tüm etkinlikler için profesyonel planlama hizmetleri.'
-              }
+              content="Discover premium event planning in Istanbul: weddings, corporate, festivals, birthdays, congress, and more."
           />
           <link rel="canonical" href={canonicalUrl} />
         </Helmet>
@@ -121,14 +93,7 @@ const Services = () => {
         <section className="py-16 bg-black relative overflow-hidden">
           <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gold to-transparent" />
           <div className="container-custom relative z-10 text-center">
-            <h1 className="heading-1 text-gold mb-4">
-              {isEnglish ? 'Our Services' : 'Hizmetlerimiz'}
-            </h1>
-            <p className="text-gold-light/80 text-lg max-w-xl mx-auto">
-              {isEnglish
-                  ? 'Your dream event deserves expert planning. Discover our complete service range.'
-                  : 'Hayalinizdeki etkinlik için profesyonel planlama hizmetlerimizi keşfedin.'}
-            </p>
+            <h1 className="heading-1 text-gold mb-4">Our Services</h1>
           </div>
         </section>
 
@@ -152,7 +117,7 @@ const Services = () => {
                       <h3 className="text-lg font-bold text-black mb-2">{item.name}</h3>
                       <p className="text-textGray text-sm mb-4">{item.desc}</p>
                       <span className="text-gold font-medium hover:text-gold-dark transition">
-                    {isEnglish ? 'Learn More →' : 'Detayları Gör →'}
+                    Learn More →
                   </span>
                     </div>
                   </div>

@@ -94,11 +94,11 @@ const IndexEn = () => {
                 We transform your vision into reality with meticulous planning, creative design, and flawless execution for all types of events.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to={`/${language}/contact`} className="gold-button text-xl">
+                <Link to={`/contact`} className="gold-button text-xl">
                   Get in Touch
                 </Link>
                 <Link
-                    to={`/${language}/services`}
+                    to={`/services`}
                     className="flex items-center justify-center gap-2 px-6 py-2.5 text-black hover:text-gold transition-colors duration-300 text-xl"
                 >
                   Our Services <ArrowRight size={16} />
@@ -174,7 +174,7 @@ const IndexEn = () => {
               ].map((service, i) => (
                   <Link
                       key={i}
-                      to={`/en/services/${service.link}`}
+                      to={`/services/${service.link}`} // Updated link
                       className="p-6 border border-gold/10 rounded-lg shadow-sm bg-white hover:shadow-md transition"
                   >
                     {service.icon}
@@ -186,7 +186,7 @@ const IndexEn = () => {
 
             <div className="mt-10">
               <Link
-                  to="/en/services"
+                  to="/services"
                   className="inline-block px-6 py-3 bg-gold text-black rounded font-medium hover:bg-gold-dark transition-all"
               >
                 View All Services
@@ -206,7 +206,7 @@ const IndexEn = () => {
               Contact us today to discuss your event needs and let us bring your vision to life.
             </p>
             <Link
-                to={`/${language}/contact`}
+                to={`/contact`} // Updated link
                 className="inline-block bg-gold hover:bg-gold-dark text-black px-8 py-3 rounded transition-all duration-300"
             >
               Get Started

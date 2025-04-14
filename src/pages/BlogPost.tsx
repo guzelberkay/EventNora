@@ -22,7 +22,9 @@ const BlogPost = () => {
         return (
             <Layout>
                 <div className="py-20 text-center text-gray-800">
-                    <h1 className="text-2xl font-bold">Blog post not found</h1>
+                    <h1 className="text-2xl font-bold">
+                        {isEnglish ? 'Blog post not found' : 'Blog yazısı bulunamadı'}
+                    </h1>
                 </div>
             </Layout>
         );
@@ -31,7 +33,7 @@ const BlogPost = () => {
     const pageTitle = isEnglish ? post.titleEn : post.titleTr;
     const pageDescription = (isEnglish ? post.contentEn : post.contentTr).slice(0, 160);
     const content = isEnglish ? post.contentEn : post.contentTr;
-    const canonicalUrl = `https://www.eventnora.com/${language}/blog/${post.slug}`;
+    const postUrl = `https://www.eventnora.com/${language === 'en' ? '' : 'tr'}/blog/${post.slug}`;
     const postDate = new Date(post.date).toISOString();
     const previousPost = blogPosts[index - 1];
     const nextPost = blogPosts[index + 1];
@@ -42,30 +44,31 @@ const BlogPost = () => {
                 <title>{pageTitle} | Event Nora Blog</title>
                 <meta name="description" content={pageDescription} />
                 <meta name="keywords" content={post.tags.join(', ')} />
-                <link rel="canonical" href={canonicalUrl} />
+                <link rel="canonical" href={postUrl} />
 
-                {/* Open Graph */}
                 <meta property="og:title" content={pageTitle} />
                 <meta property="og:description" content={pageDescription} />
                 <meta property="og:type" content="article" />
-                <meta property="og:url" content={canonicalUrl} />
+                <meta property="og:url" content={postUrl} />
                 <meta property="og:image" content={post.image} />
                 <meta property="og:site_name" content="Event Nora" />
 
-                {/* Twitter */}
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={pageTitle} />
                 <meta name="twitter:description" content={pageDescription} />
                 <meta name="twitter:image" content={post.image} />
 
-                {/* Schema.org JSON-LD */}
+                <link rel="alternate" hrefLang="en" href={`https://www.eventnora.com/blog/${post.slug}`} />
+                <link rel="alternate" hrefLang="tr" href={`https://www.eventnora.com/tr/blog/${post.slug}`} />
+                <link rel="alternate" hrefLang="x-default" href={`https://www.eventnora.com/blog/${post.slug}`} />
+
                 <script type="application/ld+json">
                     {JSON.stringify({
                         '@context': 'https://schema.org',
                         '@type': 'BlogPosting',
                         mainEntityOfPage: {
                             '@type': 'WebPage',
-                            '@id': canonicalUrl,
+                            '@id': postUrl,
                         },
                         headline: pageTitle,
                         description: pageDescription,
@@ -95,7 +98,9 @@ const BlogPost = () => {
                     loading="lazy"
                 />
 
-                <p className="text-sm text-gray-500 mb-4">{new Date(post.date).toLocaleDateString()}</p>
+                <p className="text-sm text-gray-500 mb-4">
+                    {new Date(post.date).toLocaleDateString()}
+                </p>
                 <h1 className="text-4xl font-bold text-gray-900 mb-6">{pageTitle}</h1>
 
                 <div className="prose prose-lg text-gray-800">
@@ -129,7 +134,9 @@ const BlogPost = () => {
                         >
                             👈 {isEnglish ? previousPost.titleEn : previousPost.titleTr}
                         </Link>
-                    ) : <div />}
+                    ) : (
+                        <div />
+                    )}
 
                     {nextPost ? (
                         <Link
@@ -138,7 +145,9 @@ const BlogPost = () => {
                         >
                             {isEnglish ? nextPost.titleEn : nextPost.titleTr} 👉
                         </Link>
-                    ) : <div />}
+                    ) : (
+                        <div />
+                    )}
                 </div>
             </section>
         </Layout>

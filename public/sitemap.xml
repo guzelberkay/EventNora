@@ -2,15 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <!-- ROOT -->
-    <url><loc>https://www.eventnora.com/en</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+    <url><loc>https://www.eventnora.com/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
     <url><loc>https://www.eventnora.com/tr</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
 
     <!-- EN Static Pages -->
-    <url><loc>https://www.eventnora.com/en/about</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://www.eventnora.com/en/services</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://www.eventnora.com/en/contact</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://www.eventnora.com/en/faq</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://www.eventnora.com/en/blog</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.eventnora.com/about</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.eventnora.com/services</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.eventnora.com/contact</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.eventnora.com/faq</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://www.eventnora.com/blog</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
 
     <!-- TR Static Pages -->
     <url><loc>https://www.eventnora.com/tr/hakkimizda</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
@@ -20,16 +20,16 @@
     <url><loc>https://www.eventnora.com/tr/blog</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
 
     <!-- EN Services -->
-    <url><loc>https://www.eventnora.com/en/services/engagement-wedding-organization</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
-    <url><loc>https://www.eventnora.com/en/services/corporate-events</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
-    <url><loc>https://www.eventnora.com/en/services/birthday-special-day</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
-    <url><loc>https://www.eventnora.com/en/services/festival-event</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
-    <url><loc>https://www.eventnora.com/en/services/congress-fair</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
-    <url><loc>https://www.eventnora.com/en/services/personal-event</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
-    <url><loc>https://www.eventnora.com/en/services/social-responsibility</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
-    <url><loc>https://www.eventnora.com/en/services/creative-designs</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
-    <url><loc>https://www.eventnora.com/en/services/technical-support</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
-    <url><loc>https://www.eventnora.com/en/services/consultancy</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://www.eventnora.com/services/engagement-wedding-organization</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://www.eventnora.com/services/corporate-events</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://www.eventnora.com/services/birthday-special-day</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://www.eventnora.com/services/festival-event</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://www.eventnora.com/services/congress-fair</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://www.eventnora.com/services/personal-event</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://www.eventnora.com/services/social-responsibility</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://www.eventnora.com/services/creative-designs</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://www.eventnora.com/services/technical-support</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://www.eventnora.com/services/consultancy</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
 
     <!-- TR Services -->
     <url><loc>https://www.eventnora.com/tr/hizmetler/nisan-dugun-organizasyonu</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
@@ -44,25 +44,25 @@
     <url><loc>https://www.eventnora.com/tr/hizmetler/danismanlik-hizmetleri</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
 
     <!-- BLOG EN -->
-    <url><loc>https://www.eventnora.com/blog/en/2025-wedding-invitation-trends</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
-    <url><loc>https://www.eventnora.com/blog/en/how-to-plan-perfect-engagement</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
-    <url><loc>https://www.eventnora.com/blog/en/why-digital-invitations</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
-    <url><loc>https://www.eventnora.com/blog/en/birthday-party-ideas</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
-    <url><loc>https://www.eventnora.com/blog/en/event-planning-mistakes</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
-    <url><loc>https://www.eventnora.com/blog/en/rsvp-guide</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
-    <url><loc>https://www.eventnora.com/blog/en/festival-event-decorations</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
-    <url><loc>https://www.eventnora.com/blog/en/technical-support-for-events</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
-    <url><loc>https://www.eventnora.com/blog/en/event-colors-and-themes</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
+    <url><loc>https://www.eventnora.com/blog/2025-wedding-invitation-trends</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
+    <url><loc>https://www.eventnora.com/blog/how-to-plan-perfect-engagement</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
+    <url><loc>https://www.eventnora.com/blog/why-digital-invitations</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
+    <url><loc>https://www.eventnora.com/blog/birthday-party-ideas</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
+    <url><loc>https://www.eventnora.com/blog/event-planning-mistakes</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
+    <url><loc>https://www.eventnora.com/blog/rsvp-guide</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
+    <url><loc>https://www.eventnora.com/blog/festival-event-decorations</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
+    <url><loc>https://www.eventnora.com/blog/technical-support-for-events</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
+    <url><loc>https://www.eventnora.com/blog/event-colors-and-themes</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
 
     <!-- BLOG TR -->
-    <url><loc>https://www.eventnora.com/blog/tr/2025-wedding-invitation-trends</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
-    <url><loc>https://www.eventnora.com/blog/tr/how-to-plan-perfect-engagement</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
-    <url><loc>https://www.eventnora.com/blog/tr/why-digital-invitations</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
-    <url><loc>https://www.eventnora.com/blog/tr/birthday-party-ideas</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
-    <url><loc>https://www.eventnora.com/blog/tr/event-planning-mistakes</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
-    <url><loc>https://www.eventnora.com/blog/tr/rsvp-guide</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
-    <url><loc>https://www.eventnora.com/blog/tr/festival-event-decorations</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
-    <url><loc>https://www.eventnora.com/blog/tr/technical-support-for-events</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
-    <url><loc>https://www.eventnora.com/blog/tr/event-colors-and-themes</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
+    <url><loc>https://www.eventnora.com/tr/blog/2025-wedding-invitation-trends</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
+    <url><loc>https://www.eventnora.com/tr/blog/how-to-plan-perfect-engagement</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
+    <url><loc>https://www.eventnora.com/tr/blog/why-digital-invitations</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
+    <url><loc>https://www.eventnora.com/tr/blog/birthday-party-ideas</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
+    <url><loc>https://www.eventnora.com/tr/blog/event-planning-mistakes</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
+    <url><loc>https://www.eventnora.com/tr/blog/rsvp-guide</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
+    <url><loc>https://www.eventnora.com/tr/blog/festival-event-decorations</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
+    <url><loc>https://www.eventnora.com/tr/blog/technical-support-for-events</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
+    <url><loc>https://www.eventnora.com/tr/blog/event-colors-and-themes</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
 
 </urlset>

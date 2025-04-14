@@ -7,111 +7,109 @@ const siteUrl = 'https://www.eventnora.com';
 const Canonical = () => {
     const { pathname } = useLocation();
 
-    // Canonical link oluştur
-    const canonical = `${siteUrl}${pathname}`;
+    // Eğer /en ile başlıyorsa / olarak normalize et
+    const canonicalPath = pathname === '/en' ? '/' : pathname;
+    const canonical = `${siteUrl}${canonicalPath}`;
 
-    // Sayfa eşlemeleri: EN ↔ TR
+    // Hreflang karşılıkları
     const hreflangMap: Record<string, { en: string; tr: string }> = {
-        '/': { en: '/en', tr: '/tr' },
-        '/en': { en: '/en', tr: '/tr' },
-        '/tr': { en: '/en', tr: '/tr' },
-        '/en/about': { en: '/en/about', tr: '/tr/hakkimizda' },
-        '/tr/hakkimizda': { en: '/en/about', tr: '/tr/hakkimizda' },
-        '/en/services': { en: '/en/services', tr: '/tr/hizmetler' },
-        '/tr/hizmetler': { en: '/en/services', tr: '/tr/hizmetler' },
-        '/en/contact': { en: '/en/contact', tr: '/tr/iletisim' },
-        '/tr/iletisim': { en: '/en/contact', tr: '/tr/iletisim' },
-        '/en/faq': { en: '/en/faq', tr: '/tr/sss' },
-        '/tr/sss': { en: '/en/faq', tr: '/tr/sss' },
-        '/en/blog': { en: '/en/blog', tr: '/tr/blog' },
-        '/tr/blog': { en: '/en/blog', tr: '/tr/blog' },
+        '/': { en: '/', tr: '/tr' },
+        '/tr': { en: '/', tr: '/tr' },
+        '/about': { en: '/about', tr: '/tr/hakkimizda' },
+        '/tr/hakkimizda': { en: '/about', tr: '/tr/hakkimizda' },
+        '/services': { en: '/services', tr: '/tr/hizmetler' },
+        '/tr/hizmetler': { en: '/services', tr: '/tr/hizmetler' },
+        '/contact': { en: '/contact', tr: '/tr/iletisim' },
+        '/tr/iletisim': { en: '/contact', tr: '/tr/iletisim' },
+        '/faq': { en: '/faq', tr: '/tr/sss' },
+        '/tr/sss': { en: '/faq', tr: '/tr/sss' },
+        '/blog': { en: '/blog', tr: '/tr/blog' },
+        '/tr/blog': { en: '/blog', tr: '/tr/blog' },
 
-        // EN Service Pages
-        '/en/services/engagement-wedding-organization': {
-            en: '/en/services/engagement-wedding-organization',
+        // Hizmet Sayfaları (EN ↔ TR)
+        '/services/engagement-wedding-organization': {
+            en: '/services/engagement-wedding-organization',
             tr: '/tr/hizmetler/nisan-dugun-organizasyonu',
         },
-        '/en/services/corporate-events': {
-            en: '/en/services/corporate-events',
-            tr: '/tr/hizmetler/kurumsal-etkinlikler',
-        },
-        '/en/services/birthday-special-day': {
-            en: '/en/services/birthday-special-day',
-            tr: '/tr/hizmetler/dogum-gunu-ozel-gun',
-        },
-        '/en/services/festival-event': {
-            en: '/en/services/festival-event',
-            tr: '/tr/hizmetler/festival-etkinlik-organizasyonu',
-        },
-        '/en/services/congress-fair': {
-            en: '/en/services/congress-fair',
-            tr: '/tr/hizmetler/kongre-fuar-organizasyonu',
-        },
-        '/en/services/personal-event': {
-            en: '/en/services/personal-event',
-            tr: '/tr/hizmetler/kisisel-etkinlik-planlamasi',
-        },
-        '/en/services/social-responsibility': {
-            en: '/en/services/social-responsibility',
-            tr: '/tr/hizmetler/sosyal-sorumluluk-projeleri',
-        },
-        '/en/services/creative-designs': {
-            en: '/en/services/creative-designs',
-            tr: '/tr/hizmetler/yaratici-tasarim-susleme',
-        },
-        '/en/services/technical-support': {
-            en: '/en/services/technical-support',
-            tr: '/tr/hizmetler/teknik-lojistik-destek',
-        },
-        '/en/services/consultancy': {
-            en: '/en/services/consultancy',
-            tr: '/tr/hizmetler/danismanlik-hizmetleri',
-        },
-
-        // TR Service Pages
         '/tr/hizmetler/nisan-dugun-organizasyonu': {
-            en: '/en/services/engagement-wedding-organization',
+            en: '/services/engagement-wedding-organization',
             tr: '/tr/hizmetler/nisan-dugun-organizasyonu',
+        },
+        '/services/corporate-events': {
+            en: '/services/corporate-events',
+            tr: '/tr/hizmetler/kurumsal-etkinlikler',
         },
         '/tr/hizmetler/kurumsal-etkinlikler': {
-            en: '/en/services/corporate-events',
+            en: '/services/corporate-events',
             tr: '/tr/hizmetler/kurumsal-etkinlikler',
         },
-        '/tr/hizmetler/dogum-gunu-ozel-gun': {
-            en: '/en/services/birthday-special-day',
+        '/services/birthday-special-day': {
+            en: '/services/birthday-special-day',
             tr: '/tr/hizmetler/dogum-gunu-ozel-gun',
         },
-        '/tr/hizmetler/festival-etkinlik-organizasyonu': {
-            en: '/en/services/festival-event',
+        '/tr/hizmetler/dogum-gunu-ozel-gun': {
+            en: '/services/birthday-special-day',
+            tr: '/tr/hizmetler/dogum-gunu-ozel-gun',
+        },
+        '/services/festival-event': {
+            en: '/services/festival-event',
             tr: '/tr/hizmetler/festival-etkinlik-organizasyonu',
         },
-        '/tr/hizmetler/kongre-fuar-organizasyonu': {
-            en: '/en/services/congress-fair',
+        '/tr/hizmetler/festival-etkinlik-organizasyonu': {
+            en: '/services/festival-event',
+            tr: '/tr/hizmetler/festival-etkinlik-organizasyonu',
+        },
+        '/services/congress-fair': {
+            en: '/services/congress-fair',
             tr: '/tr/hizmetler/kongre-fuar-organizasyonu',
         },
-        '/tr/hizmetler/kisisel-etkinlik-planlamasi': {
-            en: '/en/services/personal-event',
+        '/tr/hizmetler/kongre-fuar-organizasyonu': {
+            en: '/services/congress-fair',
+            tr: '/tr/hizmetler/kongre-fuar-organizasyonu',
+        },
+        '/services/personal-event': {
+            en: '/services/personal-event',
             tr: '/tr/hizmetler/kisisel-etkinlik-planlamasi',
         },
-        '/tr/hizmetler/sosyal-sorumluluk-projeleri': {
-            en: '/en/services/social-responsibility',
+        '/tr/hizmetler/kisisel-etkinlik-planlamasi': {
+            en: '/services/personal-event',
+            tr: '/tr/hizmetler/kisisel-etkinlik-planlamasi',
+        },
+        '/services/social-responsibility': {
+            en: '/services/social-responsibility',
             tr: '/tr/hizmetler/sosyal-sorumluluk-projeleri',
         },
-        '/tr/hizmetler/yaratici-tasarim-susleme': {
-            en: '/en/services/creative-designs',
+        '/tr/hizmetler/sosyal-sorumluluk-projeleri': {
+            en: '/services/social-responsibility',
+            tr: '/tr/hizmetler/sosyal-sorumluluk-projeleri',
+        },
+        '/services/creative-designs': {
+            en: '/services/creative-designs',
             tr: '/tr/hizmetler/yaratici-tasarim-susleme',
         },
-        '/tr/hizmetler/teknik-lojistik-destek': {
-            en: '/en/services/technical-support',
+        '/tr/hizmetler/yaratici-tasarim-susleme': {
+            en: '/services/creative-designs',
+            tr: '/tr/hizmetler/yaratici-tasarim-susleme',
+        },
+        '/services/technical-support': {
+            en: '/services/technical-support',
             tr: '/tr/hizmetler/teknik-lojistik-destek',
         },
+        '/tr/hizmetler/teknik-lojistik-destek': {
+            en: '/services/technical-support',
+            tr: '/tr/hizmetler/teknik-lojistik-destek',
+        },
+        '/services/consultancy': {
+            en: '/services/consultancy',
+            tr: '/tr/hizmetler/danismanlik-hizmetleri',
+        },
         '/tr/hizmetler/danismanlik-hizmetleri': {
-            en: '/en/services/consultancy',
+            en: '/services/consultancy',
             tr: '/tr/hizmetler/danismanlik-hizmetleri',
         },
     };
 
-    const current = hreflangMap[pathname];
+    const current = hreflangMap[canonicalPath];
     const hreflangs = current
         ? [
             { lang: 'en', href: `${siteUrl}${current.en}` },
@@ -125,7 +123,7 @@ const Canonical = () => {
             {hreflangs.map((link, i) => (
                 <link key={i} rel="alternate" hrefLang={link.lang} href={link.href} />
             ))}
-            <link rel="alternate" hrefLang="x-default" href={`${siteUrl}/en`} />
+            <link rel="alternate" hrefLang="x-default" href={`${siteUrl}/`} />
         </Helmet>
     );
 };

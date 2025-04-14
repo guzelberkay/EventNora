@@ -4,7 +4,7 @@ import Layout from '@/components/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 
-// Images
+// Image imports
 import weddingTrendImage from '../images/wedding_trend.png';
 import engagement from '../images/perfect_engagement_party.png';
 import digital from '../images/digital_invitations.png';
@@ -47,7 +47,7 @@ const Blog: React.FC = () => {
         ? 'event blog, wedding trends, digital invitation, RSVP online, party tips, creative event design'
         : 'düğün blogu, dijital davetiye, qr kod, rsvp nedir, davetiye trendleri, etkinlik tasarımı';
 
-    const canonicalUrl = `https://www.eventnora.com/${language}/blog`;
+    const canonicalUrl = `https://www.eventnora.com${language === 'en' ? '' : '/tr'}/blog`;
 
     const posts: BlogPost[] = [
         {
@@ -164,28 +164,6 @@ const Blog: React.FC = () => {
                 <meta name="twitter:description" content={pageDescription} />
                 <meta name="twitter:image" content={weddingTrendImage} />
                 <meta name="twitter:site" content="@eventnora" />
-
-                <script type="application/ld+json">
-                    {JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "WebSite",
-                        "name": "Event Nora",
-                        "url": "https://www.eventnora.com",
-                    })}
-                </script>
-
-                <script type="application/ld+json">
-                    {JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "Organization",
-                        "name": "Event Nora",
-                        "url": "https://www.eventnora.com",
-                        "logo": {
-                            "@type": "ImageObject",
-                            "url": "https://www.eventnora.com/logo.png",
-                        },
-                    })}
-                </script>
             </Helmet>
 
             <section className="py-20 bg-black text-center text-gold">
@@ -203,68 +181,36 @@ const Blog: React.FC = () => {
 
             <section className="py-16 bg-white">
                 <div className="container mx-auto px-4 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                    {visiblePosts.map((post, index) => {
-                        const url = `https://www.eventnora.com/${language}/blog/${post.slug}`;
+                    {visiblePosts.map((post, i) => {
+                        const url = `/${language === 'en' ? 'blog' : 'tr/blog'}/${post.slug}`;
                         const title = isEnglish ? post.titleEn : post.titleTr;
                         const excerpt = isEnglish ? post.excerptEn : post.excerptTr;
 
                         return (
-                            <React.Fragment key={index}>
-                                <Helmet>
-                                    <script type="application/ld+json">
-                                        {JSON.stringify({
-                                            '@context': 'https://schema.org',
-                                            '@type': 'BlogPosting',
-                                            mainEntityOfPage: { '@type': 'WebPage', '@id': url },
-                                            headline: title,
-                                            description: excerpt,
-                                            image: post.image,
-                                            author: { '@type': 'Organization', name: 'Event Nora' },
-                                            publisher: {
-                                                '@type': 'Organization',
-                                                name: 'Event Nora',
-                                                logo: {
-                                                    '@type': 'ImageObject',
-                                                    url: 'https://www.eventnora.com/logo.png',
-                                                },
-                                            },
-                                            datePublished: post.date,
-                                        })}
-                                    </script>
-                                </Helmet>
-
-                                <Link
-                                    to={`/${language}/blog/${post.slug}`}
-                                    className="block bg-gray-50 rounded-xl shadow hover:shadow-lg transition-all"
-                                >
-                                    <img
-                                        src={post.image}
-                                        alt={`${title} - Event Nora Blog`}
-                                        loading="lazy"
-                                        className="w-full h-52 object-cover rounded-t-xl"
-                                    />
-                                    <div className="p-5">
-                                        <div className="flex flex-wrap gap-2 mb-2">
-                                            {post.tags.map((tag, i) => (
-                                                <span
-                                                    key={i}
-                                                    className="bg-gold/10 text-gold text-xs font-medium px-2 py-1 rounded"
-                                                >
-                          #{tag}
-                        </span>
-                                            ))}
-                                        </div>
-                                        <h2 className="text-lg font-semibold text-gray-900">{title}</h2>
-                                        <p className="text-sm text-gray-500 mb-2">
-                                            {new Date(post.date).toLocaleDateString()}
-                                        </p>
-                                        <p className="text-gray-700 mb-2">{excerpt}</p>
-                                        <span className="text-gold font-semibold">
-                      {isEnglish ? 'Read more →' : 'Devamını oku →'}
-                    </span>
+                            <Link
+                                key={i}
+                                to={url}
+                                className="block bg-gray-50 rounded-xl shadow hover:shadow-lg transition-all"
+                            >
+                                <img src={post.image} alt={title} className="w-full h-52 object-cover rounded-t-xl" />
+                                <div className="p-5">
+                                    <div className="flex flex-wrap gap-2 mb-2">
+                                        {post.tags.map((tag, j) => (
+                                            <span key={j} className="bg-gold/10 text-gold text-xs font-medium px-2 py-1 rounded">
+                                                #{tag}
+                                            </span>
+                                        ))}
                                     </div>
-                                </Link>
-                            </React.Fragment>
+                                    <h2 className="text-lg font-semibold text-gray-900">{title}</h2>
+                                    <p className="text-sm text-gray-500 mb-1">
+                                        {new Date(post.date).toLocaleDateString()}
+                                    </p>
+                                    <p className="text-gray-700 mb-2">{excerpt}</p>
+                                    <span className="text-gold font-semibold">
+                                        {isEnglish ? 'Read more →' : 'Devamını oku →'}
+                                    </span>
+                                </div>
+                            </Link>
                         );
                     })}
                 </div>

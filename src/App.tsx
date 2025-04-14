@@ -1,11 +1,9 @@
 import { Toaster } from "@/components/ui/toaster";
-// import { Toaster as Sonner } from "@/components/ui/sonner"; // Eğer kullanılmıyorsa kaldır
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { FaWhatsapp } from "react-icons/fa";
-
 import { LanguageProvider, useLanguage } from "./contexts/LanguageContext";
 
 // Pages
@@ -34,13 +32,13 @@ import ServiceDetail from "./pages/servicespages/ServiceDetail";
 // TR Pages
 import TurkishIndex from "./pages/tr/index";
 import Hakkimizda from "./pages/tr/hakkimizda";
-import Hizmetlerimiz from "./pages/Hizmetlerimiz.tsx";
+import Hizmetlerimiz from "./pages/Hizmetlerimiz";
 import Iletisim from "./pages/tr/iletisim";
 import Sss from "./pages/tr/sss";
 import BlogTr from "./pages/tr/blog";
 
 // TR Services
-import DogumGunuOzelGun from "./pages/servicespages/tr/DogumGunuOzelGun";
+import DogumGunuOzelGun from "@/pages/servicespages/tr/DogumGunuOzelGun";
 import KongreFuarTr from "@/pages/servicespages/tr/KongreFuarTr";
 import DanismanlikTr from "@/pages/servicespages/tr/DanismanlikTr";
 import KurumsalEtkinlikler from "@/pages/servicespages/tr/KurumsalEtkinlikler";
@@ -84,36 +82,32 @@ const App = () => (
         <TooltipProvider>
           <LanguageProvider>
             <Toaster />
-            {/* <Sonner /> Eğer aktif değilse yorumda bırak */}
             <BrowserRouter>
               <WhatsAppFloat />
               <Routes>
-                {/* REDIRECT ROOT */}
-                <Route path="/" element={<Navigate to="/en" replace />} />
-
-                {/* EN ROUTES */}
-                <Route path="/en" element={<Index />} />
-                <Route path="/en/about" element={<About />} />
-                <Route path="/en/services" element={<Services />} />
-                <Route path="/en/contact" element={<Contact />} />
-                <Route path="/en/faq" element={<FAQ />} />
-                <Route path="/en/blog" element={<Blog />} />
-                <Route path="/en/blog/:slug" element={<BlogPost />} />
+                {/* ✅ EN ROUTES — now under `/` */}
+                <Route path="/" element={<Index />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/services" element={<Services />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/faq" element={<FAQ />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/:slug" element={<BlogPost />} />
 
                 {/* EN Services */}
-                <Route path="/en/services/:slug" element={<ServiceDetail />} />
-                <Route path="/en/services/engagement-wedding-organization" element={<EngagementWedding />} />
-                <Route path="/en/services/corporate-events" element={<CorporateEvents />} />
-                <Route path="/en/services/birthday-special-day" element={<BirthdaySpecialDay />} />
-                <Route path="/en/services/festival-event" element={<FestivalEvent />} />
-                <Route path="/en/services/congress-fair" element={<CongressFair />} />
-                <Route path="/en/services/personal-event" element={<PersonalEvent />} />
-                <Route path="/en/services/social-responsibility" element={<SocialResponsibility />} />
-                <Route path="/en/services/creative-designs" element={<CreativeDesigns />} />
-                <Route path="/en/services/technical-support" element={<TechnicalSupport />} />
-                <Route path="/en/services/consultancy" element={<Consultancy />} />
+                <Route path="/services/:slug" element={<ServiceDetail />} />
+                <Route path="/services/engagement-wedding-organization" element={<EngagementWedding />} />
+                <Route path="/services/corporate-events" element={<CorporateEvents />} />
+                <Route path="/services/birthday-special-day" element={<BirthdaySpecialDay />} />
+                <Route path="/services/festival-event" element={<FestivalEvent />} />
+                <Route path="/services/congress-fair" element={<CongressFair />} />
+                <Route path="/services/personal-event" element={<PersonalEvent />} />
+                <Route path="/services/social-responsibility" element={<SocialResponsibility />} />
+                <Route path="/services/creative-designs" element={<CreativeDesigns />} />
+                <Route path="/services/technical-support" element={<TechnicalSupport />} />
+                <Route path="/services/consultancy" element={<Consultancy />} />
 
-                {/* TR ROUTES */}
+                {/* 🇹🇷 TR ROUTES under `/tr` */}
                 <Route path="/tr" element={<TurkishIndex />} />
                 <Route path="/tr/hakkimizda" element={<Hakkimizda />} />
                 <Route path="/tr/hizmetler" element={<Hizmetlerimiz />} />
@@ -135,7 +129,7 @@ const App = () => (
                 <Route path="/tr/hizmetler/teknik-lojistik-destek" element={<TeknikDestek />} />
                 <Route path="/tr/hizmetler/danismanlik-hizmetleri" element={<DanismanlikTr />} />
 
-                {/* 404 */}
+                {/* Not Found */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </BrowserRouter>
