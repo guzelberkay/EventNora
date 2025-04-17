@@ -8,15 +8,12 @@ import {
     Star,
     HeartHandshake,
     Building2,
-    Cake, // 👈 DÜZELTİLEN İKON
+    Cake,
 } from 'lucide-react';
 import Layout from '@/components/Layout';
-import { useLanguage } from '@/contexts/LanguageContext';
-import backgroundImage from '../../images/a1.png';
+import backgroundImage from '@/images/a1.png'; // ✅ src altındaysa bu şekilde
 
 const IndexTr = () => {
-    const { language } = useLanguage();
-
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -43,41 +40,38 @@ const IndexTr = () => {
                 }}
             >
                 <div className="absolute inset-0 bg-black/10 z-0" />
-                <div className="container-custom relative z-10">
-                    <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-block px-3 py-1 bg-black text-gold text-sm font-medium rounded-full mb-6">
-              Premium Etkinlik Planlama
-            </span>
-                        <h1 className="heading-1 mb-6 text-black">
-                            Event Nora | Dijital Davetiyeler & Etkinlik Planlama
-                        </h1>
-                        <p className="paragraph mb-8 text-black text-2xl">
-                            Tüm etkinlik türleri için detaylı planlama, yaratıcı tasarım ve kusursuz uygulama ile vizyonunuzu gerçeğe dönüştürüyoruz.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Link to={`/${language}/iletisim`} className="gold-button text-xl">
-                                İletişime Geçin
-                            </Link>
-                            <Link
-                                to={`/${language}/hizmetler`}
-                                className="flex items-center justify-center gap-2 px-6 py-2.5 text-black hover:text-gold transition-colors duration-300 text-xl"
-                            >
-                                Hizmetlerimiz <ArrowRight size={16} />
-                            </Link>
-                        </div>
+                <div className="container-custom relative z-10 text-center">
+          <span className="inline-block px-3 py-1 bg-black text-gold text-sm font-medium rounded-full mb-6">
+            Premium Etkinlik Planlama
+          </span>
+                    <h1 className="heading-1 mb-6 text-black">
+                        Event Nora | Dijital Davetiyeler & Etkinlik Planlama
+                    </h1>
+                    <p className="paragraph mb-8 text-black text-2xl">
+                        Tüm etkinlik türleri için detaylı planlama, yaratıcı tasarım ve kusursuz uygulama ile vizyonunuzu gerçeğe dönüştürüyoruz.
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                        <Link to="/tr/iletisim" className="gold-button text-xl">
+                            İletişime Geçin
+                        </Link>
+                        <Link
+                            to="/tr/hizmetler"
+                            className="flex items-center justify-center gap-2 px-6 py-2.5 text-black hover:text-gold transition-colors duration-300 text-xl"
+                        >
+                            Hizmetlerimiz <ArrowRight size={16} />
+                        </Link>
                     </div>
                 </div>
             </section>
 
             {/* Neden Biz */}
-            <section className="section bg-white">
-                <div className="container-custom text-center">
+            <section className="section bg-white text-center">
+                <div className="container-custom">
                     <span className="text-gold font-medium">Neden Bizi Seçmelisiniz?</span>
                     <h2 className="heading-2 text-black mt-2 mb-4">Etkinlik Planlamada Altın Standart</h2>
                     <p className="paragraph opacity-80 mb-12">
                         Her etkinlikte uzmanlık, yaratıcılık ve hassasiyetle sorunsuz bir deneyim sunuyoruz.
                     </p>
-
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {[
                             {
@@ -106,13 +100,12 @@ const IndexTr = () => {
                 </div>
             </section>
 
-            {/* Öne Çıkan Hizmetler */}
-            <section className="section bg-[#fafafa]">
+            {/* Hizmetler */}
+            <section className="section bg-[#fafafa] text-left">
                 <div className="container-custom text-center">
                     <span className="text-gold font-medium">Hizmetlerimizden Seçmeler</span>
                     <h2 className="heading-2 text-black mt-2 mb-8">Öne Çıkan Organizasyonlar</h2>
-
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {[
                             {
                                 icon: <HeartHandshake className="w-10 h-10 text-gold mb-3" />,
@@ -127,7 +120,7 @@ const IndexTr = () => {
                                 description: 'Şirket lansmanları, yıl sonu partileri ve motivasyon etkinliklerinde yanınızdayız.',
                             },
                             {
-                                icon: <Cake className="w-10 h-10 text-gold mb-3" />, // ✅ Doğru ikon burada
+                                icon: <Cake className="w-10 h-10 text-gold mb-3" />,
                                 title: 'Doğum Günü & Özel Gün',
                                 link: 'dogum-gunu-ozel-gun',
                                 description: 'Çocuk ve yetişkin doğum günlerine özel konsept ve temalarla unutulmaz anlar sunuyoruz.',
