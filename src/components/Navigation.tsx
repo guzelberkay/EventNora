@@ -97,6 +97,7 @@ const Navigation = () => {
             <img src={logo} alt="Event Nora Logo" className="h-24 w-auto" />
           </Link>
 
+          {/* Masaüstü Menü */}
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
                 <div key={item.pathEn} className="relative group">
@@ -117,7 +118,7 @@ const Navigation = () => {
                   )}
 
                   {item.dropdown && servicesDropdownOpen && (
-                      <div className="absolute left-0 mt-2 w-64 bg-black border border-gold/20 rounded-lg shadow-lg z-50">
+                      <div className="absolute left-0 mt-2 w-64 bg-black border border-gold/20 rounded-lg shadow-lg z-50 max-h-96 overflow-y-auto">
                         <div className="py-2">
                           <Link to={language === 'en' ? '/services' : '/tr/hizmetler'} className="block px-4 py-2 text-gold hover:bg-gold/10">
                             {language === 'en' ? 'All Services' : 'Tüm Hizmetler'}
@@ -138,7 +139,7 @@ const Navigation = () => {
                 </div>
             ))}
 
-            {/* Language Switch */}
+            {/* Masaüstü Dil Seçici */}
             <div className="flex items-center gap-3">
               {['en', 'tr'].map((lang) => (
                   <button
@@ -153,19 +154,29 @@ const Navigation = () => {
             </div>
           </nav>
 
-          {/* Mobile menu toggle */}
-          <div className="md:hidden flex items-center gap-3 text-gold">
+          {/* Mobil Menü */}
+          <div className="md:hidden flex items-center text-gold w-full justify-end gap-3">
+            {['en', 'tr'].map((lang) => (
+                <button
+                    key={lang}
+                    className={cn('flex items-center gap-1 text-sm', language === lang && 'text-gold font-semibold')}
+                    onClick={() => handleLanguageChange(lang as 'en' | 'tr')}
+                >
+                  <Globe size={14} />
+                  <span>{lang.toUpperCase()}</span>
+                </button>
+            ))}
             <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobil Navigation */}
         {mobileMenuOpen && (
-            <div className="md:hidden bg-black absolute top-full left-0 w-full border-t border-gold/20 animate-slideIn">
+            <div className="md:hidden bg-black absolute top-full left-0 w-full border-t border-gold/20 transition-all duration-300 overflow-hidden">
               <div className="container-custom py-4">
-                <nav className="flex flex-col space-y-4">
+                <nav className="flex flex-col">
                   {navItems.map((item) => (
                       <div key={item.pathEn}>
                         {item.dropdown ? (
@@ -175,7 +186,7 @@ const Navigation = () => {
                                 {servicesDropdownOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
                               </div>
                               {servicesDropdownOpen && (
-                                  <div className="pl-4 mt-2 space-y-2 border-l border-gold/20">
+                                  <div className="pl-4 mt-2 space-y-2 border-l border-gold/20 max-h-96 overflow-y-auto">
                                     <Link to={language === 'en' ? '/services' : '/tr/hizmetler'} className="block py-2 text-gold/80 hover:text-gold">
                                       {language === 'en' ? 'All Services' : 'Tüm Hizmetler'}
                                     </Link>
@@ -206,22 +217,6 @@ const Navigation = () => {
                         )}
                       </div>
                   ))}
-
-                  <div className="flex gap-4 pt-4">
-                    {['en', 'tr'].map((lang) => (
-                        <button
-                            key={lang}
-                            className={cn('language-selector flex items-center gap-1', language === lang && 'text-gold font-semibold')}
-                            onClick={() => {
-                              handleLanguageChange(lang as 'en' | 'tr');
-                              setMobileMenuOpen(false);
-                            }}
-                        >
-                          <Globe size={16} />
-                          <span>{lang === 'en' ? 'English' : 'Türkçe'}</span>
-                        </button>
-                    ))}
-                  </div>
                 </nav>
               </div>
             </div>
