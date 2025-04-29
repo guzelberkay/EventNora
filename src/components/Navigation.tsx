@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Globe, Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useToast } from '@/components/ui/use-toast';
 import { cn } from '@/lib/utils';
+import React, { useEffect, useRef, useState } from 'react';
+
 import logo from '../images/eventnorasaydam.png';
 
 const Navigation = () => {
@@ -14,6 +15,8 @@ const Navigation = () => {
   const navigate = useNavigate();
   const { language, setLanguage } = useLanguage();
   const { toast } = useToast();
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
 
   useEffect(() => {
     const langPrefix = location.pathname.startsWith('/tr') ? 'tr' : 'en';
@@ -30,6 +33,25 @@ const Navigation = () => {
     setMobileMenuOpen(false);
     setServicesDropdownOpen(false);
   }, [location.pathname]);
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+          dropdownRef.current &&
+          !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setServicesDropdownOpen(false);
+      }
+    };
+
+    if (servicesDropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [servicesDropdownOpen]);
+
 
   const servicesItems = [
     { nameEn: 'Engagement and Wedding Organization', nameTr: 'Nişan ve Düğün Organizasyonu', slugEn: 'engagement-wedding-organization', slugTr: 'nisan-dugun-organizasyonu' },
@@ -119,8 +141,11 @@ const Navigation = () => {
 
                   {item.dropdown && servicesDropdownOpen && (
                       <div
-                          className="absolute left-0 mt-2 w-64 bg-black border border-gold/20 rounded-lg shadow-lg z-50 max-h-96 overflow-y-auto scrollbar-gold">
-                        <div className="py-2">
+                          ref={dropdownRef}
+                          className="absolute left-0 mt-2 w-64 bg-black border border-gold/20 rounded-lg shadow-lg z-50 max-h-96 overflow-y-auto scrollbar-gold"
+                      >
+
+                      <div className="py-2">
                           <Link to={language === 'en' ? '/services' : '/tr/hizmetler'}
                                 className="block px-4 py-2 text-gold hover:bg-gold/10">
                             {language === 'en' ? 'All Services' : 'Tüm Hizmetler'}
