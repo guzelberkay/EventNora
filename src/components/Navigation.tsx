@@ -118,9 +118,11 @@ const Navigation = () => {
                   )}
 
                   {item.dropdown && servicesDropdownOpen && (
-                      <div className="absolute left-0 mt-2 w-64 bg-black border border-gold/20 rounded-lg shadow-lg z-50 max-h-96 overflow-y-auto">
+                      <div
+                          className="absolute left-0 mt-2 w-64 bg-black border border-gold/20 rounded-lg shadow-lg z-50 max-h-96 overflow-y-auto scrollbar-gold">
                         <div className="py-2">
-                          <Link to={language === 'en' ? '/services' : '/tr/hizmetler'} className="block px-4 py-2 text-gold hover:bg-gold/10">
+                          <Link to={language === 'en' ? '/services' : '/tr/hizmetler'}
+                                className="block px-4 py-2 text-gold hover:bg-gold/10">
                             {language === 'en' ? 'All Services' : 'Tüm Hizmetler'}
                           </Link>
                           {servicesItems.map((service, index) => (

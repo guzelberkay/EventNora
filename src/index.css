@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -44,9 +43,30 @@
     @apply bg-background text-textGray antialiased overflow-x-hidden;
     font-family: 'Inter', sans-serif;
   }
-  
+
   ::selection {
     @apply bg-gold/30 text-secondary;
+  }
+
+  /* ✅ Gold Scrollbar Customization */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #D4AF37;
+    border-radius: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Firefox support */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #D4AF37 transparent;
   }
 }
 
@@ -54,48 +74,48 @@
   .container-custom {
     @apply container px-4 md:px-8 mx-auto max-w-7xl;
   }
-  
+
   .heading-1 {
     @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight;
   }
-  
+
   .heading-2 {
     @apply text-3xl md:text-4xl font-bold tracking-tight;
   }
-  
+
   .heading-3 {
     @apply text-2xl md:text-3xl font-semibold;
   }
-  
+
   .paragraph {
     @apply text-base md:text-lg leading-relaxed;
   }
-  
+
   .gold-gradient {
     @apply bg-gradient-to-r from-gold-dark via-gold to-gold-light;
   }
-  
+
   .page-transition {
     @apply opacity-0 animate-fadeIn;
     animation-delay: 0.2s;
     animation-fill-mode: forwards;
   }
-  
+
   .nav-link {
     @apply relative text-gold hover:opacity-80 transition-opacity duration-300
-    after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-gold 
+    after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-gold
     after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full;
   }
-  
+
   .language-selector {
     @apply flex items-center gap-1 text-gold hover:opacity-80 transition-opacity duration-300 text-sm;
   }
-  
+
   .gold-button {
     @apply bg-black text-gold border border-gold px-6 py-2.5 rounded transition-all
     hover:bg-gold hover:text-black hover:shadow-lg hover:shadow-gold/20 duration-300;
   }
-  
+
   .section {
     @apply py-16 md:py-24;
   }
