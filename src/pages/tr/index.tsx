@@ -21,13 +21,54 @@ const IndexTr = () => {
     return (
         <Layout>
             <Helmet>
-                <title>Etkinlik Planlama ve Organizasyon | Event Nora</title>
+                <title>Event Nora | Düğün Organizasyonu, Davetiye Hizmeti ve Etkinlik Planlama</title>
                 <meta
                     name="description"
-                    content="Yaratıcılık, strateji ve kusursuz uygulama ile unutulmaz etkinlikler tasarlıyoruz."
+                    content="Event Nora ile hayalinizdeki düğünü, daveti ve özel etkinlikleri kusursuz bir şekilde planlayın. Davetiye, organizasyon ve etkinlik yönetiminde uzman ekibimizle yanınızdayız."
+                />
+                <meta
+                    name="keywords"
+                    content="Event Nora, Nora Event, Ays Davet, düğün organizasyonu, davetiye, davet organizasyonu, etkinlik planlama, nişan organizasyonu, doğum günü organizasyonu, etkinlik tasarımı"
                 />
                 <link rel="canonical" href="https://www.eventnora.com/tr" />
+
+                {/* Open Graph */}
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content="Event Nora | Düğün ve Davet Organizasyonları" />
+                <meta property="og:description" content="Event Nora ile davetlerinizi unutulmaz kılın. Düğün organizasyonu, davetiye hizmeti ve etkinlik planlama uzmanlığımızla yanınızdayız." />
+                <meta property="og:url" content="https://www.eventnora.com/tr" />
+                <meta property="og:site_name" content="Event Nora" />
+
+                {/* Twitter */}
+                <meta name="twitter:card" content="summary" />
+                <meta name="twitter:title" content="Event Nora | Unutulmaz Düğünler ve Davetler" />
+                <meta name="twitter:description" content="Düğün, nişan, doğum günü, davet organizasyonlarınız için Event Nora profesyonel hizmet sunuyor." />
+
+                {/* Schema - WebSite */}
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "WebSite",
+                        name: "Event Nora",
+                        url: "https://www.eventnora.com/tr",
+                    })}
+                </script>
+
+                {/* Schema - Organization */}
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Organization",
+                        name: "Event Nora",
+                        url: "https://www.eventnora.com",
+                        logo: {
+                            "@type": "ImageObject",
+                            url: "https://www.eventnora.com/logo.png",
+                        },
+                    })}
+                </script>
             </Helmet>
+
 
             {/* Hero */}
             <section

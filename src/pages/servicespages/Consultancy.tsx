@@ -12,30 +12,31 @@ const ConsultancyEn = () => {
     }, []);
 
     const handleContactClick = () => {
-        navigate('/en/contact');
+        navigate('/contact');
     };
 
-    const seoTitle = 'Consultancy Services | Event Strategy & Planning - Event Nora';
+    const seoTitle = 'Event Nora - Consultancy Services | Event Strategy & Planning';
     const seoDescription =
-        'We provide consultancy services for every step of event planning — from strategy to execution and evaluation.';
+        'Expert consultancy services for event strategy, planning, execution and evaluation to make your events successful with Event Nora.';
 
     return (
         <Layout>
             <Helmet>
+                {/* SEO Basics */}
                 <title>{seoTitle}</title>
                 <meta name="description" content={seoDescription} />
-                <link rel="canonical" href="https://www.eventnora.com/en/services/consultancy" />
-                <link
-                    rel="alternate"
-                    hrefLang="tr"
-                    href="https://www.eventnora.com/tr/hizmetler/danismanlik-hizmetleri"
-                />
+                <link rel="canonical" href="https://www.eventnora.com/services/consultancy" />
+
+                {/* Hreflang */}
+                <link rel="alternate" hrefLang="en" href="https://www.eventnora.com/services/consultancy" />
+                <link rel="alternate" hrefLang="tr" href="https://www.eventnora.com/tr/hizmetler/danismanlik-hizmetleri" />
+                <link rel="alternate" hrefLang="x-default" href="https://www.eventnora.com/" />
 
                 {/* Open Graph */}
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content={seoTitle} />
                 <meta property="og:description" content={seoDescription} />
-                <meta property="og:url" content="https://www.eventnora.com/en/services/consultancy" />
+                <meta property="og:url" content="https://www.eventnora.com/services/consultancy" />
                 <meta property="og:site_name" content="Event Nora" />
                 <meta property="og:image" content="https://www.eventnora.com/logo.png" />
 
@@ -49,38 +50,22 @@ const ConsultancyEn = () => {
                 <script type="application/ld+json">
                     {JSON.stringify({
                         "@context": "https://schema.org",
-                        "@type": "WebSite",
-                        name: "Event Nora",
-                        url: "https://www.eventnora.com",
-                    })}
-                </script>
-                <script type="application/ld+json">
-                    {JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "Organization",
-                        name: "Event Nora",
-                        url: "https://www.eventnora.com",
-                        logo: {
-                            "@type": "ImageObject",
-                            url: "https://www.eventnora.com/logo.png",
-                        },
-                    })}
-                </script>
-                <script type="application/ld+json">
-                    {JSON.stringify({
-                        "@context": "https://schema.org",
                         "@type": "Service",
-                        serviceType: "Event Consultancy Services",
-                        provider: {
+                        "serviceType": "Event Consultancy Services",
+                        "provider": {
                             "@type": "Organization",
-                            name: "Event Nora",
-                            url: "https://www.eventnora.com",
+                            "name": "Event Nora",
+                            "url": "https://www.eventnora.com",
+                            "logo": {
+                                "@type": "ImageObject",
+                                "url": "https://www.eventnora.com/logo.png"
+                            }
                         },
-                        areaServed: {
-                            "@type": "Place",
-                            name: "Istanbul",
+                        "areaServed": {
+                            "@type": "City",
+                            "name": "Istanbul"
                         },
-                        description: seoDescription,
+                        "description": seoDescription
                     })}
                 </script>
             </Helmet>
@@ -108,7 +93,7 @@ const ConsultancyEn = () => {
                 />
             </section>
 
-            {/* Content */}
+            {/* Service Content */}
             <section className="section bg-white">
                 <div className="container-custom max-w-6xl mx-auto">
                     <h2 className="text-3xl md:text-4xl font-bold text-black mb-14 text-center">
@@ -187,7 +172,7 @@ const ConsultancyEn = () => {
 
 export default ConsultancyEn;
 
-// 🔁 Reusable Content Column
+// 🔁 Reusable Column Block
 const ContentColumn = ({
                            content,
                        }: {

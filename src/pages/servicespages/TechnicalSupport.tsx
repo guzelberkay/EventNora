@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Layout from '@/components/Layout';
-import technicalImg from '@/images/technical_support_event.png';
+import socialResponsibilityImage from '@/images/socialresponsiblility_event.png';
 
-const TechnicalSupport = () => {
+const SocialResponsibility = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -12,93 +12,160 @@ const TechnicalSupport = () => {
     }, []);
 
     const handleContactClick = () => {
-        navigate('/en/contact');
+        navigate('/contact');
     };
+
+    const seoTitle = 'Event Nora - Social Responsibility Projects & Impact Events';
+    const seoDescription =
+        'We support social impact through sustainable project planning and meaningful event organization tailored to community needs.';
 
     return (
         <Layout>
             <Helmet>
-                <title>Technical & Logistics Support | Event Nora</title>
-                <meta
-                    name="description"
-                    content="We provide professional technical infrastructure and logistics services for flawless event execution."
-                />
-                <link rel="canonical" href="https://www.eventnora.com/en/services/technical-support" />
+                {/* SEO Meta */}
+                <title>{seoTitle}</title>
+                <meta name="description" content={seoDescription} />
+                <link rel="canonical" href="https://www.eventnora.com/services/social-responsibility" />
+
+                {/* Hreflang */}
+                <link rel="alternate" hrefLang="en" href="https://www.eventnora.com/services/social-responsibility" />
+                <link rel="alternate" hrefLang="tr" href="https://www.eventnora.com/tr/hizmetler/sosyal-sorumluluk-projeleri" />
+                <link rel="alternate" hrefLang="x-default" href="https://www.eventnora.com/" />
 
                 {/* Open Graph */}
-                <meta property="og:type" content="article" />
-                <meta property="og:title" content="Technical & Logistics Support | Event Nora" />
-                <meta property="og:description" content="We provide professional technical infrastructure and logistics services for flawless event execution." />
-                <meta property="og:image" content={technicalImg} />
-                <meta property="og:url" content="https://www.eventnora.com/en/services/technical-support" />
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content={seoTitle} />
+                <meta property="og:description" content={seoDescription} />
+                <meta property="og:url" content="https://www.eventnora.com/services/social-responsibility" />
                 <meta property="og:site_name" content="Event Nora" />
+                <meta property="og:image" content="https://www.eventnora.com/logo.png" />
+                <meta property="og:locale" content="en_US" />
 
-                {/* Twitter */}
+                {/* Twitter Card */}
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Technical & Logistics Support | Event Nora" />
-                <meta name="twitter:description" content="We provide professional technical infrastructure and logistics services for flawless event execution." />
-                <meta name="twitter:image" content={technicalImg} />
+                <meta name="twitter:title" content={seoTitle} />
+                <meta name="twitter:description" content={seoDescription} />
+                <meta name="twitter:image" content="https://www.eventnora.com/logo.png" />
+
+                {/* Structured Data */}
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Service",
+                        "serviceType": "Social Responsibility Projects",
+                        "provider": {
+                            "@type": "Organization",
+                            "name": "Event Nora",
+                            "url": "https://www.eventnora.com",
+                            "logo": {
+                                "@type": "ImageObject",
+                                "url": "https://www.eventnora.com/logo.png"
+                            }
+                        },
+                        "areaServed": {
+                            "@type": "Place",
+                            "name": "Istanbul"
+                        },
+                        "description": seoDescription
+                    })}
+                </script>
             </Helmet>
 
-            {/* Hero */}
+            {/* Hero Section */}
             <section className="py-20 bg-black relative overflow-hidden">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gold to-transparent opacity-20" />
+                <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gold to-transparent" />
                 <div className="container-custom relative z-10 text-center max-w-3xl mx-auto">
                     <h1 className="text-gold text-4xl md:text-5xl font-extrabold mb-6">
-                        🔧 Technical & Logistics Support
+                        Social Responsibility Projects
                     </h1>
-                    <p className="text-gold-light/90 text-xl font-light">
-                        Strong infrastructure for flawless events!
+                    <p className="text-gold-light/90 text-xl leading-relaxed font-light">
+                        Creating meaningful impact through powerful partnerships
                     </p>
                 </div>
             </section>
 
-            {/* Banner */}
+            {/* Banner Image */}
             <section>
                 <img
-                    src={technicalImg}
-                    alt="Technical Support"
+                    src={socialResponsibilityImage}
+                    alt="Social responsibility event organized by Event Nora"
                     className="w-full h-auto object-cover object-center"
                     loading="lazy"
                 />
             </section>
 
-            {/* Content */}
+            {/* Services Content */}
             <section className="section bg-white">
                 <div className="container-custom max-w-6xl mx-auto">
                     <h2 className="text-3xl md:text-4xl font-bold text-black mb-14 text-center">
-                        Our Services
+                        Our Services in Social Responsibility Projects
                     </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 text-textGray">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-textGray text-lg leading-relaxed">
                         <ContentColumn
-                            items={[
-                                '🎯 We offer all technical and logistical services needed to ensure a safe, organized, and professional flow at every stage of your event.',
-                                '🔌 <strong>Technical Infrastructure & Setup</strong><br />• Sound, light, and video system installation<br />• LED screens, projection, and live stream solutions<br />• Stage, podium, tent, truss systems<br />• Electrical infrastructure and generator support',
-                                '🚛 <strong>Logistics Services</strong><br />• Material transport, setup and dismantling<br />• Equipment organization and placement<br />• Supply and inventory tracking<br />• Coordination of on-site technical staff',
+                            content={[
+                                '🌱 We design and deliver responsible, impactful projects that serve the community and promote awareness.',
+                                {
+                                    title: '📌 Project Development & Planning',
+                                    items: [
+                                        'Social needs analysis and objective setting',
+                                        'Partnerships with NGOs and institutions',
+                                        'Event calendar and content planning',
+                                        'Volunteer engagement and coordination',
+                                    ],
+                                },
+                                {
+                                    title: '🌍 Event Organization',
+                                    items: [
+                                        'Workshops, panels, awareness walks',
+                                        'Environmental campaigns (cleanup, planting)',
+                                        'Donation drives (books, clothes, essentials)',
+                                        'Youth camps and civic initiatives',
+                                    ],
+                                },
                             ]}
                         />
                         <ContentColumn
-                            items={[
-                                '🧯 <strong>Safety & Support Services</strong><br />• Fire, first aid, and emergency planning<br />• Entry-exit control systems<br />• Toilets, bins, sanitizers, signboards<br />• Permit, license, municipality procedures',
-                                '🎤 <strong>Live Technical Monitoring</strong><br />• Real-time technical interventions<br />• Backstage communication<br />• Control desks for camera, sound, light<br />• Rehearsal planning and coordination',
-                                '⚙️ Leave the technical details to us — just enjoy your event!',
+                            content={[
+                                {
+                                    title: '📣 Communication & Visibility',
+                                    items: [
+                                        'Social media and outreach campaigns',
+                                        'Printed and digital material production',
+                                        'Press and media engagement',
+                                        'Post-event reporting and measurement',
+                                    ],
+                                },
+                                {
+                                    title: '🤲 Target Groups',
+                                    items: [
+                                        'Children & Youth',
+                                        'Women & Elderly',
+                                        'Underprivileged communities',
+                                        'NGOs and Volunteers',
+                                    ],
+                                },
+                                '✨ Let’s turn your values into actions — together we create lasting change.',
                             ]}
                         />
                     </div>
                 </div>
             </section>
 
-            {/* CTA */}
+            {/* CTA Section */}
             <section className="section bg-black text-center">
                 <div className="container-custom">
                     <h2 className="text-gold text-3xl md:text-4xl font-extrabold mb-6">
-                        📍 Contact us today to build a strong event infrastructure!
+                        Ready to make an impact with your project?
                     </h2>
+                    <p className="text-gold-light/80 mb-8 max-w-2xl mx-auto text-lg leading-relaxed">
+                        Let’s bring your ideas to life — contact us today!
+                    </p>
                     <button
                         onClick={handleContactClick}
+                        aria-label="Contact Event Nora for social responsibility projects"
                         className="bg-gold hover:bg-gold-dark text-black font-semibold text-lg py-4 px-10 rounded-full transition-colors shadow-md"
                     >
-                        Get Support
+                        Get in Touch
                     </button>
                 </div>
             </section>
@@ -106,12 +173,30 @@ const TechnicalSupport = () => {
     );
 };
 
-export default TechnicalSupport;
+export default SocialResponsibility;
 
-const ContentColumn = ({ items }: { items: string[] }) => (
-    <div className="space-y-6 text-base md:text-lg leading-relaxed">
-        {items.map((item, index) => (
-            <p key={index} dangerouslySetInnerHTML={{ __html: item }} />
-        ))}
+// 🔁 Reusable Column Component
+const ContentColumn = ({
+                           content,
+                       }: {
+    content: (string | { title: string; items: string[] })[];
+}) => (
+    <div className="space-y-6">
+        {content.map((block, index) =>
+            typeof block === 'string' ? (
+                <p key={index} className="text-base md:text-lg whitespace-pre-line">
+                    {block}
+                </p>
+            ) : (
+                <div key={index}>
+                    <h3 className="text-xl font-semibold mb-2">{block.title}</h3>
+                    <ul className="space-y-1 pl-4 list-disc marker:text-gold">
+                        {block.items.map((item, idx) => (
+                            <li key={idx}>{item}</li>
+                        ))}
+                    </ul>
+                </div>
+            )
+        )}
     </div>
 );

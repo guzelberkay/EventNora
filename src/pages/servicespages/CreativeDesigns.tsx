@@ -15,7 +15,7 @@ const CreativeDesigns = () => {
         navigate('/en/contact');
     };
 
-    const seoTitle = 'Creative Designs & Decoration | Visual Event Styling - Event Nora';
+    const seoTitle = ' Event Nora - Creative Designs & Decoration | Visual Event Styling ';
     const seoDescription =
         'Aesthetic event spaces and custom decoration services. Transform your dream concept into a visual reality.';
 
@@ -24,7 +24,7 @@ const CreativeDesigns = () => {
             <Helmet>
                 <title>{seoTitle}</title>
                 <meta name="description" content={seoDescription} />
-                <link rel="canonical" href="https://www.eventnora.com/en/services/creative-designs" />
+                <link rel="canonical" href="https://www.eventnora.com/services/creative-designs" />
                 <link
                     rel="alternate"
                     hrefLang="tr"
@@ -35,7 +35,7 @@ const CreativeDesigns = () => {
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content={seoTitle} />
                 <meta property="og:description" content={seoDescription} />
-                <meta property="og:url" content="https://www.eventnora.com/en/services/creative-designs" />
+                <meta property="og:url" content="https://www.eventnora.com/services/creative-designs" />
                 <meta property="og:site_name" content="Event Nora" />
                 <meta property="og:image" content="https://www.eventnora.com/logo.png" />
 

@@ -12,30 +12,30 @@ const CorporateEn = () => {
     }, []);
 
     const handleContactClick = () => {
-        navigate('/en/contact');
+        navigate('/contact');
     };
 
     const seoTitle = 'Corporate Events | Professional Event Planning - Event Nora';
-    const seoDescription =
-        'Stand out with corporate event services reflecting your brand value. Discover our comprehensive event management solutions.';
+    const seoDescription = 'Stand out with corporate event services reflecting your brand value. Discover our comprehensive event management solutions.';
 
     return (
         <Layout>
             <Helmet>
+                {/* SEO Meta */}
                 <title>{seoTitle}</title>
                 <meta name="description" content={seoDescription} />
-                <link rel="canonical" href="https://www.eventnora.com/en/services/corporate-events" />
-                <link
-                    rel="alternate"
-                    hrefLang="tr"
-                    href="https://www.eventnora.com/tr/hizmetler/kurumsal-etkinlikler"
-                />
+                <link rel="canonical" href="https://www.eventnora.com/services/corporate-events" />
+
+                {/* Hreflang */}
+                <link rel="alternate" hrefLang="en" href="https://www.eventnora.com/services/corporate-events" />
+                <link rel="alternate" hrefLang="tr" href="https://www.eventnora.com/tr/hizmetler/kurumsal-etkinlikler" />
+                <link rel="alternate" hrefLang="x-default" href="https://www.eventnora.com/" />
 
                 {/* Open Graph */}
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content={seoTitle} />
                 <meta property="og:description" content={seoDescription} />
-                <meta property="og:url" content="https://www.eventnora.com/en/services/corporate-events" />
+                <meta property="og:url" content="https://www.eventnora.com/services/corporate-events" />
                 <meta property="og:site_name" content="Event Nora" />
                 <meta property="og:image" content="https://www.eventnora.com/logo.png" />
 
@@ -49,35 +49,19 @@ const CorporateEn = () => {
                 <script type="application/ld+json">
                     {JSON.stringify({
                         "@context": "https://schema.org",
-                        "@type": "WebSite",
-                        "name": "Event Nora",
-                        "url": "https://www.eventnora.com"
-                    })}
-                </script>
-                <script type="application/ld+json">
-                    {JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "Organization",
-                        "name": "Event Nora",
-                        "url": "https://www.eventnora.com",
-                        "logo": {
-                            "@type": "ImageObject",
-                            "url": "https://www.eventnora.com/logo.png"
-                        }
-                    })}
-                </script>
-                <script type="application/ld+json">
-                    {JSON.stringify({
-                        "@context": "https://schema.org",
                         "@type": "Service",
                         "serviceType": "Corporate Event Planning",
                         "provider": {
                             "@type": "Organization",
                             "name": "Event Nora",
-                            "url": "https://www.eventnora.com"
+                            "url": "https://www.eventnora.com",
+                            "logo": {
+                                "@type": "ImageObject",
+                                "url": "https://www.eventnora.com/logo.png"
+                            }
                         },
                         "areaServed": {
-                            "@type": "Place",
+                            "@type": "City",
                             "name": "Istanbul"
                         },
                         "description": seoDescription
@@ -85,7 +69,7 @@ const CorporateEn = () => {
                 </script>
             </Helmet>
 
-            {/* Hero */}
+            {/* Hero Section */}
             <section className="py-16 bg-black relative overflow-hidden">
                 <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gold to-transparent" />
                 <div className="container-custom relative z-10 text-center max-w-3xl mx-auto">
@@ -106,7 +90,7 @@ const CorporateEn = () => {
                 />
             </section>
 
-            {/* Services */}
+            {/* Services Content */}
             <section className="section bg-white">
                 <div className="container-custom max-w-6xl mx-auto">
                     <h2 className="text-3xl font-bold text-black mb-10 text-center">
@@ -124,7 +108,6 @@ const CorporateEn = () => {
                                 '🍽️ <strong>Catering Services</strong><br />• Welcome treats, coffee break stands<br />• Buffet or table service meals<br />• Corporate branded presentation areas<br />• Vegan, vegetarian and special menu options',
                             ]}
                         />
-
                         <ServiceColumn
                             items={[
                                 '📸 <strong>Promotion & Media Support</strong><br />• Professional photo & video shooting<br />• Social media content production<br />• Instant sharing corners & branded memory walls<br />• Post-event promotional film',
@@ -160,7 +143,7 @@ const CorporateEn = () => {
 
 export default CorporateEn;
 
-// 💡 Modular Content Renderer
+// Reusable service content
 const ServiceColumn = ({ items }: { items: string[] }) => (
     <div className="w-full md:w-[48%] space-y-4">
         {items.map((item, index) => (

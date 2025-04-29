@@ -11,13 +11,13 @@ const FestivalEvent = () => {
     }, []);
 
     const handleContactClick = () => {
-        navigate('/en/contact');
+        navigate('/contact');
     };
 
-    const seoTitle = 'Festival & Large-Scale Event Organization | Event Nora';
+    const seoTitle = 'Event Nora - Festival & Large-Scale Event Organization';
     const seoDescription =
         'Music festivals, public events, and brand activations – we organize large-scale events with creative planning and perfect execution.';
-    const canonicalUrl = 'https://www.eventnora.com/en/services/festival-event';
+    const canonicalUrl = 'https://www.eventnora.com/services/festival-event';
 
     return (
         <Layout>

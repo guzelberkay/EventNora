@@ -8,18 +8,18 @@ Disallow: /private/
 Disallow: /temp/
 Disallow: /drafts/
 
-# Belirli URL parametrelerini engelle
+# Ana sayfa ve içeriklerin açık olduğunu net belirt
+Allow: /
+
+# Belirli parametreleri engelle (gereksiz içerik çoğalmasını önler)
 Disallow: /*?sessionid=
 Disallow: /*?temp=
-
-# Gerekiyorsa tüm parametreli URL'leri engelle (DİKKATLE kullan)
-# Disallow: /*?*
 
 # Belirli dosya türlerini dışla
 Disallow: /*.pdf$
 
-# Site haritası
+# Site haritası — Arama motorları buradan sayfaları tarar
 Sitemap: https://www.eventnora.com/sitemap.xml
 
-# (İsteğe bağlı) Host belirtme — bazı botlar için
-# Host: https://www.eventnora.com
+# (İsteğe bağlı) Host belirtme — bazı botlar için (Yandex vs)
+# Host: www.eventnora.com

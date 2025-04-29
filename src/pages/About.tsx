@@ -17,6 +17,10 @@ const About = () => {
         ? 'Event Nora is passionate about crafting unforgettable experiences through creativity, precision, and professionalism.'
         : 'Event Nora, yaratıcılık, hassasiyet ve profesyonellik ile unutulmaz deneyimler yaratmaya tutkuyla bağlıdır.';
 
+    const pageUrl = isEnglish
+        ? 'https://www.eventnora.com/about'
+        : 'https://www.eventnora.com/tr/hakkimizda';
+
     const coreValues = isEnglish
         ? [
             { value: 'Excellence', description: 'We strive for perfection in every detail, no matter how small.' },
@@ -34,33 +38,31 @@ const About = () => {
     return (
         <Layout>
             <Helmet>
+                {/* SEO Meta Tags */}
                 <title>{pageTitle}</title>
                 <meta name="description" content={pageDescription} />
+                <link rel="canonical" href={pageUrl} />
 
-                {/* ✅ Canonical Tag */}
-                <link
-                    rel="canonical"
-                    href={`https://www.eventnora.com/${isEnglish ? 'en/about' : 'tr/hakkimizda'}`}
-                />
-
-                {/* ✅ Open Graph Tags */}
+                {/* Open Graph */}
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content={pageTitle} />
                 <meta property="og:description" content={pageDescription} />
-                <meta
-                    property="og:url"
-                    content={`https://www.eventnora.com/${isEnglish ? 'en/about' : 'tr/hakkimizda'}`}
-                />
+                <meta property="og:url" content={pageUrl} />
                 <meta property="og:site_name" content="Event Nora" />
                 <meta property="og:image" content="https://www.eventnora.com/logo.png" />
 
-                {/* ✅ Twitter Card */}
+                {/* Twitter Card */}
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={pageTitle} />
                 <meta name="twitter:description" content={pageDescription} />
                 <meta name="twitter:image" content="https://www.eventnora.com/logo.png" />
 
-                {/* ✅ Structured Data - WebSite */}
+                {/* Hreflang */}
+                <link rel="alternate" hrefLang="en" href="https://www.eventnora.com/about" />
+                <link rel="alternate" hrefLang="tr" href="https://www.eventnora.com/tr/hakkimizda" />
+                <link rel="alternate" hrefLang="x-default" href="https://www.eventnora.com/about" />
+
+                {/* Structured Data */}
                 <script type="application/ld+json">
                     {JSON.stringify({
                         '@context': 'https://schema.org',
@@ -70,7 +72,6 @@ const About = () => {
                     })}
                 </script>
 
-                {/* ✅ Structured Data - Organization */}
                 <script type="application/ld+json">
                     {JSON.stringify({
                         '@context': 'https://schema.org',
@@ -106,50 +107,22 @@ const About = () => {
                             </h2>
                             {isEnglish ? (
                                 <>
-                                    <p>
-                                        Event Nora is an event and organization company that works with passion to create unforgettable
-                                        moments. We offer a wide range of services from business dinners to weddings, birthdays to company
-                                        openings, fashion events to boat parties.
-                                    </p>
-                                    <p>
-                                        We design each event with aesthetic touches to transform it into a unique experience and perfect it
-                                        down to the smallest detail. With our services covering stage setup, table arrangement, decoration,
-                                        music, consultancy, animation and more, we make your events more magnificent than you imagined.
-                                    </p>
-                                    <p>
-                                        We make a difference in the event industry by offering creative and personalized solutions to our
-                                        local and international clients. For us, every detail is a work of art and every event is an
-                                        unforgettable story. Ready to turn your dream event into reality with Event Nora?
-                                    </p>
+                                    <p>Event Nora is an event and organization company that works with passion to create unforgettable moments. We offer a wide range of services from business dinners to weddings, birthdays to company openings, fashion events to boat parties.</p>
+                                    <p>We design each event with aesthetic touches to transform it into a unique experience and perfect it down to the smallest detail. With our services covering stage setup, table arrangement, decoration, music, consultancy, animation and more, we make your events more magnificent than you imagined.</p>
+                                    <p>We make a difference in the event industry by offering creative and personalized solutions to our local and international clients. For us, every detail is a work of art and every event is an unforgettable story. Ready to turn your dream event into reality with Event Nora?</p>
                                 </>
                             ) : (
                                 <>
-                                    <p>
-                                        Event Nora, unutulmaz anlar yaratmak için tutkuyla çalışan bir etkinlik ve organizasyon şirketidir.
-                                        İş yemeklerinden düğünlere, doğum günlerinden şirket açılışlarına, moda etkinliklerinden tekne
-                                        partilerine kadar geniş bir yelpazede hizmet sunuyoruz.
-                                    </p>
-                                    <p>
-                                        Her organizasyonu estetik dokunuşlarla benzersiz bir deneyime dönüştürüyor, en ince detayına kadar
-                                        kusursuz hale getiriyoruz. Sahne kurulumu, masa düzeni, dekorasyon, müzik, danışmanlık, animasyon ve
-                                        daha fazlasıyla hayal ettiğinizden daha görkemli organizasyonlar sunuyoruz.
-                                    </p>
-                                    <p>
-                                        Yerli ve uluslararası müşterilerimize özel, yaratıcı ve kişiselleştirilmiş çözümler sunarak
-                                        sektörde fark yaratıyoruz. Her detay bizim için bir sanat eseri, her etkinlik ise unutulmaz bir
-                                        hikâyedir. Hayalinizdeki organizasyonu gerçeğe dönüştürmek için hazır mısınız?
-                                    </p>
+                                    <p>Event Nora, unutulmaz anlar yaratmak için tutkuyla çalışan bir etkinlik ve organizasyon şirketidir. İş yemeklerinden düğünlere, doğum günlerinden şirket açılışlarına, moda etkinliklerinden tekne partilerine kadar geniş bir yelpazede hizmet sunuyoruz.</p>
+                                    <p>Her organizasyonu estetik dokunuşlarla benzersiz bir deneyime dönüştürüyor, en ince detayına kadar kusursuz hale getiriyoruz. Sahne kurulumu, masa düzeni, dekorasyon, müzik, danışmanlık, animasyon ve daha fazlasıyla hayal ettiğinizden daha görkemli organizasyonlar sunuyoruz.</p>
+                                    <p>Yerli ve uluslararası müşterilerimize özel, yaratıcı ve kişiselleştirilmiş çözümler sunarak sektörde fark yaratıyoruz. Her detay bizim için bir sanat eseri, her etkinlik ise unutulmaz bir hikâyedir. Hayalinizdeki organizasyonu gerçeğe dönüştürmek için hazır mısınız?</p>
                                 </>
                             )}
                         </div>
                         <div>
                             <img
                                 src={aboutImage}
-                                alt={
-                                    isEnglish
-                                        ? 'Event Nora team creating an event'
-                                        : 'Event Nora ekibi bir etkinlik hazırlıyor'
-                                }
+                                alt={isEnglish ? 'Event Nora team creating an event' : 'Event Nora ekibi bir etkinlik hazırlıyor'}
                                 className="w-full h-[550px] object-cover rounded-lg"
                                 loading="lazy"
                             />
@@ -158,13 +131,11 @@ const About = () => {
                 </div>
             </section>
 
-            {/* Values Section */}
+            {/* Core Values Section */}
             <section className="section bg-black/95 text-white">
                 <div className="container-custom">
                     <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-gold font-medium">
-              {isEnglish ? 'Our Core Values' : 'Temel Değerlerimiz'}
-            </span>
+                        <span className="text-gold font-medium">{isEnglish ? 'Our Core Values' : 'Temel Değerlerimiz'}</span>
                         <h2 className="heading-2 mt-2 mb-4">{isEnglish ? 'What Drives Us' : 'Bizi Yönlendirenler'}</h2>
                         <p className="text-white/80">
                             {isEnglish

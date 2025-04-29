@@ -23,28 +23,27 @@ const IndexEn = () => {
 
   const pageTitle = 'Event Planning & Organization | Event Nora';
   const pageDescription = 'We design unforgettable events through creativity, strategy, and flawless execution.';
-  const canonicalUrl = 'https://www.eventnora.com/en';
+  const canonicalUrl = 'https://www.eventnora.com/';
 
   return (
       <Layout>
         <Helmet>
-          <title>{pageTitle}</title>
-          <meta name="description" content={pageDescription} />
-          <link rel="canonical" href={canonicalUrl} />
+          <title>Event Nora | Wedding Organization, Digital Invitations & Event Planning</title>
+          <meta name="description" content="Event Nora offers exceptional wedding planning, digital invitations, corporate events, and special day organizations to create unforgettable memories." />
+          <meta name="keywords" content="Event Nora, eventnora, noraevent, wedding planning, event organization, digital invitations, engagement organization, corporate events, birthday parties" />
+          <link rel="canonical" href="https://www.eventnora.com/" />
 
           {/* Open Graph */}
           <meta property="og:type" content="website" />
-          <meta property="og:title" content={pageTitle} />
-          <meta property="og:description" content={pageDescription} />
-          <meta property="og:url" content={canonicalUrl} />
-          <meta property="og:image" content="https://www.eventnora.com/logo.png" />
+          <meta property="og:title" content="Event Nora | Wedding Organization and Event Planning" />
+          <meta property="og:description" content="Expert wedding planning, digital invitations, and event organization services to bring your vision to life." />
+          <meta property="og:url" content="https://www.eventnora.com/" />
           <meta property="og:site_name" content="Event Nora" />
 
           {/* Twitter */}
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content={pageTitle} />
-          <meta name="twitter:description" content={pageDescription} />
-          <meta name="twitter:image" content="https://www.eventnora.com/logo.png" />
+          <meta name="twitter:card" content="summary" />
+          <meta name="twitter:title" content="Event Nora | Memorable Weddings and Events" />
+          <meta name="twitter:description" content="Make your dream wedding and events come true with Event Nora's professional planning and organization services." />
 
           {/* Schema - WebSite */}
           <script type="application/ld+json">
@@ -70,6 +69,8 @@ const IndexEn = () => {
             })}
           </script>
         </Helmet>
+
+
 
         {/* Hero */}
         <section

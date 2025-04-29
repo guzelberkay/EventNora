@@ -3,36 +3,54 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <meta name="theme-color" content="#ffffff" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Event Nora" />
+
+  <!-- Favicon ve Web Manifest -->
   <link rel="icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" href="/favicon.ico" />
   <link rel="manifest" href="/manifest.json" />
 
-  <!-- 🌍 Language declarations -->
-  <link rel="alternate" href="https://eventnora.com/" hreflang="en" />
-  <link rel="alternate" href="https://eventnora.com/tr/" hreflang="tr" />
-  <link rel="alternate" href="https://eventnora.com/" hreflang="x-default" />
+  <!-- 🌍 Hreflang (Dil Alternatifleri) -->
+  <link rel="alternate" href="https://www.eventnora.com/" hreflang="en" />
+  <link rel="alternate" href="https://www.eventnora.com/tr/" hreflang="tr" />
+  <link rel="alternate" href="https://www.eventnora.com/" hreflang="x-default" />
 
-  <!-- ✅ SEO Basics -->
-  <title>Event Nora | Digital Invitations & Event Planning</title>
-  <meta name="description" content="Event Nora offers custom digital invitations, event planning, birthday and corporate organization services in Istanbul. Check our blog, services, and contact page.">
-  <meta name="robots" content="index, follow" />
+  <!-- ✅ Site Başlığı ve Açıklama -->
+  <title>Event Nora | Digital Invitations, Event Planning, Wedding Organization</title>
+  <meta name="description" content="Event Nora offers professional digital invitation services, event planning, wedding organization, and birthday/corporate event management in Istanbul and beyond." />
 
-  <!-- ✅ Schema Markup -->
+  <!-- ✅ Structured Data - Organization -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Event Nora",
-      "url": "https://eventnora.com",
-      "logo": "https://eventnora.com/favicon.ico",
+      "url": "https://www.eventnora.com",
+      "logo": "https://www.eventnora.com/favicon.ico",
       "sameAs": [
         "https://www.instagram.com/eventnora",
         "https://www.facebook.com/eventnora"
       ]
     }
   </script>
+
+  <!-- ✅ Structured Data - WebSite -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Event Nora",
+      "url": "https://www.eventnora.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.eventnora.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  </script>
+
 </head>
 <body>
 <noscript>JavaScript must be enabled to run this app.</noscript>
@@ -49,7 +67,7 @@
   </ul>
 </nav>
 
-<!-- ✅ React uygulamasını başlatan doğru dosya -->
+<!-- ✅ React Uygulaması Başlat -->
 <script type="module" src="/src/main.tsx"></script>
 </body>
 </html>

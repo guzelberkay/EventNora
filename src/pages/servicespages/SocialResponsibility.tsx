@@ -12,38 +12,67 @@ const SocialResponsibility = () => {
     }, []);
 
     const handleContactClick = () => {
-        navigate('/en/contact');
+        navigate('/contact');
     };
+
+    const seoTitle = 'Event Nora - Social Responsibility Projects & Impact Events';
+    const seoDescription =
+        'We support social impact with responsible and sustainable project planning and impactful event organization services.';
 
     return (
         <Layout>
             <Helmet>
-                <title>Social Responsibility Projects | Event Nora</title>
-                <meta
-                    name="description"
-                    content="We support social impact with responsible and sustainable project planning and event organization services."
-                />
-                <link
-                    rel="canonical"
-                    href="https://www.eventnora.com/en/services/social-responsibility"
-                />
-                <meta property="og:title" content="Social Responsibility Projects | Event Nora" />
-                <meta
-                    property="og:description"
-                    content="We support social impact with responsible and sustainable project planning and event organization services."
-                />
-                <meta property="og:image" content={socialResponsibilityImage} />
-                <meta property="og:url" content="https://www.eventnora.com/en/services/social-responsibility" />
-                <meta property="og:type" content="article" />
-                <meta property="og:site_name" content="Event Nora" />
+                {/* SEO Basics */}
+                <title>{seoTitle}</title>
+                <meta name="description" content={seoDescription} />
+                <link rel="canonical" href="https://www.eventnora.com/services/social-responsibility" />
 
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Social Responsibility Projects | Event Nora" />
-                <meta
-                    name="twitter:description"
-                    content="We support social impact with responsible and sustainable project planning and event organization services."
+                {/* Hreflang */}
+                <link rel="alternate" hrefLang="en" href="https://www.eventnora.com/services/social-responsibility" />
+                <link
+                    rel="alternate"
+                    hrefLang="tr"
+                    href="https://www.eventnora.com/tr/hizmetler/sosyal-sorumluluk-projeleri"
                 />
-                <meta name="twitter:image" content={socialResponsibilityImage} />
+                <link rel="alternate" hrefLang="x-default" href="https://www.eventnora.com/" />
+
+                {/* Open Graph */}
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content={seoTitle} />
+                <meta property="og:description" content={seoDescription} />
+                <meta property="og:url" content="https://www.eventnora.com/services/social-responsibility" />
+                <meta property="og:site_name" content="Event Nora" />
+                <meta property="og:image" content="https://www.eventnora.com/logo.png" />
+                <meta property="og:locale" content="en_US" />
+
+                {/* Twitter */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={seoTitle} />
+                <meta name="twitter:description" content={seoDescription} />
+                <meta name="twitter:image" content="https://www.eventnora.com/logo.png" />
+
+                {/* Structured Data */}
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Service",
+                        "serviceType": "Social Responsibility Projects",
+                        "provider": {
+                            "@type": "Organization",
+                            "name": "Event Nora",
+                            "url": "https://www.eventnora.com",
+                            "logo": {
+                                "@type": "ImageObject",
+                                "url": "https://www.eventnora.com/logo.png",
+                            },
+                        },
+                        "areaServed": {
+                            "@type": "Place",
+                            "name": "Istanbul",
+                        },
+                        "description": seoDescription,
+                    })}
+                </script>
             </Helmet>
 
             {/* Hero Section */}
@@ -63,35 +92,63 @@ const SocialResponsibility = () => {
             <section>
                 <img
                     src={socialResponsibilityImage}
-                    alt="Social Responsibility Event"
+                    alt="Social responsibility event organized by Event Nora"
                     className="w-full h-auto object-cover object-center"
                     loading="lazy"
                 />
             </section>
 
-            {/* Content */}
+            {/* Service Content */}
             <section className="section bg-white">
                 <div className="container-custom max-w-6xl mx-auto">
                     <h2 className="text-3xl md:text-4xl font-bold text-black mb-14 text-center">
                         Our Services in Social Responsibility Projects
                     </h2>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 text-textGray">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-textGray text-lg leading-relaxed">
                         <ContentColumn
-                            items={[
-                                '🤝 <strong>Social Responsibility Projects</strong>',
-                                '<strong>Powerful collaboration for projects that bring value to society!</strong>',
-                                '🌱 We plan and implement your projects effectively and sustainably, from environment to education, health to equality.',
-                                '📍 <strong>Our Service Scope:</strong>',
-                                '📌 <strong>Project Development & Planning</strong><br />• Social needs analysis and goal setting<br />• Collaborations with NGOs and public institutions<br />• Event calendar creation and content development<br />• Local engagement and volunteer management',
-                                '🌍 <strong>Event Organization</strong><br />• Thematic workshops, seminars, awareness walks<br />• Recycling, tree planting, cleanup campaigns<br />• Donation drives (food, clothes, books)<br />• Youth camps, social entrepreneurship events',
+                            content={[
+                                '🌱 We plan and execute meaningful social responsibility projects with long-term impact and community focus.',
+                                {
+                                    title: '📌 Project Development & Planning',
+                                    items: [
+                                        'Social needs analysis and goal setting',
+                                        'NGO and institutional collaborations',
+                                        'Event calendars and content creation',
+                                        'Volunteer coordination and outreach',
+                                    ],
+                                },
+                                {
+                                    title: '🌍 Event Organization',
+                                    items: [
+                                        'Workshops, seminars, awareness campaigns',
+                                        'Recycling, tree planting, and clean-ups',
+                                        'Donation campaigns (books, clothes, food)',
+                                        'Youth camps and entrepreneurship events',
+                                    ],
+                                },
                             ]}
                         />
                         <ContentColumn
-                            items={[
-                                '📣 <strong>Communication & Outreach</strong><br />• Social media campaigns<br />• Posters, brochures, digital materials<br />• Media relations, visibility strategy<br />• Post-event reporting, feedback collection',
-                                '🤲 <strong>Target Groups</strong><br />• Children & Youth<br />• Women<br />• Elderly<br />• Disadvantaged Groups<br />• NGOs and Volunteers',
-                                '✨ <strong>Together we build impactful projects for a better future.</strong><br />📍 Tell us your project — let’s take action together!',
+                            content={[
+                                {
+                                    title: '📣 Communication & Visibility',
+                                    items: [
+                                        'Social media and awareness campaigns',
+                                        'Design of posters and digital assets',
+                                        'Media relations and public visibility',
+                                        'Post-event reporting and feedback analysis',
+                                    ],
+                                },
+                                {
+                                    title: '🤲 Target Groups',
+                                    items: [
+                                        'Children & Youth',
+                                        'Women & Elderly',
+                                        'Disadvantaged Communities',
+                                        'NGOs and Local Volunteers',
+                                    ],
+                                },
+                                '✨ Together, we design projects that leave a lasting social footprint.',
                             ]}
                         />
                     </div>
@@ -105,10 +162,11 @@ const SocialResponsibility = () => {
                         Ready to make an impact with your project?
                     </h2>
                     <p className="text-gold-light/80 mb-8 max-w-2xl mx-auto text-lg leading-relaxed">
-                        Let’s bring your ideas to life—contact us now!
+                        Let’s bring your ideas to life — contact us today!
                     </p>
                     <button
                         onClick={handleContactClick}
+                        aria-label="Contact Event Nora for social responsibility projects"
                         className="bg-gold hover:bg-gold-dark text-black font-semibold text-lg py-4 px-10 rounded-full transition-colors shadow-md"
                     >
                         Get in Touch
@@ -121,11 +179,28 @@ const SocialResponsibility = () => {
 
 export default SocialResponsibility;
 
-// Reusable content column component
-const ContentColumn = ({ items }: { items: string[] }) => (
-    <div className="space-y-6 text-base md:text-lg leading-relaxed">
-        {items.map((item, index) => (
-            <p key={index} dangerouslySetInnerHTML={{ __html: item }} />
-        ))}
+// 🔁 Reusable Column Component
+const ContentColumn = ({
+                           content,
+                       }: {
+    content: (string | { title: string; items: string[] })[];
+}) => (
+    <div className="space-y-6">
+        {content.map((block, index) =>
+            typeof block === 'string' ? (
+                <p key={index} className="text-base md:text-lg whitespace-pre-line">
+                    {block}
+                </p>
+            ) : (
+                <div key={index}>
+                    <h3 className="text-xl font-semibold mb-2">{block.title}</h3>
+                    <ul className="space-y-1 pl-4 list-disc marker:text-gold">
+                        {block.items.map((item, idx) => (
+                            <li key={idx}>{item}</li>
+                        ))}
+                    </ul>
+                </div>
+            )
+        )}
     </div>
 );

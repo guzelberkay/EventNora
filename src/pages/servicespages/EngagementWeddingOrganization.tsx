@@ -12,14 +12,14 @@ const EngagementWedding = () => {
     }, []);
 
     const handleContactClick = () => {
-        navigate('/en/contact');
+        navigate('/contact');
     };
 
-    const seoTitle = 'Engagement & Wedding Organization Services | Event Nora';
+    const seoTitle = 'Event Nora - Engagement & Wedding Organization Services';
     const seoDescription =
         'Turn your dream wedding into reality with Event Nora’s concept design, decoration, music, catering, and photography services.';
     const canonicalUrl =
-        'https://www.eventnora.com/en/services/engagement-wedding-organization';
+        'https://www.eventnora.com/services/engagement-wedding-organization';
 
     return (
         <Layout>

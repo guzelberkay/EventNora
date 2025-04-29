@@ -12,43 +12,40 @@ const BirthdaySpecialDay = () => {
     }, []);
 
     const handleContactClick = () => {
-        navigate('/en/contact');
+        navigate('/contact');
     };
 
     return (
         <Layout>
             <Helmet>
+                {/* PAGE TITLE and DESCRIPTION */}
                 <title>Birthday & Special Day Organization | Event Nora</title>
                 <meta
                     name="description"
-                    content="From birthdays to anniversaries, we plan every detail of your special day with elegance and joy."
+                    content="From birthdays to anniversaries, Event Nora plans every detail of your special day with elegance, joy, and unforgettable moments."
                 />
-                <link rel="canonical" href="https://www.eventnora.com/en/services/birthday-special-day" />
-                <link
-                    rel="alternate"
-                    hrefLang="tr"
-                    href="https://www.eventnora.com/tr/hizmetler/dogum-gunu-ozel-gun"
-                />
+                <link rel="canonical" href="https://www.eventnora.com/services/birthday-special-day" />
+
+                {/* Hreflang */}
+                <link rel="alternate" hrefLang="en" href="https://www.eventnora.com/services/birthday-special-day" />
+                <link rel="alternate" hrefLang="tr" href="https://www.eventnora.com/tr/hizmetler/dogum-gunu-ozel-gun" />
+                <link rel="alternate" hrefLang="x-default" href="https://www.eventnora.com/" />
 
                 {/* Open Graph */}
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content="Birthday & Special Day Organization | Event Nora" />
-                <meta
-                    property="og:description"
-                    content="From birthdays to anniversaries, we plan every detail of your special day with elegance and joy."
-                />
-                <meta property="og:url" content="https://www.eventnora.com/en/services/birthday-special-day" />
+                <meta property="og:description" content="From birthdays to anniversaries, Event Nora plans every detail of your special day with elegance, joy, and unforgettable moments." />
+                <meta property="og:url" content="https://www.eventnora.com/services/birthday-special-day" />
                 <meta property="og:site_name" content="Event Nora" />
                 <meta property="og:image" content="https://www.eventnora.com/logo.png" />
 
                 {/* Twitter Card */}
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="Birthday & Special Day Organization | Event Nora" />
-                <meta
-                    name="twitter:description"
-                    content="From birthdays to anniversaries, we plan every detail of your special day with elegance and joy."
-                />
+                <meta name="twitter:description" content="From birthdays to anniversaries, Event Nora plans every detail of your special day with elegance, joy, and unforgettable moments." />
                 <meta name="twitter:image" content="https://www.eventnora.com/logo.png" />
+                {/* (Opsiyonel) */}
+                {/* <meta name="twitter:site" content="@eventnora" /> */}
 
                 {/* Structured Data */}
                 <script type="application/ld+json">
@@ -62,26 +59,23 @@ const BirthdaySpecialDay = () => {
                             "url": "https://www.eventnora.com",
                             "logo": {
                                 "@type": "ImageObject",
-                                "url": "https://www.eventnora.com/logo.png",
-                            },
+                                "url": "https://www.eventnora.com/logo.png"
+                            }
                         },
                         "areaServed": {
-                            "@type": "Place",
-                            "name": "Istanbul",
+                            "@type": "City",
+                            "name": "Istanbul"
                         },
-                        "description":
-                            "From birthdays to anniversaries, we plan every detail of your special day with elegance and joy.",
+                        "description": "From birthdays to anniversaries, Event Nora plans every detail of your special day with elegance, joy, and unforgettable moments."
                     })}
                 </script>
             </Helmet>
 
-            {/* Hero */}
+            {/* Hero Section */}
             <section className="py-16 bg-black relative overflow-hidden">
                 <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gold to-transparent" />
                 <div className="container-custom relative z-10 text-center">
-                    <h1 className="heading-1 text-gold mb-4">
-                        Birthday and Special Day Organization
-                    </h1>
+                    <h1 className="heading-1 text-gold mb-4">Birthday and Special Day Organization</h1>
                     <p className="text-gold-light/80 text-lg">
                         Your unforgettable celebration starts here
                     </p>
@@ -111,7 +105,7 @@ const BirthdaySpecialDay = () => {
                             <p>📍 <strong>What We Offer:</strong></p>
                             <ul className="list-disc list-inside">
                                 <li>🎉 <strong>Event Themes:</strong> Custom concepts for kids, teens & adults</li>
-                                <li>Decor: Banners, age boards, balloons, themed tables</li>
+                                <li>🎈 Decor: Banners, age boards, balloons, themed tables</li>
                                 <li>🎂 <strong>Treats:</strong> Cake, cupcakes, welcome snacks, printed candies</li>
                             </ul>
                         </div>
