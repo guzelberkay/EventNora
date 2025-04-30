@@ -68,9 +68,6 @@ const IndexTr = () => {
                     content="Event Nora, düğün organizasyonu, etkinlik yönetimi, dijital davetiye, doğum günü organizasyonu, kurumsal etkinlikler, düğün planlayıcısı, nişan organizasyonu, gala etkinlikleri"
                 />
                 <link rel="canonical" href="https://www.eventnora.com/tr" />
-                <link rel="alternate" href="https://www.eventnora.com/tr" hrefLang="tr" />
-                <link rel="alternate" href="https://www.eventnora.com/" hrefLang="en" />
-                <link rel="alternate" href="https://www.eventnora.com/" hrefLang="x-default" />
                 <meta name="robots" content="index, follow" />
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content="Event Nora | Düğün ve Etkinlik Hizmetleri" />
@@ -86,26 +83,36 @@ const IndexTr = () => {
                     name="twitter:description"
                     content="Düğün, doğum günü ve kurumsal etkinlikleriniz için yaratıcı ve profesyonel çözümler."
                 />
-                <script type="application/ld+json">
-                    {JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "Organization",
-                        name: "Event Nora",
-                        url: "https://www.eventnora.com/tr",
-                        logo: {
-                            "@type": "ImageObject",
-                            url: "https://www.eventnora.com/logo.png"
-                        },
-                        contactPoint: {
-                            "@type": "ContactPoint",
-                            telephone: "+90-531-000-0000",
-                            contactType: "Customer Service",
-                            areaServed: "TR",
-                            availableLanguage: ["Turkish", "English"]
-                        }
-                    })}
-                </script>
+                <script type="application/ld+json">{JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "Organization",
+                    name: "Event Nora",
+                    url: "https://www.eventnora.com/tr",
+                    logo: {
+                        "@type": "ImageObject",
+                        url: "https://www.eventnora.com/logo.png"
+                    },
+                    contactPoint: {
+                        "@type": "ContactPoint",
+                        telephone: "+90-532-770-12-08",
+                        contactType: "Customer Service",
+                        areaServed: "TR",
+                        availableLanguage: ["Turkish", "English"]
+                    }
+                })}</script>
             </Helmet>
+
+            {/* Google için doğru hreflang etiketleri */}
+            <div
+                dangerouslySetInnerHTML={{
+                    __html: `
+      <link rel="alternate" hreflang="tr" href="https://www.eventnora.com/tr" />
+      <link rel="alternate" hreflang="en" href="https://www.eventnora.com/" />
+      <link rel="alternate" hreflang="x-default" href="https://www.eventnora.com/" />
+    `
+                }}
+            />
+
 
             {/* HERO BÖLÜMÜ */}
             <section
