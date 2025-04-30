@@ -59,29 +59,54 @@ const IndexTr = () => {
         <Layout>
             <Helmet>
                 <title>Event Nora | Düğün Organizasyonu, Dijital Davetiye ve Etkinlik Yönetimi</title>
-                <meta name="description" content="Event Nora ile hayalinizdeki düğün, doğum günü ve kurumsal etkinlikler için profesyonel planlama ve yaratıcı tasarım hizmeti alın." />
-                <meta name="keywords" content="Event Nora, düğün organizasyonu, etkinlik yönetimi, dijital davetiye, doğum günü organizasyonu, kurumsal etkinlikler" />
+                <meta
+                    name="description"
+                    content="Event Nora ile hayalinizdeki düğün, doğum günü ve kurumsal etkinlikler için profesyonel planlama ve yaratıcı tasarım hizmeti alın."
+                />
+                <meta
+                    name="keywords"
+                    content="Event Nora, düğün organizasyonu, etkinlik yönetimi, dijital davetiye, doğum günü organizasyonu, kurumsal etkinlikler, düğün planlayıcısı, nişan organizasyonu, gala etkinlikleri"
+                />
                 <link rel="canonical" href="https://www.eventnora.com/tr" />
+                <link rel="alternate" href="https://www.eventnora.com/tr" hrefLang="tr" />
+                <link rel="alternate" href="https://www.eventnora.com/" hrefLang="en" />
+                <link rel="alternate" href="https://www.eventnora.com/" hrefLang="x-default" />
                 <meta name="robots" content="index, follow" />
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content="Event Nora | Düğün ve Etkinlik Hizmetleri" />
-                <meta property="og:description" content="Event Nora ile unutulmaz düğünler ve kurumsal etkinlikler planlayın – yaratıcı organizasyon ortağınız." />
+                <meta
+                    property="og:description"
+                    content="Event Nora ile unutulmaz düğünler ve kurumsal etkinlikler planlayın – yaratıcı organizasyon ortağınız."
+                />
                 <meta property="og:url" content="https://www.eventnora.com/tr" />
                 <meta property="og:site_name" content="Event Nora" />
                 <meta name="twitter:card" content="summary" />
                 <meta name="twitter:title" content="Event Nora | Davetler, Etkinlikler ve Organizasyonlar" />
-                <meta name="twitter:description" content="Düğün, doğum günü ve kurumsal etkinlikleriniz için yaratıcı ve profesyonel çözümler." />
-                <script type="application/ld+json">{JSON.stringify({
-                    "@context": "https://schema.org",
-                    "@type": "Organization",
-                    name: "Event Nora",
-                    url: "https://www.eventnora.com/tr",
-                    logo: {
-                        "@type": "ImageObject",
-                        url: "https://www.eventnora.com/logo.png"
-                    }
-                })}</script>
+                <meta
+                    name="twitter:description"
+                    content="Düğün, doğum günü ve kurumsal etkinlikleriniz için yaratıcı ve profesyonel çözümler."
+                />
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Organization",
+                        name: "Event Nora",
+                        url: "https://www.eventnora.com/tr",
+                        logo: {
+                            "@type": "ImageObject",
+                            url: "https://www.eventnora.com/logo.png"
+                        },
+                        contactPoint: {
+                            "@type": "ContactPoint",
+                            telephone: "+90-531-000-0000",
+                            contactType: "Customer Service",
+                            areaServed: "TR",
+                            availableLanguage: ["Turkish", "English"]
+                        }
+                    })}
+                </script>
             </Helmet>
+
             {/* HERO BÖLÜMÜ */}
             <section
                 className="relative py-20 md:py-32 overflow-hidden"

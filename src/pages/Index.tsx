@@ -61,18 +61,36 @@ const IndexEn = () => {
       <Layout>
         <Helmet>
           <title>Event Nora | Wedding Planning, Digital Invitations & Corporate Events</title>
-          <meta name="description" content="Event Nora offers expert wedding planning, digital invitations, birthday celebrations, and corporate event services to turn your moments into memories." />
-          <meta name="keywords" content="Event Nora, wedding planning, digital invitations, event organizer, birthday planning, event management services, corporate events" />
-          <link rel="canonical" href="https://www.eventnora.com/" />
-          <meta name="robots" content="index, follow" />
-          <meta property="og:type" content="website" />
-          <meta property="og:title" content="Event Nora | Wedding Planning & Event Services" />
-          <meta property="og:description" content="Plan unforgettable weddings and professional events with Event Nora – your creative event partner." />
-          <meta property="og:url" content="https://www.eventnora.com/" />
-          <meta property="og:site_name" content="Event Nora" />
-          <meta name="twitter:card" content="summary" />
-          <meta name="twitter:title" content="Event Nora | Weddings, Events & Invitations" />
-          <meta name="twitter:description" content="Creative and professional planning for weddings, birthdays, and corporate events." />
+          <meta name="description"
+                content="Event Nora offers expert wedding planning, digital invitations, birthday celebrations, and corporate event services to turn your moments into memories."/>
+          <meta name="keywords"
+                content="Event Nora, wedding planning, digital invitations, event organizer, birthday planning, event management services, corporate events, bridal shower, luxury events, engagement parties, baby showers, gala, product launches, event coordination"/>
+          <meta name="author" content="Event Nora"/>
+          <meta name="viewport" content="width=device-width, initial-scale=1"/>
+          <meta name="robots" content="index, follow"/>
+
+          <link rel="canonical" href="https://www.eventnora.com/"/>
+          <link rel="alternate" href="https://www.eventnora.com/" hrefLang="en"/>
+          <link rel="alternate" href="https://www.eventnora.com/tr" hrefLang="tr"/>
+          <link rel="alternate" href="https://www.eventnora.com/" hrefLang="x-default"/>
+
+
+          <meta property="og:type" content="website"/>
+          <meta property="og:title" content="Event Nora | Wedding Planning & Event Services"/>
+          <meta property="og:description"
+                content="Plan unforgettable weddings and professional events with Event Nora – your creative event partner."/>
+          <meta property="og:url" content="https://www.eventnora.com/"/>
+          <meta property="og:site_name" content="Event Nora"/>
+          <meta property="og:locale" content="en_US"/>
+          <meta property="og:image" content="https://www.eventnora.com/og-cover.jpg"/>
+
+          <meta name="twitter:card" content="summary_large_image"/>
+          <meta name="twitter:title" content="Event Nora | Weddings, Events & Invitations"/>
+          <meta name="twitter:description"
+                content="Creative and professional planning for weddings, birthdays, and corporate events."/>
+          <meta name="twitter:image" content="https://www.eventnora.com/og-cover.jpg"/>
+          <meta name="twitter:site" content="@eventnora"/>
+
           <script type="application/ld+json">{JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
@@ -81,9 +99,15 @@ const IndexEn = () => {
             logo: {
               "@type": "ImageObject",
               url: "https://www.eventnora.com/logo.png"
-            }
+            },
+            sameAs: [
+              "https://www.instagram.com/eventnora",
+              "https://www.facebook.com/eventnora",
+              "https://www.linkedin.com/company/eventnora"
+            ]
           })}</script>
         </Helmet>
+
 
         {/* HERO SECTION */}
         <section
