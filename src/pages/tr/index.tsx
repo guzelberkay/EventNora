@@ -21,28 +21,32 @@ const IndexTr = () => {
     return (
         <Layout>
             <Helmet>
-                <title>Event Nora | Düğün Organizasyonu, Davetiye Hizmeti ve Etkinlik Planlama</title>
+                <title>Event Nora | Düğün Organizasyonu, Dijital Davetiyeler & Etkinlik Planlama</title>
                 <meta
                     name="description"
-                    content="Event Nora ile hayalinizdeki düğünü, daveti ve özel etkinlikleri kusursuz bir şekilde planlayın. Davetiye, organizasyon ve etkinlik yönetiminde uzman ekibimizle yanınızdayız."
+                    content="Event Nora ile hayalinizdeki düğünü, nişanı veya kurumsal etkinliği profesyonelce planlayın. Dijital davetiye, etkinlik yönetimi ve yaratıcı tasarımlarla yanınızdayız."
                 />
                 <meta
                     name="keywords"
-                    content="Event Nora, Nora Event, Ays Davet, düğün organizasyonu, davetiye, davet organizasyonu, etkinlik planlama, nişan organizasyonu, doğum günü organizasyonu, etkinlik tasarımı"
+                    content="Event Nora, düğün organizasyonu, etkinlik planlama, dijital davetiye, doğum günü organizasyonu, kurumsal etkinlikler, nişan organizasyonu"
                 />
                 <link rel="canonical" href="https://www.eventnora.com/tr" />
 
+                {/* SEO: Arama motorlarına açık */}
+                <meta name="robots" content="index, follow" />
+                <meta name="googlebot" content="index, follow" />
+
                 {/* Open Graph */}
                 <meta property="og:type" content="website" />
-                <meta property="og:title" content="Event Nora | Düğün ve Davet Organizasyonları" />
-                <meta property="og:description" content="Event Nora ile davetlerinizi unutulmaz kılın. Düğün organizasyonu, davetiye hizmeti ve etkinlik planlama uzmanlığımızla yanınızdayız." />
+                <meta property="og:title" content="Event Nora | Düğün ve Etkinlik Organizasyonları" />
+                <meta property="og:description" content="Düğün, nişan, doğum günü ve kurumsal etkinliklerinizi Event Nora farkıyla planlayın. Hayalinizdeki daveti birlikte tasarlayalım." />
                 <meta property="og:url" content="https://www.eventnora.com/tr" />
                 <meta property="og:site_name" content="Event Nora" />
 
                 {/* Twitter */}
                 <meta name="twitter:card" content="summary" />
-                <meta name="twitter:title" content="Event Nora | Unutulmaz Düğünler ve Davetler" />
-                <meta name="twitter:description" content="Düğün, nişan, doğum günü, davet organizasyonlarınız için Event Nora profesyonel hizmet sunuyor." />
+                <meta name="twitter:title" content="Event Nora | Unutulmaz Etkinlikler ve Davetler" />
+                <meta name="twitter:description" content="Profesyonel organizasyon hizmetleriyle düğün, nişan ve özel günlerinizi unutulmaz hale getiriyoruz." />
 
                 {/* Schema - WebSite */}
                 <script type="application/ld+json">
@@ -70,6 +74,7 @@ const IndexTr = () => {
             </Helmet>
 
 
+
             {/* Hero */}
             <section
                 className="relative py-20 md:py-32 overflow-hidden"
@@ -89,8 +94,14 @@ const IndexTr = () => {
                         Event Nora | Dijital Davetiyeler & Etkinlik Planlama
                     </h1>
                     <p className="paragraph mb-8 text-black text-2xl">
-                        Tüm etkinlik türleri için detaylı planlama, yaratıcı tasarım ve kusursuz uygulama ile vizyonunuzu gerçeğe dönüştürüyoruz.
+                        Tüm etkinlik türleri için detaylı planlama, yaratıcı tasarım ve kusursuz uygulama ile
+                        vizyonunuzu gerçeğe dönüştürüyoruz.
                     </p>
+                    <p className="paragraph mb-8 text-black text-xl">
+                        <strong>Event Nora</strong>, düğün organizasyonundan kurumsal etkinliklere kadar yaratıcı
+                        çözümler sunan profesyonel bir planlama markasıdır.
+                    </p>
+
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Link to="/tr/iletisim" className="gold-button text-xl">
                             İletişime Geçin
@@ -99,7 +110,7 @@ const IndexTr = () => {
                             to="/tr/hizmetler"
                             className="flex items-center justify-center gap-2 px-6 py-2.5 text-black hover:text-gold transition-colors duration-300 text-xl"
                         >
-                            Hizmetlerimiz <ArrowRight size={16} />
+                            Hizmetlerimiz <ArrowRight size={16}/>
                         </Link>
                     </div>
                 </div>

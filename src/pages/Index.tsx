@@ -28,22 +28,26 @@ const IndexEn = () => {
   return (
       <Layout>
         <Helmet>
-          <title>Event Nora | Wedding Organization, Digital Invitations & Event Planning</title>
-          <meta name="description" content="Event Nora offers exceptional wedding planning, digital invitations, corporate events, and special day organizations to create unforgettable memories." />
-          <meta name="keywords" content="Event Nora, eventnora, noraevent, wedding planning, event organization, digital invitations, engagement organization, corporate events, birthday parties" />
+          <title>Event Nora | Wedding Planning, Digital Invitations & Corporate Events</title>
+          <meta name="description" content="Event Nora offers expert wedding planning, digital invitations, birthday celebrations, and corporate event services to turn your moments into memories." />
+          <meta name="keywords" content="Event Nora, eventnora, wedding planning, event organization, digital invitations, corporate events, birthday planning, event management" />
           <link rel="canonical" href="https://www.eventnora.com/" />
+
+          {/* SEO: Botlara açıkça tarama izni */}
+          <meta name="robots" content="index, follow" />
+          <meta name="googlebot" content="index, follow" />
 
           {/* Open Graph */}
           <meta property="og:type" content="website" />
-          <meta property="og:title" content="Event Nora | Wedding Organization and Event Planning" />
-          <meta property="og:description" content="Expert wedding planning, digital invitations, and event organization services to bring your vision to life." />
+          <meta property="og:title" content="Event Nora | Wedding Planning & Event Services" />
+          <meta property="og:description" content="Plan unforgettable weddings and professional events with Event Nora – your creative event partner." />
           <meta property="og:url" content="https://www.eventnora.com/" />
           <meta property="og:site_name" content="Event Nora" />
 
           {/* Twitter */}
           <meta name="twitter:card" content="summary" />
-          <meta name="twitter:title" content="Event Nora | Memorable Weddings and Events" />
-          <meta name="twitter:description" content="Make your dream wedding and events come true with Event Nora's professional planning and organization services." />
+          <meta name="twitter:title" content="Event Nora | Weddings, Events & Invitations" />
+          <meta name="twitter:description" content="Creative and professional planning for weddings, birthdays, and corporate events." />
 
           {/* Schema - WebSite */}
           <script type="application/ld+json">
@@ -92,8 +96,14 @@ const IndexEn = () => {
                 Event Nora | Digital Invitations & Event Planning
               </h1>
               <p className="paragraph mb-8 text-black text-2xl">
-                We transform your vision into reality with meticulous planning, creative design, and flawless execution for all types of events.
+                We transform your vision into reality with meticulous planning, creative design, and flawless execution
+                for all types of events.
               </p>
+              <p className="paragraph mb-8 text-black text-xl">
+                At <strong>Event Nora</strong>, we specialize in full-service wedding planning and creative event
+                design.
+              </p>
+
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link to={`/contact`} className="gold-button text-xl">
                   Get in Touch
@@ -102,7 +112,7 @@ const IndexEn = () => {
                     to={`/services`}
                     className="flex items-center justify-center gap-2 px-6 py-2.5 text-black hover:text-gold transition-colors duration-300 text-xl"
                 >
-                  Our Services <ArrowRight size={16} />
+                  Our Services <ArrowRight size={16}/>
                 </Link>
               </div>
             </div>
