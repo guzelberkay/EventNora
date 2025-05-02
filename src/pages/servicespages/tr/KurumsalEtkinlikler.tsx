@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Layout from '@/components/Layout';
-import corporateBanner from '@/images/corporate_event.png';
+import corporateBanner from '@/images/corporate_event.webp';
 
 const KurumsalEtkinlikler = () => {
     const navigate = useNavigate();
@@ -32,7 +32,7 @@ const KurumsalEtkinlikler = () => {
                     property="og:description"
                     content="Marka değerinizi yansıtan kurumsal etkinlik hizmetleri ile fark yaratın."
                 />
-                <meta property="og:image" content="https://www.eventnora.com/images/corporate_event.png" />
+                <meta property="og:image" content="https://www.eventnora.com/images/corporate_event.webp" />
                 <meta property="og:url" content="https://www.eventnora.com/tr/hizmetler/kurumsal-etkinlikler" />
                 <meta property="og:type" content="website" />
                 <meta name="twitter:card" content="summary_large_image" />
@@ -41,7 +41,7 @@ const KurumsalEtkinlikler = () => {
                     name="twitter:description"
                     content="Marka değerinizi yansıtan kurumsal etkinlik hizmetleri ile fark yaratın."
                 />
-                <meta name="twitter:image" content="https://www.eventnora.com/images/corporate_event.png" />
+                <meta name="twitter:image" content="https://www.eventnora.com/images/corporate_event.webp" />
                 <link rel="canonical" href="https://www.eventnora.com/tr/hizmetler/kurumsal-etkinlikler" />
                 <link
                     rel="alternate"

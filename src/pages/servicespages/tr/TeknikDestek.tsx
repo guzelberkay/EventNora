@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Layout from '@/components/Layout';
-import technicalImg from '@/images/technical_support_event.png';
+import technicalImg from '@/images/technical_support_event.webp';
 
 const TeknikDestek = () => {
     const navigate = useNavigate();
@@ -26,13 +26,13 @@ const TeknikDestek = () => {
                 <meta name="keywords" content="teknik destek, etkinlik teknik altyapı, ses ışık sistemleri, sahne kurulum, Event Nora" />
                 <meta property="og:title" content="Teknik ve Lojistik Destek | Event Nora" />
                 <meta property="og:description" content="Etkinliklerinizin teknik altyapısı için güvenilir çözüm ortağınız Event Nora." />
-                <meta property="og:image" content="https://www.eventnora.com/images/technical_support_event.png" />
+                <meta property="og:image" content="https://www.eventnora.com/images/technical_support_event.webp" />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://www.eventnora.com/tr/hizmetler/teknik-destek" />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="Teknik ve Lojistik Destek | Event Nora" />
                 <meta name="twitter:description" content="Profesyonel etkinlikler için güçlü teknik altyapı çözümleri." />
-                <meta name="twitter:image" content="https://www.eventnora.com/images/technical_support_event.png" />
+                <meta name="twitter:image" content="https://www.eventnora.com/images/technical_support_event.webp" />
                 <link rel="canonical" href="https://www.eventnora.com/tr/hizmetler/teknik-destek" />
                 <link rel="alternate" hrefLang="en" href="https://www.eventnora.com/en/services/technical-support" />
             </Helmet>

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Layout from '@/components/Layout';
-import weddingImage from '@/images/wedding_event.png';
+import weddingImage from '@/images/wedding_event.webp';
 
 const EngagementWedding = () => {
     const navigate = useNavigate();
@@ -38,14 +38,14 @@ const EngagementWedding = () => {
                 <meta property="og:title" content={seoTitle} />
                 <meta property="og:description" content={seoDescription} />
                 <meta property="og:url" content={canonicalUrl} />
-                <meta property="og:image" content="https://www.eventnora.com/images/wedding_event.png" />
+                <meta property="og:image" content="https://www.eventnora.com/images/wedding_event.webp" />
                 <meta property="og:site_name" content="Event Nora" />
 
                 {/* Twitter */}
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={seoTitle} />
                 <meta name="twitter:description" content={seoDescription} />
-                <meta name="twitter:image" content="https://www.eventnora.com/images/wedding_event.png" />
+                <meta name="twitter:image" content="https://www.eventnora.com/images/wedding_event.webp" />
 
                 {/* Structured Data */}
                 <script type="application/ld+json">

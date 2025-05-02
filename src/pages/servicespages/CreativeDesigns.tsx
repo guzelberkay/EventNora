@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Layout from '@/components/Layout';
-import creativeImg from '@/images/creative_event.png';
+import creativeImg from '@/images/creative_event.webp';
 
 const CreativeDesigns = () => {
     const navigate = useNavigate();

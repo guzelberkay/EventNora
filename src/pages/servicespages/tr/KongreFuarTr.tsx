@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Layout from '@/components/Layout';
-import congressImage from '@/images/congressfair_event.png';
+import congressImage from '@/images/congressfair_event.webp';
 
 const KongreFuarTr = () => {
     const navigate = useNavigate();
@@ -27,13 +27,13 @@ const KongreFuarTr = () => {
                 <meta name="keywords" content="kongre organizasyonu, fuar etkinliği, iş dünyası fuarı, akademik kongre, sempozyum, Event Nora" />
                 <meta property="og:title" content={seoTitle} />
                 <meta property="og:description" content={seoDescription} />
-                <meta property="og:image" content="https://www.eventnora.com/images/congressfair_event.png" />
+                <meta property="og:image" content="https://www.eventnora.com/images/congressfair_event.webp" />
                 <meta property="og:url" content="https://www.eventnora.com/tr/hizmetler/kongre-fuar" />
                 <meta property="og:type" content="website" />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={seoTitle} />
                 <meta name="twitter:description" content={seoDescription} />
-                <meta name="twitter:image" content="https://www.eventnora.com/images/congressfair_event.png" />
+                <meta name="twitter:image" content="https://www.eventnora.com/images/congressfair_event.webp" />
                 <link rel="canonical" href="https://www.eventnora.com/tr/hizmetler/kongre-fuar" />
                 <link rel="alternate" hrefLang="en" href="https://www.eventnora.com/en/services/congress-fair" />
             </Helmet>

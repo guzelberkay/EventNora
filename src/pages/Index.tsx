@@ -15,9 +15,9 @@ import {
 } from 'lucide-react';
 import Layout from '@/components/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
-import backgroundImage from '../images/a1.png'; // optimize edilmiş WebP görsel
-import weddingTrendImage from '../images/wedding_trend.png';
-import digitalInvitationImage from '../images/digital_invitations.png';
+import backgroundImage from '../images/a1.webp'; // optimize edilmiş WebP görsel
+import weddingTrendImage from '../images/wedding_trend.webp';
+import digitalInvitationImage from '../images/digital_invitations.webp';
 import planningMistakesImage from '../images/event_planing_mistakes.jpg';
 
 const IndexEn = () => {

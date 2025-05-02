@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Layout from '@/components/Layout';
-import personalImage from '@/images/personal_event.png';
+import personalImage from '@/images/personal_event.webp';
 
 const KisiselEtkinlikTr = () => {
     const navigate = useNavigate();
@@ -34,7 +34,7 @@ const KisiselEtkinlikTr = () => {
                 />
                 <meta
                     property="og:image"
-                    content="https://www.eventnora.com/images/personal_event.png"
+                    content="https://www.eventnora.com/images/personal_event.webp"
                 />
                 <meta
                     property="og:url"
@@ -47,7 +47,7 @@ const KisiselEtkinlikTr = () => {
                     name="twitter:description"
                     content="Hayatınızın en özel anlarını profesyonelce planlıyor ve unutulmaz hâle getiriyoruz."
                 />
-                <meta name="twitter:image" content="https://www.eventnora.com/images/personal_event.png" />
+                <meta name="twitter:image" content="https://www.eventnora.com/images/personal_event.webp" />
                 <link
                     rel="canonical"
                     href="https://www.eventnora.com/tr/hizmetler/kisisel-etkinlik"

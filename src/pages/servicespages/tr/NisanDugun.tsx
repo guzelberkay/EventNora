@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Layout from '@/components/Layout';
-import weddingImage from '@/images/wedding_event.png';
+import weddingImage from '@/images/wedding_event.webp';
 
 const NisanDugun = () => {
     const navigate = useNavigate();
@@ -23,13 +23,13 @@ const NisanDugun = () => {
                 <meta name="keywords" content="nişan organizasyonu, düğün organizasyonu, gelin yolu, düğün süsleme, düğün catering, Event Nora" />
                 <meta property="og:title" content="Nişan & Düğün Organizasyonu Hizmetleri | Event Nora" />
                 <meta property="og:description" content="Hayalinizdeki düğünü gerçeğe dönüştüren profesyonel hizmetler Event Nora’da." />
-                <meta property="og:image" content="https://www.eventnora.com/images/wedding_event.png" />
+                <meta property="og:image" content="https://www.eventnora.com/images/wedding_event.webp" />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://www.eventnora.com/tr/hizmetler/nisan-dugun" />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="Nişan & Düğün Organizasyonu | Event Nora" />
                 <meta name="twitter:description" content="Hayalinizdeki düğün organizasyonu için her şey Event Nora’da." />
-                <meta name="twitter:image" content="https://www.eventnora.com/images/wedding_event.png" />
+                <meta name="twitter:image" content="https://www.eventnora.com/images/wedding_event.webp" />
                 <link rel="canonical" href="https://www.eventnora.com/tr/hizmetler/nisan-dugun" />
                 <link rel="alternate" hrefLang="en" href="https://www.eventnora.com/en/services/engagement-wedding" />
             </Helmet>

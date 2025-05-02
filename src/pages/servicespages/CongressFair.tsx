@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Layout from '@/components/Layout';
-import congressImage from '@/images/congressfair_event.png';
+import congressImage from '@/images/congressfair_event.webp';
 
 const CongressFairEn = () => {
     const navigate = useNavigate();

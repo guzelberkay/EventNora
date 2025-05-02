@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Layout from '@/components/Layout';
-import socialResponsibilityImage from '@/images/socialresponsiblility_event.png';
+import socialResponsibilityImage from '@/images/socialresponsiblility_event.webp';
 
 const SosyalSorumlulukTr = () => {
     const navigate = useNavigate();
@@ -26,13 +26,13 @@ const SosyalSorumlulukTr = () => {
                 <meta name="keywords" content="sosyal sorumluluk, etkinlik organizasyonu, STK iş birliği, sosyal proje, Event Nora" />
                 <meta property="og:title" content="Sosyal Sorumluluk Projeleri | Event Nora" />
                 <meta property="og:description" content="Sosyal etki yaratan projeleriniz için profesyonel organizasyon ve danışmanlık hizmetleri." />
-                <meta property="og:image" content="https://www.eventnora.com/images/socialresponsiblility_event.png" />
+                <meta property="og:image" content="https://www.eventnora.com/images/socialresponsiblility_event.webp" />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://www.eventnora.com/tr/hizmetler/sosyal-sorumluluk" />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="Sosyal Sorumluluk Projeleri | Event Nora" />
                 <meta name="twitter:description" content="Topluma değer katan projeler için yaratıcı planlama ve sürdürülebilir çözümler." />
-                <meta name="twitter:image" content="https://www.eventnora.com/images/socialresponsiblility_event.png" />
+                <meta name="twitter:image" content="https://www.eventnora.com/images/socialresponsiblility_event.webp" />
                 <link rel="canonical" href="https://www.eventnora.com/tr/hizmetler/sosyal-sorumluluk" />
                 <link rel="alternate" hrefLang="en" href="https://www.eventnora.com/en/services/social-responsibility" />
             </Helmet>

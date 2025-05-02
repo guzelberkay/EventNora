@@ -5,10 +5,10 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
 
 // Image imports
-import weddingTrendImage from '../images/wedding_trend.png';
-import engagement from '../images/perfect_engagement_party.png';
-import digital from '../images/digital_invitations.png';
-import birthdayparty from '../images/birhday_party.png';
+import weddingTrendImage from '../images/wedding_trend.webp';
+import engagement from '../images/perfect_engagement_party.webp';
+import digital from '../images/digital_invitations.webp';
+import birthdayparty from '../images/birhday_party.webp';
 import eventmistakes from '../images/event_planing_mistakes.jpg';
 import festival from '../images/festival.jpg';
 import teknikdestek from '../images/teknik-destek-hizmetleri.jpg';

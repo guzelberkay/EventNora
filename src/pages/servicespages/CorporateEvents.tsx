@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Layout from '@/components/Layout';
-import corporateBanner from '@/images/corporate_event.png';
+import corporateBanner from '@/images/corporate_event.webp';
 
 const CorporateEn = () => {
     const navigate = useNavigate();

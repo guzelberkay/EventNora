@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import Layout from '@/components/Layout';
-import birthdayImage from '@/images/birthday_event.png';
+import birthdayImage from '@/images/birthday_event.webp';
 
 const DogumGunuOzelGun = () => {
     const navigate = useNavigate();

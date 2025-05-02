@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Layout from '@/components/Layout';
-import creativeImg from '@/images/creative_event.png';
+import creativeImg from '@/images/creative_event.webp';
 
 const YaraticiTasarimlar = () => {
     const navigate = useNavigate();
@@ -26,13 +26,13 @@ const YaraticiTasarimlar = () => {
                 <meta name="keywords" content="etkinlik süsleme, dekorasyon, yaratıcı tasarım, etkinlik teması, Event Nora" />
                 <meta property="og:title" content="Yaratıcı Tasarımlar & Süsleme Hizmetleri | Event Nora" />
                 <meta property="og:description" content="Konsept tasarımı, el yapımı detaylar ve etkileyici dekorasyonlarla etkinliğiniz estetik bir deneyime dönüşsün." />
-                <meta property="og:image" content="https://www.eventnora.com/images/creative_event.png" />
+                <meta property="og:image" content="https://www.eventnora.com/images/creative_event.webp" />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://www.eventnora.com/tr/hizmetler/yaratici-tasarimlar" />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="Yaratıcı Tasarımlar & Süsleme Hizmetleri | Event Nora" />
                 <meta name="twitter:description" content="Hayal ettiğiniz görsel konsepti etkileyici süsleme detaylarıyla hayata geçiriyoruz." />
-                <meta name="twitter:image" content="https://www.eventnora.com/images/creative_event.png" />
+                <meta name="twitter:image" content="https://www.eventnora.com/images/creative_event.webp" />
                 <link rel="canonical" href="https://www.eventnora.com/tr/hizmetler/yaratici-tasarimlar" />
                 <link rel="alternate" hrefLang="en" href="https://www.eventnora.com/en/services/creative-design" />
             </Helmet>

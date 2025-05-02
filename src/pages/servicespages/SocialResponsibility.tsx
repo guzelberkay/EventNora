@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Layout from '@/components/Layout';
-import socialResponsibilityImage from '@/images/socialresponsiblility_event.png';
+import socialResponsibilityImage from '@/images/socialresponsiblility_event.webp';
 
 const SocialResponsibility = () => {
     const navigate = useNavigate();
