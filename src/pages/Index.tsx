@@ -15,7 +15,10 @@ import {
 } from 'lucide-react';
 import Layout from '@/components/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
-import backgroundImage from '../images/a1.png';
+import backgroundImage from '../images/a1.png'; // optimize edilmiş WebP görsel
+import weddingTrendImage from '../images/wedding_trend.png';
+import digitalInvitationImage from '../images/digital_invitations.png';
+import planningMistakesImage from '../images/event_planing_mistakes.jpg';
 
 const IndexEn = () => {
   const { language } = useLanguage();
@@ -24,25 +27,18 @@ const IndexEn = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 400);
-    };
+    const handleScroll = () => setShowScrollTop(window.scrollY > 400);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollSlider = (direction: 'left' | 'right') => {
+  const scrollSlider = (dir: 'left' | 'right') => {
     if (sliderRef.current) {
-      sliderRef.current.scrollBy({
-        left: direction === 'left' ? -300 : 300,
-        behavior: 'smooth',
-      });
+      sliderRef.current.scrollBy({ left: dir === 'left' ? -300 : 300, behavior: 'smooth' });
     }
   };
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   const googleReviews = [
     { name: "Zeki Bey Bakery", comment: "The grand opening was flawless! Every detail was perfectly thought out. Huge thanks to the amazing team!" },
@@ -60,20 +56,18 @@ const IndexEn = () => {
   return (
       <Layout>
         <Helmet>
-          <title>Event Nora | Wedding Planning, Digital Invitations & Corporate Events</title>
-          <meta name="description" content="Event Nora offers expert wedding planning, digital invitations, birthday celebrations, and corporate event services to turn your moments into memories." />
-          <meta name="keywords" content="Event Nora, wedding planning, digital invitations, event organizer, birthday planning, event management services, corporate events, bridal shower, luxury events, engagement parties, baby showers, gala, product launches, event coordination" />
+          <title>Event Nora | Wedding Planner, Event Design & Digital Invitations</title>
+          <meta name="description" content="Plan your dream wedding, birthday or corporate event with Event Nora. Digital invitations, luxury events and full-service event planning in Turkey." />
+          <meta name="keywords" content="wedding planner, digital invitations, event design, engagement party planner, birthday event organizer, RSVP system, corporate events" />
           <meta name="author" content="Event Nora" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="robots" content="index, follow" />
-
-          {/* Canonical & hreflang via dangerouslySetInnerHTML (see below) */}
           <link rel="canonical" href="https://www.eventnora.com/" />
 
           {/* Open Graph */}
           <meta property="og:type" content="website" />
-          <meta property="og:title" content="Event Nora | Wedding Planning & Event Services" />
-          <meta property="og:description" content="Plan unforgettable weddings and professional events with Event Nora – your creative event partner." />
+          <meta property="og:title" content="Event Nora | Wedding & Event Planning Experts" />
+          <meta property="og:description" content="Creative wedding and event planning, digital invitations, birthday and engagement celebrations by Event Nora." />
           <meta property="og:url" content="https://www.eventnora.com/" />
           <meta property="og:site_name" content="Event Nora" />
           <meta property="og:locale" content="en_US" />
@@ -82,7 +76,7 @@ const IndexEn = () => {
           {/* Twitter */}
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content="Event Nora | Weddings, Events & Invitations" />
-          <meta name="twitter:description" content="Creative and professional planning for weddings, birthdays, and corporate events." />
+          <meta name="twitter:description" content="Professional event planning services for weddings, birthdays, corporate events and more." />
           <meta name="twitter:image" content="https://www.eventnora.com/og-cover.jpg" />
           <meta name="twitter:site" content="@eventnora" />
 
@@ -90,19 +84,15 @@ const IndexEn = () => {
           <script type="application/ld+json">
             {JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Organization",
+              "@type": "LocalBusiness",
               name: "Event Nora",
+              description: "Full-service wedding and event planning in Turkey. Specialists in digital invitations, creative events and elegant decor.",
               url: "https://www.eventnora.com",
-              logo: {
-                "@type": "ImageObject",
-                url: "https://www.eventnora.com/logo.png"
-              },
-              contactPoint: {
-                "@type": "ContactPoint",
-                telephone: "+90-532-770-12-08",
-                contactType: "Customer Service",
-                areaServed: "TR",
-                availableLanguage: ["English", "Turkish"]
+              logo: "https://www.eventnora.com/logo.png",
+              telephone: "+90-532-770-12-08",
+              address: {
+                "@type": "PostalAddress",
+                addressCountry: "TR",
               },
               sameAs: [
                 "https://www.instagram.com/eventnora",
@@ -113,19 +103,16 @@ const IndexEn = () => {
           </script>
         </Helmet>
 
-        {/* hreflang etiketleri Helmet dışında DOM'a düzgün şekilde ekleniyor */}
+        {/* hreflang for multilingual SEO */}
         <div
             dangerouslySetInnerHTML={{
               __html: `
-      <link rel="alternate" hreflang="en" href="https://www.eventnora.com/" />
-      <link rel="alternate" hreflang="tr" href="https://www.eventnora.com/tr" />
-      <link rel="alternate" hreflang="x-default" href="https://www.eventnora.com/" />
-    `
+            <link rel="alternate" hreflang="en" href="https://www.eventnora.com/" />
+            <link rel="alternate" hreflang="tr" href="https://www.eventnora.com/tr" />
+            <link rel="alternate" hreflang="x-default" href="https://www.eventnora.com/" />
+          `
             }}
         />
-
-
-
         {/* HERO SECTION */}
         <section
             className="relative py-20 md:py-32 overflow-hidden"
@@ -142,12 +129,14 @@ const IndexEn = () => {
             <span className="inline-block px-3 py-1 bg-black text-gold text-sm font-medium rounded-full mb-6">
               Premier Event Planning
             </span>
-              <h1 className="heading-1 mb-6 text-black">Event Nora | Digital Invitations & Event Planning</h1>
+              <h1 className="heading-1 mb-6 text-black">
+                Expert Wedding Planning & Digital Invitations | Event Nora
+              </h1>
               <p className="paragraph mb-8 text-black text-2xl">
-                We transform your vision into reality with meticulous planning, creative design, and flawless execution.
+                From luxury weddings to intimate engagements – we plan it all with precision and creativity.
               </p>
               <p className="paragraph mb-8 text-black text-xl">
-                At <strong>Event Nora</strong>, we specialize in full-service wedding planning and creative event design.
+                Discover the art of event design, RSVP management and bespoke digital invitations with <strong>Event Nora</strong>.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link to="/contact" className="gold-button text-xl">Get in Touch</Link>
@@ -165,8 +154,7 @@ const IndexEn = () => {
             <span className="text-gold font-medium">Why Choose Us</span>
             <h2 className="heading-2 text-black mt-2 mb-4">The Golden Standard in Event Planning</h2>
             <p className="paragraph opacity-80 mb-12">
-              We bring expertise, creativity, and precision to every event, ensuring a seamless experience from concept to execution.
-            </p>
+              At Event Nora, our full-service approach to wedding planning, corporate event organization, and digital RSVP systems ensures flawless execution at every stage — from concept to celebration. As a leading event company in Turkey, Event Nora specializes in custom event design, luxury weddings, and innovative digital invitations tailored for modern hosts. Trust Event Nora to bring elegance, efficiency, and creativity together for unforgettable moments.            </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[{
                 icon: <Star className="w-10 h-10 text-gold" />,
@@ -190,19 +178,19 @@ const IndexEn = () => {
             </div>
           </div>
         </section>
+
         {/* ABOUT */}
         <section className="section bg-[#fdfdfd]">
           <div className="container-custom text-center">
             <h2 className="heading-2 text-black mt-2 mb-4">About Event Nora</h2>
             <p className="paragraph opacity-80 max-w-4xl mx-auto">
-              Event Nora is a global event planning and design company offering full-service event management
-              for weddings, birthdays, corporate functions, and special celebrations. Our creative team transforms
-              visions into stunning realities, delivering bespoke experiences with elegance and precision.
+              Event Nora is a premier event planning company in Turkey, offering full-service solutions for weddings, birthday celebrations, corporate functions, and digital RSVP invitation systems. Our experienced and creative team ensures that every event is executed with elegance, professional precision, and customized innovation.
+              Whether you're planning an intimate engagement or a large-scale luxury wedding, Event Nora provides bespoke designs, seamless coordination, and trend-forward digital invitations that turn your vision into an unforgettable reality.
             </p>
           </div>
         </section>
 
-        {/* SERVICES */}
+        {/* FEATURED SERVICES */}
         <section className="section bg-[#fafafa]">
           <div className="container-custom text-center">
             <span className="text-gold font-medium">Featured Services</span>
@@ -241,13 +229,11 @@ const IndexEn = () => {
             </div>
           </div>
         </section>
-
         {/* TESTIMONIALS */}
         <section className="section bg-white overflow-hidden">
           <div className="container-custom text-center relative">
             <h2 className="heading-2 text-black mb-6">What Our Clients Say</h2>
 
-            {/* Yorumlar kaydırılabilir alan */}
             <div
                 ref={sliderRef}
                 className="flex gap-4 overflow-x-auto scroll-smooth px-4 touch-pan-x snap-x snap-mandatory scrollbar-hide"
@@ -261,15 +247,17 @@ const IndexEn = () => {
                     <p className="italic mb-2">"{review.comment}"</p>
                     <p className="font-semibold text-black">– {review.name}</p>
                     <div className="flex text-gold mt-2">
-                      {Array(5).fill(0).map((_, i) => (
-                          <Star key={i} size={16} />
-                      ))}
+                      {Array(5)
+                          .fill(0)
+                          .map((_, i) => (
+                              <Star key={i} size={16} />
+                          ))}
                     </div>
                   </div>
               ))}
             </div>
 
-            {/* Oklar — hem mobil hem masaüstü için yorumların altında ortalanmış */}
+            {/* Slider Arrows */}
             <div className="flex justify-center gap-6 mt-6">
               <button
                   onClick={() => scrollSlider('left')}
@@ -289,21 +277,57 @@ const IndexEn = () => {
           </div>
         </section>
 
+        {/* OPTIONAL: BLOG PREVIEW SECTION FOR SEO BOOST */}
+        <section className="section bg-[#fdfdfd]">
+          <div className="container-custom text-center">
+            <h2 className="heading-2 text-black mb-4">From Our Blog</h2>
+            <p className="paragraph mb-10 max-w-2xl mx-auto text-textGray">
+              Get the latest tips on wedding trends, invitation styles, and creative event inspiration from Event Nora.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+              {[ // Placeholder posts — you should replace with real dynamic data from API or context
+                {
+                  title: '2025 Wedding Invitation Trends',
+                  slug: '/blog/2025-wedding-invitation-trends',
+                  image: weddingTrendImage,
+                },
+                {
+                  title: 'Why Use Digital Invitations?',
+                  slug: '/blog/why-digital-invitations',
+                  image: digitalInvitationImage,                },
+                {
+                  title: '5 Event Planning Mistakes to Avoid',
+                  slug: '/blog/event-planning-mistakes',
+                  image: planningMistakesImage,
+                },
+              ].map((post, i) => (
+                  <Link key={i} to={post.slug} className="block bg-white rounded-xl shadow hover:shadow-lg transition">
+                    <img
+                        src={post.image}
+                        alt={post.title}
+                        loading="lazy"
+                        className="w-full h-48 object-cover rounded-t-xl"
+                    />
+                    <div className="p-4 text-left">
+                      <h3 className="font-semibold text-black text-lg">{post.title}</h3>
+                      <p className="text-sm text-gold mt-1">Read More →</p>
+                    </div>
+                  </Link>
+              ))}
+            </div>
+          </div>
+        </section>
 
-        {/* SCROLL TO TOP */}
+        {/* SCROLL TO TOP BUTTON */}
         {showScrollTop && (
             <button
                 onClick={scrollToTop}
                 className="fixed bottom-24 right-6 sm:right-5 bg-gold/60 hover:bg-gold transition-all duration-300 p-3 sm:p-4 rounded-full shadow-xl z-50"
                 aria-label="Scroll to top"
             >
-              <ChevronUp className="text-black w-7 h-7" /> {/* eşit boyutlu */}
+              <ChevronUp className="text-black w-7 h-7" />
             </button>
         )}
-
-
-
-
       </Layout>
   );
 };
