@@ -57,35 +57,26 @@ const IndexEn = () => {
       <Layout>
         <Helmet>
           <title>Event Nora | Wedding Planner, Event Design & Digital Invitations</title>
-          <meta name="description"
-                content="Plan your dream wedding, birthday or corporate event with Event Nora. Digital invitations, luxury events and full-service event planning in Turkey."/>
-          <meta name="keywords"
-                content="wedding planner, digital invitations, event design, engagement party planner, birthday event organizer, RSVP system, corporate events"/>
-          <meta name="author" content="Event Nora"/>
-          <meta name="viewport" content="width=device-width, initial-scale=1"/>
-          <meta name="robots" content="index, follow"/>
-          <link rel="canonical" href="https://www.eventnora.com/"/>
+          <meta name="description" content="Plan your dream wedding, birthday or corporate event with Event Nora. Digital invitations, luxury events and full-service event planning in Turkey." />
+          <meta name="keywords" content="wedding planner, digital invitations, event design, engagement party planner, birthday event organizer, RSVP system, corporate events" />
+          <meta name="robots" content="index, follow" />
+          <link rel="canonical" href="https://www.eventnora.com/" />
 
           {/* Open Graph */}
-          <meta property="og:type" content="website"/>
-          <meta property="og:title" content="Event Nora | Wedding & Event Planning Experts"/>
-          <meta property="og:description"
-                content="Creative wedding and event planning, digital invitations, birthday and engagement celebrations by Event Nora."/>
-          <meta property="og:url" content="https://www.eventnora.com/"/>
-          <meta property="og:site_name" content="Event Nora"/>
-          <meta property="og:locale" content="en_US"/>
-          <meta property="og:image" content="https://www.eventnora.com/og-cover.jpg"/>
+          <meta property="og:type" content="website" />
+          <meta property="og:title" content="Event Nora | Wedding & Event Planning Experts" />
+          <meta property="og:description" content="Creative wedding and event planning, digital invitations, birthday and engagement celebrations by Event Nora." />
+          <meta property="og:url" content="https://www.eventnora.com/" />
+          <meta property="og:site_name" content="Event Nora" />
+          <meta property="og:locale" content="en_US" />
+          <meta property="og:image" content="https://www.eventnora.com/og-cover.jpg" />
 
           {/* Twitter */}
-          <meta name="twitter:card" content="summary_large_image"/>
-          <meta name="twitter:title" content="Event Nora | Weddings, Events & Invitations"/>
-          <meta name="twitter:description"
-                content="Professional event planning services for weddings, birthdays, corporate events and more."/>
-          <meta name="twitter:image" content="https://www.eventnora.com/og-cover.jpg"/>
-          <meta name="twitter:site" content="@eventnora"/>
-          <link rel="alternate" hrefLang="en" href="https://www.eventnora.com/"/>
-          <link rel="alternate" hrefLang="tr" href="https://www.eventnora.com/tr"/>
-          <link rel="alternate" hrefLang="x-default" href="https://www.eventnora.com/"/>
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="Event Nora | Weddings, Events & Invitations" />
+          <meta name="twitter:description" content="Professional event planning services for weddings, birthdays, corporate events and more." />
+          <meta name="twitter:image" content="https://www.eventnora.com/og-cover.jpg" />
+
           {/* Structured Data */}
           <script type="application/ld+json">
             {JSON.stringify({
@@ -108,6 +99,17 @@ const IndexEn = () => {
             })}
           </script>
         </Helmet>
+
+        {/* Hreflang'leri doğrudan DOM'a ekle */}
+        <div
+            dangerouslySetInnerHTML={{
+              __html: `
+      <link rel="alternate" hreflang="en" href="https://www.eventnora.com/" />
+      <link rel="alternate" hreflang="tr" href="https://www.eventnora.com/tr" />
+      <link rel="alternate" hreflang="x-default" href="https://www.eventnora.com/" />
+    `
+            }}
+        />
 
         {/* HERO SECTION */}
         <section

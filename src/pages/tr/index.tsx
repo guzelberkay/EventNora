@@ -58,32 +58,25 @@ const IndexTr = () => {
         <Layout>
             <Helmet>
                 <title>Event Nora | Düğün Planlama, Dijital Davetiyeler & Etkinlik Organizasyonu</title>
-                <meta name="description"
-                      content="Event Nora ile hayalinizdeki düğünü, doğum gününü veya kurumsal etkinliği gerçeğe dönüştürün. Dijital davetiyeler, lüks organizasyonlar ve tam hizmet planlama."/>
-                <meta name="keywords"
-                      content="düğün organizasyonu, dijital davetiye, etkinlik tasarımı, nişan planlama, doğum günü organizatörü, RSVP sistemi, kurumsal etkinlikler"/>
-                <meta name="author" content="Event Nora"/>
-                <meta name="viewport" content="width=device-width, initial-scale=1"/>
-                <meta name="robots" content="index, follow"/>
-                <link rel="canonical" href="https://www.eventnora.com/tr"/>
+                <meta name="description" content="Event Nora ile hayalinizdeki düğünü, doğum gününü veya kurumsal etkinliği gerçeğe dönüştürün. Dijital davetiyeler, lüks organizasyonlar ve tam hizmet planlama." />
+                <meta name="keywords" content="düğün organizasyonu, dijital davetiye, etkinlik tasarımı, nişan planlama, doğum günü organizatörü, RSVP sistemi, kurumsal etkinlikler" />
+                <meta name="robots" content="index, follow" />
+                <link rel="canonical" href="https://www.eventnora.com/tr" />
 
                 {/* Open Graph */}
-                <meta property="og:type" content="website"/>
-                <meta property="og:title" content="Event Nora | Düğün & Etkinlik Planlama Uzmanı"/>
-                <meta property="og:description"
-                      content="Event Nora ile yaratıcı düğün ve etkinlik planlama, dijital davetiyeler, doğum günü ve nişan organizasyonları."/>
-                <meta property="og:url" content="https://www.eventnora.com/tr"/>
-                <meta property="og:site_name" content="Event Nora"/>
-                <meta property="og:locale" content="tr_TR"/>
-                <meta property="og:image" content="https://www.eventnora.com/og-cover.jpg"/>
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content="Event Nora | Düğün & Etkinlik Planlama Uzmanı" />
+                <meta property="og:description" content="Event Nora ile yaratıcı düğün ve etkinlik planlama, dijital davetiyeler, doğum günü ve nişan organizasyonları." />
+                <meta property="og:url" content="https://www.eventnora.com/tr" />
+                <meta property="og:site_name" content="Event Nora" />
+                <meta property="og:locale" content="tr_TR" />
+                <meta property="og:image" content="https://www.eventnora.com/og-cover.jpg" />
 
                 {/* Twitter */}
-                <meta name="twitter:card" content="summary_large_image"/>
-                <meta name="twitter:title" content="Event Nora | Düğünler, Etkinlikler & Dijital Davetiyeler"/>
-                <meta name="twitter:description"
-                      content="Profesyonel düğün, doğum günü ve kurumsal etkinlik planlama hizmetleri."/>
-                <meta name="twitter:image" content="https://www.eventnora.com/og-cover.jpg"/>
-                <meta name="twitter:site" content="@eventnora"/>
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Event Nora | Düğünler, Etkinlikler & Dijital Davetiyeler" />
+                <meta name="twitter:description" content="Profesyonel düğün, doğum günü ve kurumsal etkinlik planlama hizmetleri." />
+                <meta name="twitter:image" content="https://www.eventnora.com/og-cover.jpg" />
 
                 {/* Structured Data */}
                 <script type="application/ld+json">
@@ -106,10 +99,19 @@ const IndexTr = () => {
                         ]
                     })}
                 </script>
-                <link rel="alternate" hrefLang="tr" href="https://www.eventnora.com/tr"/>
-                <link rel="alternate" hrefLang="en" href="https://www.eventnora.com/"/>
-                <link rel="alternate" hrefLang="x-default" href="https://www.eventnora.com/"/>
             </Helmet>
+
+            {/* Hreflang etiketlerini doğrudan DOM'a yaz */}
+            <div
+                dangerouslySetInnerHTML={{
+                    __html: `
+      <link rel="alternate" hreflang="tr" href="https://www.eventnora.com/tr" />
+      <link rel="alternate" hreflang="en" href="https://www.eventnora.com/" />
+      <link rel="alternate" hreflang="x-default" href="https://www.eventnora.com/" />
+    `
+                }}
+            />
+
 
 
             {/* HERO BÖLÜMÜ */}
