@@ -12,7 +12,7 @@ const About = () => {
         window.scrollTo(0, 0);
     }, []);
 
-    const pageTitle = isEnglish ? 'About Us | Event Nora' : 'Hakkımızda | Event Nora';
+    const pageTitle = isEnglish ? 'Event Nora | About Us ' : 'Event Nora | Hakkımızda';
     const pageDescription = isEnglish
         ? 'Event Nora is passionate about crafting unforgettable experiences through creativity, precision, and professionalism.'
         : 'Event Nora, yaratıcılık, hassasiyet ve profesyonellik ile unutulmaz deneyimler yaratmaya tutkuyla bağlıdır.';
