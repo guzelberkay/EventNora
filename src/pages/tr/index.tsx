@@ -63,6 +63,11 @@ const IndexTr = () => {
                 <meta name="robots" content="index, follow" />
                 <link rel="canonical" href="https://www.eventnora.com/tr" />
 
+                {/* Hreflang etiketleri – doğru camelCase ile */}
+                <link rel="alternate" hrefLang="tr" href="https://www.eventnora.com/tr" />
+                <link rel="alternate" hrefLang="en" href="https://www.eventnora.com/" />
+                <link rel="alternate" hrefLang="x-default" href="https://www.eventnora.com/" />
+
                 {/* Open Graph */}
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content="Event Nora | Düğün & Etkinlik Planlama Uzmanı" />
@@ -100,18 +105,6 @@ const IndexTr = () => {
                     })}
                 </script>
             </Helmet>
-
-            {/* Hreflang etiketlerini doğrudan DOM'a yaz */}
-            <div
-                dangerouslySetInnerHTML={{
-                    __html: `
-      <link rel="alternate" hreflang="tr" href="https://www.eventnora.com/tr" />
-      <link rel="alternate" hreflang="en" href="https://www.eventnora.com/" />
-      <link rel="alternate" hreflang="x-default" href="https://www.eventnora.com/" />
-    `
-                }}
-            />
-
 
 
             {/* HERO BÖLÜMÜ */}
