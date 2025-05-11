@@ -133,8 +133,8 @@ const IndexTr = () => {
                             <strong>Event Nora</strong> ile dijital davetiyeler, RSVP sistemleri ve lüks etkinlik organizasyonu bir arada.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Link to="/iletisim" className="gold-button text-xl">İletişime Geçin</Link>
-                            <Link to="/hizmetler" className="flex items-center justify-center gap-2 px-6 py-2.5 text-black hover:text-gold transition-colors duration-300 text-xl">
+                            <Link to="/tr/iletisim" className="gold-button text-xl">İletişime Geçin</Link>
+                            <Link to="/tr/hizmetler" className="flex items-center justify-center gap-2 px-6 py-2.5 text-black hover:text-gold transition-colors duration-300 text-xl">
                                 Hizmetlerimiz <ArrowRight size={16} />
                             </Link>
                         </div>
