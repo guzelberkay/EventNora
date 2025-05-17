@@ -12,7 +12,7 @@ const Contact = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const pageTitle = isEnglish ? 'Contact Us | Event Nora' : 'İletişim | Event Nora';
+  const pageTitle = isEnglish ? ' Event Nora | Contact Us' : ' Event Nora | İletişim';
   const pageDescription = isEnglish
       ? "Let's talk about your next unforgettable event. Reach us anytime to bring your vision to life."
       : 'Bir sonraki unutulmaz etkinliğiniz için bizimle iletişime geçin. Hayalinizi birlikte gerçeğe dönüştürelim.';

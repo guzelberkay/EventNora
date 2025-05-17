@@ -77,11 +77,7 @@ const IndexTr = () => {
                 <meta property="og:locale" content="tr_TR" />
                 <meta property="og:image" content="https://www.eventnora.com/og-cover.jpg" />
 
-                {/* Twitter */}
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Event Nora | Düğünler, Etkinlikler & Dijital Davetiyeler" />
-                <meta name="twitter:description" content="Profesyonel düğün, doğum günü ve kurumsal etkinlik planlama hizmetleri." />
-                <meta name="twitter:image" content="https://www.eventnora.com/og-cover.jpg" />
+
 
                 {/* Structured Data */}
                 <script type="application/ld+json">
