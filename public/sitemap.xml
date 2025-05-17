@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+    <!-- Ana Sayfa -->
     <url>
         <loc>https://www.eventnora.com/</loc>
         <xhtml:link rel="alternate" hreflang="en" href="https://www.eventnora.com/"/>
@@ -17,6 +19,8 @@
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
+
+    <!-- Hakkımızda / About -->
     <url>
         <loc>https://www.eventnora.com/about</loc>
         <xhtml:link rel="alternate" hreflang="en" href="https://www.eventnora.com/about"/>
@@ -34,6 +38,7 @@
         <priority>0.9</priority>
     </url>
 
+    <!-- Hizmetler / Services -->
     <url>
         <loc>https://www.eventnora.com/services</loc>
         <xhtml:link rel="alternate" hreflang="en" href="https://www.eventnora.com/services"/>
@@ -50,6 +55,8 @@
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
+
+    <!-- Nişan/Düğün Organizasyonu -->
     <url>
         <loc>https://www.eventnora.com/services/engagement-wedding-organization</loc>
         <xhtml:link rel="alternate" hreflang="en" href="https://www.eventnora.com/services/engagement-wedding-organization"/>
@@ -67,6 +74,7 @@
         <priority>0.85</priority>
     </url>
 
+    <!-- Blog -->
     <url>
         <loc>https://www.eventnora.com/blog/event-planning-mistakes</loc>
         <xhtml:link rel="alternate" hreflang="en" href="https://www.eventnora.com/blog/event-planning-mistakes"/>
@@ -83,4 +91,5 @@
         <changefreq>monthly</changefreq>
         <priority>0.75</priority>
     </url>
+
 </urlset>
