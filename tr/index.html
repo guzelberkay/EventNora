@@ -10,26 +10,28 @@
     <link rel="manifest" href="/manifest.json" />
 
     <!-- 🌍 Language declarations -->
-    <link rel="alternate" href="https://www.eventnora.com/" hreflang="en" />
-    <link rel="alternate" href="https://www.eventnora.com/tr/" hreflang="tr" />
-    <link rel="alternate" href="https://www.eventnora.com/" hreflang="x-default" />
+    <link rel="alternate" hreflang="en" href="https://www.eventnora.com/" />
+    <link rel="alternate" hreflang="tr" href="https://www.eventnora.com/tr/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.eventnora.com/" />
+
+    <!-- ✅ Canonical -->
+    <link rel="canonical" href="https://www.eventnora.com/tr/" />
 
     <!-- ✅ SEO Temelleri -->
     <title>Event Nora | Dijital Davetiye & Etkinlik Organizasyonu</title>
     <meta name="description" content="Event Nora ile İstanbul'da dijital davetiye, etkinlik planlama, doğum günü ve kurumsal organizasyonlar. Blog, hizmetler ve iletişim sayfamızı inceleyin.">
     <meta name="robots" content="index, follow" />
 
-    <!-- ✅ Schema Yapısı -->
+    <!-- ✅ Schema Yapısı (Facebook kaldırıldı) -->
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
             "@type": "Organization",
             "name": "Event Nora",
-            "url": "https://eventnora.com",
+            "url": "https://www.eventnora.com",
             "logo": "https://www.eventnora.com/favicon.ico",
             "sameAs": [
-                "https://www.instagram.com/eventnora",
-                "https://www.facebook.com/eventnora"
+                "https://www.instagram.com/eventnora"
             ]
         }
     </script>
@@ -41,15 +43,14 @@
 <!-- 🔗 SEO Yardımcı Gizli Menü -->
 <nav style="display:none;">
     <ul>
-        <li><a href="/tr">Ana Sayfa</a></li>
+        <li><a href="/tr/">Ana Sayfa</a></li>
         <li><a href="/tr/hizmetler">Hizmetler</a></li>
         <li><a href="/tr/blog">Blog</a></li>
         <li><a href="/tr/iletisim">İletişim</a></li>
-        <li><a href="/">English Version</a></li>
+        <li><a href="https://www.eventnora.com/">English Version</a></li>
     </ul>
 </nav>
 
-<!-- ✅ React uygulamasını başlatan dosya -->
 <script type="module" src="/src/main.tsx"></script>
 </body>
 </html>
