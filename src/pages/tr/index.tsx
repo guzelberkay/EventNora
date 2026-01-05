@@ -15,7 +15,7 @@ import {
 } from 'lucide-react';
 import Layout from '@/components/Layout';
 import { useLanguage } from '@/contexts/LanguageContext';
-import backgroundImage from '../../images/a1.webp'; // optimize edilmiş WebP formatı
+import backgroundImage from '@/images/congressfair_event.webp';
 import weddingTrendImage from '../../images/wedding_trend.webp';
 import digitalInvitationImage from '../../images/digital_invitations.webp';
 import planningMistakesImage from '../../images/event_planing_mistakes.jpg';
