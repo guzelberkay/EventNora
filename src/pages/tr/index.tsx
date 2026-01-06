@@ -120,13 +120,13 @@ const IndexTr = () => {
               Kusursuz Etkinlik Planlama
             </span>
                         <h1 className="heading-1 mb-6 text-black">
-                            Event Nora | Dijital Davetiyeler & Etkinlik Organizasyonu
+                            Kurumsal ve Özel Etkinliklerde Profesyonel Dokunuş
                         </h1>
                         <p className="paragraph mb-8 text-black text-2xl">
-                            Hayallerinizi gerçeğe dönüştüren yaratıcı etkinlik tasarımları ve eksiksiz düğün planlama hizmeti.
+                           Event Nora olarak; markaların kurumsal duruşunu güçlendiren, prestijli ve etkileyici etkinlikler tasarlıyoruz.
                         </p>
                         <p className="paragraph mb-8 text-black text-xl">
-                            <strong>Event Nora</strong> ile dijital davetiyeler, RSVP sistemleri ve lüks etkinlik organizasyonu bir arada.
+                            Lansmanlar, bayi toplantıları, yıl sonu organizasyonları ve kurumsal davetlerde; konseptten uygulamaya kadar tüm süreci titizlikle yönetiyoruz.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <Link to="/tr/iletisim" className="gold-button text-xl">İletişime Geçin</Link>
