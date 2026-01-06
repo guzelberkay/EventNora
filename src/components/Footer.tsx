@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Instagram, Mail, MapPin, Phone, MessageCircle } from 'lucide-react';
-import { FaLinkedin, FaGoogle } from 'react-icons/fa';
+import { FaLinkedin, FaGoogle , FaYoutube } from 'react-icons/fa';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
 import logo from '../images/eventnorasaydam.png';
@@ -51,6 +51,9 @@ const Footer = () => {
                 <a href="https://g.co/kgs/MEC9u4e" target="_blank" rel="noopener noreferrer" aria-label="Google Reviews" className="hover:text-gold-light">
                   <FaGoogle size={20} />
                 </a>
+                <a href="https://www.youtube.com/@KanalAdiniz" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="hover:text-gold-light">
+  <FaYoutube size={20} />
+</a>
               </div>
             </div>
 
