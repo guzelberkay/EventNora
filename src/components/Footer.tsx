@@ -51,7 +51,7 @@ const Footer = () => {
                 <a href="https://g.co/kgs/MEC9u4e" target="_blank" rel="noopener noreferrer" aria-label="Google Reviews" className="hover:text-gold-light">
                   <FaGoogle size={20} />
                 </a>
-                <a href="https://www.youtube.com/@KanalAdiniz" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="hover:text-gold-light">
+                <a href="https://youtube.com/@eventnora?si=_hXjXD3dhMh_XQQl" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="hover:text-gold-light">
   <FaYoutube size={20} />
 </a>
               </div>
