@@ -128,13 +128,13 @@ const IndexEn = () => {
               Premier Event Planning
             </span>
               <h1 className="heading-1 mb-6 text-black">
-                Expert Wedding Planning & Digital Invitations | Event Nora
+                A Professional Touch in Corporate and Private Events
               </h1>
               <p className="paragraph mb-8 text-black text-2xl">
-                From luxury weddings to intimate engagements – we plan it all with precision and creativity.
+                At Event Nora, we design prestigious and impactful events that strengthen brands' corporate image.
               </p>
               <p className="paragraph mb-8 text-black text-xl">
-                Discover the art of event design, RSVP management and bespoke digital invitations with <strong>Event Nora</strong>.
+                For product launches, dealer meetings, year-end events, and corporate gatherings, we meticulously manage the entire process, from concept to execution.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link to="/contact" className="gold-button text-xl">Get in Touch</Link>
